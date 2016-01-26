@@ -17,8 +17,8 @@
             <StackPanel Margin="0,0,0,10">
                 <TextBlock Text="Scanning..." FontSize="40" Margin="10,20,0,20"></TextBlock>
             </StackPanel>
-           
-            <ScrollViewer Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+
+            <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Margin="0,103,0,151" Grid.RowSpan="2">
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -37,16 +37,19 @@
                             Grid.ColumnSpan="2"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Top"
-                            Height="300"
+                            Height="249"
                             Margin="0,10,0,0"
                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
                             ScrollViewer.HorizontalScrollMode="Auto"/>
+
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
-
+            <Button x:Name="BackGround_Start" Grid.Row="1" Content="B_Start" Margin="0,0,0,151" Click="Background_Start" Width="132" Height="40" VerticalAlignment="Bottom"/>
+            <Button x:Name="BackGround_Stop" Grid.Row="1" Content="B_Stop" Margin="200,0,0,151" Click="Background_Stop" Width="132" Height="40" VerticalAlignment="Bottom"/>
 
         </Grid>
+        <TextBlock Text="abc..." FontSize="20" Margin="12,480,12,131"></TextBlock>
     </Grid>
-    
+
 </Page>

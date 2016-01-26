@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -15,8 +17,11 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Windows.ApplicationModel.Background;
+using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.Advertisement;
-using Windows.Storage.Streams;
+using Windows.Devices.Bluetooth.Background;
+
 
 namespace realBluetoothTest__
 {
@@ -25,10 +30,22 @@ namespace realBluetoothTest__
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        // The background task registration for the background advertisement publisher
+        private IBackgroundTaskRegistration taskRegistration;
+        // The publisher trigger used to configure the background task registration
+        private BluetoothLEAdvertisementPublisherTrigger trigger;
+        
+        // A name is given to the task in order for it to be identifiable across context.
+        private string taskName = "Background_publisher";
+        // Entry point for the background task.
+        private string taskEntryPoint = "BackgroundTasks.AdvertisementPublisherTask";
+
         private BluetoothLEAdvertisementWatcher watcher;
         private DispatcherTimer dispatcherTimer;
         private Client_List current_client= new Client_List();
 
+       
 
         public MainPage()
         {
@@ -37,16 +54,32 @@ namespace realBluetoothTest__
             // Create and initialize a new watcher instance.
             watcher = new BluetoothLEAdvertisementWatcher();
 
-         
+            // Create and initialize a new trigger to configure it.
+            trigger = new BluetoothLEAdvertisementPublisherTrigger();
+
+            // Add a manufacturer-specific section:
+            // First, create a manufacturer data section
             var manufacturerData = new BluetoothLEManufacturerData();
 
             // Then, set the company ID for the manufacturer data. Here we picked an unused value: 0xFF00
             manufacturerData.CompanyId = 0xFF00;
 
-            // Add the manufacturer data to the advertisement filter on the watcher:
 
-            // 여기 필터추가
-           // watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
+            // Finally set the data payload within the manufacturer-specific section
+            // Here, use a 16-bit UUID: 0x1234 -> {0x34, 0x12} (little-endian)
+            var writer = new DataWriter();
+            UInt16 uuidData = 0x1234;
+            writer.WriteUInt16(uuidData);
+
+            // Make sure that the buffer length can fit within an advertisement payload. Otherwise you will get an exception.
+            manufacturerData.Data = writer.DetachBuffer();
+
+            //(publisher)
+            // Add the manufacturer data to the advertisement publisher: 
+            trigger.Advertisement.ManufacturerData.Add(manufacturerData);
+
+            // add filter (watcher)
+            // watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
 
 
             // Configure the signal strength filter to only propagate events when in-range
@@ -72,8 +105,27 @@ namespace realBluetoothTest__
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-           
-            
+
+            // Get the existing task if already registered
+            if (taskRegistration == null)
+            {
+                // Find the task if we previously registered it
+                foreach (var task in BackgroundTaskRegistration.AllTasks.Values)
+                {
+                    if (task.Name == taskName)
+                    {
+                        taskRegistration = task;
+                        taskRegistration.Completed += OnBackgroundTaskCompleted;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                taskRegistration.Completed += OnBackgroundTaskCompleted;
+            }
+
+
             // Attach a handler to process the received advertisement. 
             // The watcher cannot be started without a Received handler attached
             watcher.Received += OnAdvertisementReceived;
@@ -95,6 +147,14 @@ namespace realBluetoothTest__
             App.Current.Suspending -= App_Suspending;
             App.Current.Resuming -= App_Resuming;
 
+            // Since the publisher is registered in the background, the background task will be triggered when the App is closed 
+            // or in the background. To unregister the task, press the Stop button.
+            if (taskRegistration != null)
+            {
+                // Always unregister the handlers to release the resources to prevent leaks.
+                taskRegistration.Completed -= OnBackgroundTaskCompleted;
+            }
+
             // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
             // scanning will be stopped automatically if the watcher is destroyed.
             watcher.Stop();
@@ -115,6 +175,15 @@ namespace realBluetoothTest__
         /// <param name="e">Details about the suspend request.</param>
         private void App_Suspending(object sender, Windows.ApplicationModel.SuspendingEventArgs e)
         {
+            //publisher stop
+            if (taskRegistration != null)
+            {
+                // Always unregister the handlers to release the resources to prevent leaks.
+                taskRegistration.Completed -= OnBackgroundTaskCompleted;
+            }
+
+            Debug.WriteLine("App Suspending.....");
+
             // Make sure to stop the watcher on suspend.
             watcher.Stop();
             // Always unregister the handlers to release the resources to prevent leaks.
@@ -131,8 +200,113 @@ namespace realBluetoothTest__
         {
             watcher.Received += OnAdvertisementReceived;
             watcher.Stopped += OnAdvertisementWatcherStopped;
+
+
         }
 
+      
+
+        /***********************************  publisher!!  ***************************************************/
+
+            /*
+        private async void Background_button_text_change(bool status)
+        {
+            // button text change!
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                if(status)
+                    BackGroundButton.Content = "Background_Start!!";
+                else
+                    BackGroundButton.Content = "Background_Stop!!";
+
+            });
+
+        }
+
+            */
+
+        private async void Background_Start(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Background start.");
+
+            // Registering a background trigger if it is not already registered. It will start background advertising.
+            // First get the existing tasks to see if we already registered for it
+            if (taskRegistration != null)
+                {
+                    Debug.WriteLine("Background publisher already registered.");
+                    return;
+                }
+
+                else
+                {
+
+                Debug.WriteLine("Background start1");
+                // Applications registering for background trigger must request for permission.
+                BackgroundAccessStatus backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+                // Here, we do not fail the registration even if the access is not granted. Instead, we allow 
+                // the trigger to be registered and when the access is granted for the Application at a later time,
+                // the trigger will automatically start working again.
+
+                Debug.WriteLine("Background start1-2");
+                // At this point we assume we haven't found any existing tasks matching the one we want to register
+                // First, configure the task entry point, trigger and name
+                var builder = new BackgroundTaskBuilder();
+                    builder.TaskEntryPoint = taskEntryPoint;
+                    builder.SetTrigger(trigger);
+                    builder.Name = taskName;
+
+                    // Now perform the registration.
+                    taskRegistration = builder.Register();
+                Debug.WriteLine("Background start2");
+
+                // For this scenario, attach an event handler to display the result processed from the background task
+                taskRegistration.Completed += OnBackgroundTaskCompleted;
+
+                    // Even though the trigger is registered successfully, it might be blocked. Notify the user if that is the case.
+                    if ((backgroundAccessStatus == BackgroundAccessStatus.Denied) || (backgroundAccessStatus == BackgroundAccessStatus.Unspecified))
+                    {
+                        Debug.WriteLine("Not able to run in background. Application must given permission to be added to lock screen.");
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Background publisher registered.");
+                    }
+                }
+            
+
+         
+        }
+        private void Background_Stop(object sender, RoutedEventArgs e)
+        {
+            // Unregistering the background task will stop advertising if this is the only client requesting
+            // First get the existing tasks to see if we already registered for it
+            if (taskRegistration != null)
+            {
+                taskRegistration.Unregister(true);
+                taskRegistration = null;
+           
+            }
+            else
+            {
+               
+            }
+        }
+
+
+        //publisher status
+        private void OnBackgroundTaskCompleted(BackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs eventArgs)
+        {
+            // We get the status changed processed by the background task
+            if (ApplicationData.Current.LocalSettings.Values.Keys.Contains(taskName))
+            {
+                string backgroundMessage = (string)ApplicationData.Current.LocalSettings.Values[taskName];
+                Debug.WriteLine(backgroundMessage);
+            }
+        }
+
+
+        /***********************************  watcher!!  ***************************************************/
+      
         /// <summary>
         /// Invoked as an event handler when the Run button is pressed.
         /// </summary>
@@ -166,12 +340,14 @@ namespace realBluetoothTest__
                     ReceivedAdvertisementListBox.Items.Add(string.Format("Found client=[{0}]", current_client.client_id(i)));
             });
         }
-
         /// <summary>
         /// Invoked as an event handler when the Stop button is pressed.
         /// </summary>
         /// <param name="sender">Instance that triggered the event.</param>
         /// <param name="e">Event data describing the conditions that led to the event.</param>
+        /// 
+
+
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             // Stopping the watcher will stop scanning if this is the only client requesting scan
