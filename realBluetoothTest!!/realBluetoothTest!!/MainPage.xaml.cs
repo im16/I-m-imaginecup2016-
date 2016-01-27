@@ -68,11 +68,17 @@ namespace realBluetoothTest__
             // Finally set the data payload within the manufacturer-specific section
             // Here, use a 16-bit UUID: 0x1234 -> {0x34, 0x12} (little-endian)
             var writer = new DataWriter();
-            UInt16 uuidData = 0x1234;
-            writer.WriteUInt16(uuidData);
+          //  UInt16 uuidData = 0x1234;
+           // writer.WriteUInt16(uuidData);
+            string s = "mk";
+
+            writer.WriteString(s);
+  
+        
 
             // Make sure that the buffer length can fit within an advertisement payload. Otherwise you will get an exception.
             manufacturerData.Data = writer.DetachBuffer();
+         
 
             //(publisher)
             // Add the manufacturer data to the advertisement publisher: 
@@ -139,7 +145,10 @@ namespace realBluetoothTest__
             App.Current.Resuming += App_Resuming;
 
         }
-
+        private void Click_dbTest(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(dbTest));
+        }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {

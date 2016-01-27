@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>cfd098dd-4b8c-4a80-a4e9-7c7e34f05c62</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\realBluetoothTest!!.exe">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\realBluetoothTest!!.exe">
       <PackagePath>entrypoint\realBluetoothTest!!.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -74,6 +74,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.Win32.Primitives\4.0.0\lib\dotnet\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\SQLite.Net-PCL\3.1.1\lib\Windows8\SQLite.Net.Platform.WinRT.dll">
+      <PackagePath>SQLite.Net.Platform.WinRT.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\SQLite.Net.Core-PCL\3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll">
+      <PackagePath>SQLite.Net.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -339,49 +345,52 @@
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UAP.2015\3.10.2\Redist\Debug\ARM\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\realBluetoothTest!!.xr.xml">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\realBluetoothTest!!.xr.xml">
       <PackagePath>realBluetoothTest!!.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\imaginecup16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\Core\realBluetoothTest!!.exe">
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\Core\realBluetoothTest!!.exe">
       <PackagePath>realBluetoothTest!!.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

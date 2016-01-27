@@ -50,6 +50,7 @@
 
         </Grid>
         <TextBlock Text="abc..." FontSize="20" Margin="12,480,12,131"></TextBlock>
+        <Button x:Name="dbTest" Content="DB_TEST" Margin="111,0,0,86" Click="Click_dbTest" Width="132" Height="40" VerticalAlignment="Bottom"/>
     </Grid>
 
 </Page>

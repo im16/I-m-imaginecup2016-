@@ -29,9 +29,9 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Button x:ConnectionId='4' x:Name="RunButton" Grid.Row="0" Grid.Column="0" Content="Run" Margin="5,10,10,0"                        />
-                        <Button x:ConnectionId='5' x:Name="StopButton" Grid.Row="0" Grid.Column="1" Content="Stop" Margin="5,10,10,0"                         />
-                        <ListBox x:ConnectionId='6'
+                        <Button x:ConnectionId='5' x:Name="RunButton" Grid.Row="0" Grid.Column="0" Content="Run" Margin="5,10,10,0"                        />
+                        <Button x:ConnectionId='6' x:Name="StopButton" Grid.Row="0" Grid.Column="1" Content="Stop" Margin="5,10,10,0"                         />
+                        <ListBox x:ConnectionId='7'
                             x:Name="ReceivedAdvertisementListBox"
                             Grid.Row="1"
                             Grid.ColumnSpan="2"
@@ -45,11 +45,12 @@
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
-            <Button x:ConnectionId='2' x:Name="BackGround_Start" Grid.Row="1" Content="B_Start" Margin="0,0,0,151"                          Width="132" Height="40" VerticalAlignment="Bottom"/>
-            <Button x:ConnectionId='3' x:Name="BackGround_Stop" Grid.Row="1" Content="B_Stop" Margin="200,0,0,151"                         Width="132" Height="40" VerticalAlignment="Bottom"/>
+            <Button x:ConnectionId='3' x:Name="BackGround_Start" Grid.Row="1" Content="B_Start" Margin="0,0,0,151"                          Width="132" Height="40" VerticalAlignment="Bottom"/>
+            <Button x:ConnectionId='4' x:Name="BackGround_Stop" Grid.Row="1" Content="B_Stop" Margin="200,0,0,151"                         Width="132" Height="40" VerticalAlignment="Bottom"/>
 
         </Grid>
         <TextBlock Text="abc..." FontSize="20" Margin="12,480,12,131"></TextBlock>
+        <Button x:ConnectionId='2' x:Name="dbTest" Content="DB_TEST" Margin="111,0,0,86"                      Width="132" Height="40" VerticalAlignment="Bottom"/>
     </Grid>
 
 </Page>

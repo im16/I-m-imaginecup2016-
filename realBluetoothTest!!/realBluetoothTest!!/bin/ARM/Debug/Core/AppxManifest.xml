@@ -38,6 +38,7 @@
     </Application>
   </Applications>
   <Capabilities>
+    <uap:Capability Name="removableStorage" />
     <DeviceCapability Name="bluetooth" />
   </Capabilities>
   <build:Metadata>
@@ -50,6 +51,7 @@
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="14.0.24720.0" />
+    <build:Item Name="SQLite.UAP.2015" Version="3.10.2" />
     <build:Item Name="MakePri.exe" Version="10.0.10586.15 (th2_release.151119-1817)" />
   </build:Metadata>
 </Package>

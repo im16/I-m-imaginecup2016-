@@ -30,6 +30,7 @@
     </Application>
   </Applications>
   <Capabilities>
+    <uap:Capability Name="removableStorage" />
     <DeviceCapability Name="bluetooth" />
   </Capabilities>
 </Package>
