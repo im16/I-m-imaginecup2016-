@@ -62,19 +62,16 @@ namespace realBluetoothTest__
             var manufacturerData = new BluetoothLEManufacturerData();
 
             // Then, set the company ID for the manufacturer data. Here we picked an unused value: 0xFF00
-            manufacturerData.CompanyId = 0xFF00;
+           // manufacturerData.CompanyId = 0x4C;
 
 
             // Finally set the data payload within the manufacturer-specific section
             // Here, use a 16-bit UUID: 0x1234 -> {0x34, 0x12} (little-endian)
             var writer = new DataWriter();
-          //  UInt16 uuidData = 0x1234;
-           // writer.WriteUInt16(uuidData);
-            string s = "mk";
 
-            writer.WriteString(s);
-  
-        
+            UInt16 uuidData = 0x1234;
+            writer.WriteUInt16(uuidData);
+
 
             // Make sure that the buffer length can fit within an advertisement payload. Otherwise you will get an exception.
             manufacturerData.Data = writer.DetachBuffer();
@@ -83,9 +80,6 @@ namespace realBluetoothTest__
             //(publisher)
             // Add the manufacturer data to the advertisement publisher: 
             trigger.Advertisement.ManufacturerData.Add(manufacturerData);
-
-            // add filter (watcher)
-            // watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
 
 
             // Configure the signal strength filter to only propagate events when in-range
@@ -407,7 +401,8 @@ namespace realBluetoothTest__
                     }
                     // Print the company ID + the raw data in hex format
                     client_ids[i] = string.Format("{0}",
-                        BitConverter.ToString(data));
+                      BitConverter.ToString(data));
+                  
                 }
             }
             // compare pre_member with current member

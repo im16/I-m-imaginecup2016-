@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Client_Token.cs" />
+    <Compile Include="Connect_Server.cs" />
     <Compile Include="dbTest.xaml.cs">
       <DependentUpon>dbTest.xaml</DependentUpon>
     </Compile>

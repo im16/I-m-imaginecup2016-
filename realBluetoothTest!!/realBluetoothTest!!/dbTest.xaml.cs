@@ -21,16 +21,26 @@ namespace realBluetoothTest__
     /// <summary>
     /// 자체적으로 사용하거나 프레임 내에서 탐색할 수 있는 빈 페이지입니다.
     /// </summary>
+    /// 
+
+
     public sealed partial class dbTest : Page
     {
         string path;
         SQLite.Net.SQLiteConnection conn;
+        Windows.Storage.ApplicationDataContainer localSettings;
+        Windows.Storage.StorageFolder localFolde;
 
         public dbTest()
         {
             this.InitializeComponent();
             Connect_DB();
+            
+           localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Object value = localSettings.Values["exampleSetting"];
+            test.Text = value.ToString();
            
+
         }
 
         private void Connect_DB()
@@ -40,9 +50,21 @@ namespace realBluetoothTest__
             conn.CreateTable<Client_Token>();
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private async void Add_Click(object sender, RoutedEventArgs e)
         {
-            var add = conn.Insert(new Client_Token() { token_num = textBox.Text });
+           
+
+            localSettings.Values["exampleSetting"] = textBox.Text;
+            Object value = localSettings.Values["exampleSetting"];
+
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                test.Text = value.ToString();
+            });
+           
+
+            //  var add = conn.Insert(new Client_Token() { token_num = textBox.Text });
+            //  Debug.WriteLine(path);
         }
 
         private void Show_Click(object sender, RoutedEventArgs e)
@@ -63,6 +85,11 @@ namespace realBluetoothTest__
             conn.Dispose();
             conn.Close();
             Connect_DB();
+        }
+
+        private void Contact_Click(object sender, RoutedEventArgs e)
+        {
+            Connect_Server.Request_Json();
         }
     }
 }
