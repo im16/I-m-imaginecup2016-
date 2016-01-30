@@ -22,6 +22,8 @@ namespace App7
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        bool flag = true;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -55,8 +57,8 @@ namespace App7
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            LoaderStoryBoard.Begin();
-            LoaderRing.Visibility = Visibility.Visible;
+          /*  LoaderStoryBoard.Begin();
+            LoaderRing.Visibility = Visibility.Visible;*/
             
         }
 
@@ -78,6 +80,23 @@ namespace App7
         private void SettingsRadioButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+      
+
+        private void ProgressRing_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (flag)
+            {
+                Storyboard1.Pause();
+                flag = false;
+            }
+            else
+            {
+                Storyboard1.Begin();
+                flag = true;
+            }
         }
     }
 }

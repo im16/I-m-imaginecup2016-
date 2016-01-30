@@ -132,21 +132,47 @@ namespace App7.App7_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[19];
             _typeNameTable[0] = "App7.LoginPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "App7.MainPage";
-            _typeNameTable[4] = "App7.MenuPage";
-            _typeNameTable[5] = "App7.SettingPage";
+            _typeNameTable[3] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[6] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[7] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[8] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[9] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[10] = "String";
+            _typeNameTable[11] = "Microsoft.Xaml.Interactions.Media.ControlStoryboardAction";
+            _typeNameTable[12] = "Windows.UI.Xaml.Media.Animation.Storyboard";
+            _typeNameTable[13] = "Microsoft.Xaml.Interactions.Media.ControlStoryboardOption";
+            _typeNameTable[14] = "System.Enum";
+            _typeNameTable[15] = "System.ValueType";
+            _typeNameTable[16] = "App7.MainPage";
+            _typeNameTable[17] = "App7.MenuPage";
+            _typeNameTable[18] = "App7.SettingPage";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[19];
             _typeTable[0] = typeof(global::App7.LoginPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::App7.MainPage);
-            _typeTable[4] = typeof(global::App7.MenuPage);
-            _typeTable[5] = typeof(global::App7.SettingPage);
+            _typeTable[3] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[8] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[9] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[10] = typeof(global::System.String);
+            _typeTable[11] = typeof(global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
+            _typeTable[13] = typeof(global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption);
+            _typeTable[14] = typeof(global::System.Enum);
+            _typeTable[15] = typeof(global::System.ValueType);
+            _typeTable[16] = typeof(global::App7.MainPage);
+            _typeTable[17] = typeof(global::App7.MenuPage);
+            _typeTable[18] = typeof(global::App7.SettingPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -182,9 +208,25 @@ namespace App7.App7_XamlTypeInfo
         }
 
         private object Activate_0_LoginPage() { return new global::App7.LoginPage(); }
-        private object Activate_3_MainPage() { return new global::App7.MainPage(); }
-        private object Activate_4_MenuPage() { return new global::App7.MenuPage(); }
-        private object Activate_5_SettingPage() { return new global::App7.SettingPage(); }
+        private object Activate_5_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_8_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_9_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_11_ControlStoryboardAction() { return new global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction(); }
+        private object Activate_16_MainPage() { return new global::App7.MainPage(); }
+        private object Activate_17_MenuPage() { return new global::App7.MenuPage(); }
+        private object Activate_18_SettingPage() { return new global::App7.SettingPage(); }
+        private void VectorAdd_5_BehaviorCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_9_ActionCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -211,23 +253,103 @@ namespace App7.App7_XamlTypeInfo
                 xamlType = new global::App7.App7_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  App7.MainPage
+            case 3:   //  Microsoft.Xaml.Interactivity.Interaction
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Behaviors");
+                xamlType = userType;
+                break;
+
+            case 4:   //  Object
+                xamlType = new global::App7.App7_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_5_BehaviorCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::App7.App7_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::App7.App7_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_8_EventTriggerBehavior;
+                userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
+                userType.AddMemberName("Actions");
+                userType.AddMemberName("EventName");
+                userType.AddMemberName("SourceObject");
+                userType.AddMemberName("AssociatedObject");
+                xamlType = userType;
+                break;
+
+            case 9:   //  Microsoft.Xaml.Interactivity.ActionCollection
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_9_ActionCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 10:   //  String
+                xamlType = new global::App7.App7_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  Microsoft.Xaml.Interactions.Media.ControlStoryboardAction
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_11_ControlStoryboardAction;
+                userType.AddMemberName("Storyboard");
+                userType.AddMemberName("ControlStoryboardOption");
+                xamlType = userType;
+                break;
+
+            case 12:   //  Windows.UI.Xaml.Media.Animation.Storyboard
+                xamlType = new global::App7.App7_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  Microsoft.Xaml.Interactions.Media.ControlStoryboardOption
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Play", global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption.Play);
+                userType.AddEnumValue("Stop", global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption.Stop);
+                userType.AddEnumValue("TogglePlayPause", global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption.TogglePlayPause);
+                userType.AddEnumValue("Pause", global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption.Pause);
+                userType.AddEnumValue("Resume", global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption.Resume);
+                userType.AddEnumValue("SkipToFill", global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption.SkipToFill);
+                xamlType = userType;
+                break;
+
+            case 14:   //  System.Enum
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                xamlType = userType;
+                break;
+
+            case 15:   //  System.ValueType
+                userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 16:   //  App7.MainPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_16_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  App7.MenuPage
+            case 17:   //  App7.MenuPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_MenuPage;
+                userType.Activator = Activate_17_MenuPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  App7.SettingPage
+            case 18:   //  App7.SettingPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_SettingPage;
+                userType.Activator = Activate_18_SettingPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -236,11 +358,122 @@ namespace App7.App7_XamlTypeInfo
         }
 
 
+        private object get_0_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_0_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_1_EventTriggerBehavior_Actions(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.Actions;
+        }
+        private object get_2_EventTriggerBehavior_EventName(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.EventName;
+        }
+        private void set_2_EventTriggerBehavior_EventName(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.EventName = (global::System.String)Value;
+        }
+        private object get_3_EventTriggerBehavior_SourceObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.SourceObject;
+        }
+        private void set_3_EventTriggerBehavior_SourceObject(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.SourceObject = (global::System.Object)Value;
+        }
+        private object get_4_EventTriggerBehavior_AssociatedObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.AssociatedObject;
+        }
+        private object get_5_ControlStoryboardAction_Storyboard(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction)instance;
+            return that.Storyboard;
+        }
+        private void set_5_ControlStoryboardAction_Storyboard(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction)instance;
+            that.Storyboard = (global::Windows.UI.Xaml.Media.Animation.Storyboard)Value;
+        }
+        private object get_6_ControlStoryboardAction_ControlStoryboardOption(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction)instance;
+            return that.ControlStoryboardOption;
+        }
+        private void set_6_ControlStoryboardAction_ControlStoryboardOption(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction)instance;
+            that.ControlStoryboardOption = (global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::App7.App7_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::App7.App7_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_0_Interaction_Behaviors;
+                xamlMember.Setter = set_0_Interaction_Behaviors;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_EventTriggerBehavior_Actions;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "EventName", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_2_EventTriggerBehavior_EventName;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_3_EventTriggerBehavior_SourceObject;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+                xamlMember.Getter = get_4_EventTriggerBehavior_AssociatedObject;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Media.ControlStoryboardAction");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "Storyboard", "Windows.UI.Xaml.Media.Animation.Storyboard");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_ControlStoryboardAction_Storyboard;
+                xamlMember.Setter = set_5_ControlStoryboardAction_Storyboard;
+                break;
+            case "Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption":
+                userType = (global::App7.App7_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Media.ControlStoryboardAction");
+                xamlMember = new global::App7.App7_XamlTypeInfo.XamlMember(this, "ControlStoryboardOption", "Microsoft.Xaml.Interactions.Media.ControlStoryboardOption");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_ControlStoryboardAction_ControlStoryboardOption;
+                xamlMember.Setter = set_6_ControlStoryboardAction_ControlStoryboardOption;
+                break;
+            }
             return xamlMember;
         }
     }

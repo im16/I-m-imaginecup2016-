@@ -209,3 +209,7 @@
 \\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Debug\LoginPage.xaml
 \\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Debug\LoginPage.xbf
 \\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Debug\App7.csprojResolveAssemblyReference.cache
+\\mac\home\documents\visual studio 2015\Projects\App7\App7\bin\ARM\Debug\Microsoft.Xaml.Interactions.dll
+\\mac\home\documents\visual studio 2015\Projects\App7\App7\bin\ARM\Debug\Microsoft.Xaml.Interactivity.dll
+\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Debug\Microsoft.Xaml.Interactions.pri.xml
+\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Debug\Microsoft.Xaml.Interactivity.pri.xml
