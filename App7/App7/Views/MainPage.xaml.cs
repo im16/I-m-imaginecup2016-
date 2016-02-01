@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // 빈 페이지 항목 템플릿은 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 에 문서화되어 있습니다.
 
-namespace App7
+namespace App7.Views
 {
     /// <summary>
     /// 자체적으로 사용하거나 프레임 내에서 탐색할 수 있는 빈 페이지입니다.

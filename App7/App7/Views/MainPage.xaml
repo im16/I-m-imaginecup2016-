@@ -5,12 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core" xmlns:Media="using:Microsoft.Xaml.Interactions.Media"
-    x:Class="App7.MainPage"
+    x:Class="App7.Views.MainPage"
     mc:Ignorable="d">
 
 
     <Page.Resources>
-        <Storyboard x:Name="LoaderStoryBoard" RepeatBehavior="Forever">
+        <!--<Storyboard x:Name="LoaderStoryBoard" RepeatBehavior="Forever">
             <DoubleAnimation Duration="0:0:4" To="-720.000" 
         		Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" 
         		Storyboard.TargetName="LoaderRing" 
@@ -99,7 +99,7 @@
                                 <Ellipse x:Name="OuterEllipse" Height="20" Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" StrokeThickness="{ThemeResource RadioButtonBorderThemeThickness}" UseLayoutRounding="False" Width="20"/>
                                 <Ellipse x:Name="CheckOuterEllipse" Height="20" Opacity="0" Stroke="{ThemeResource SystemControlHighlightAltAccentBrush}" StrokeThickness="{ThemeResource RadioButtonBorderThemeThickness}" UseLayoutRounding="False" Width="20">
                                     <Ellipse.Fill>
-                                        <ImageBrush Stretch="Fill" ImageSource="Images/Add.png"/>
+                                        <ImageBrush Stretch="Fill" ImageSource="Assets/Add.png"/>
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <Ellipse x:Name="CheckGlyph" Fill="{ThemeResource SystemControlHighlightAltBaseMediumHighBrush}" Height="10" Opacity="0" UseLayoutRounding="False" Width="10"/>
@@ -109,7 +109,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
         <Storyboard x:Name="Storyboard1" RepeatBehavior="Forever">
             <DoubleAnimation Duration="0:0:4" To="720" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="Ring1" d:IsOptimized="True">
                 <DoubleAnimation.EasingFunction>
@@ -234,9 +234,9 @@
     </Interactivity:Interaction.Behaviors>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
         
-        <Grid.Resources>
+
+            <Grid.Resources>
             <DataTemplate x:Name="Ring">
                 <Ellipse Width="15" Height="15" Fill="Aqua" VerticalAlignment="Top"  />
             </DataTemplate>
@@ -280,7 +280,7 @@
         </Grid>
         
 
-        <SplitView x:Name="SplitView" OpenPaneLength="100" CompactPaneLength="120"   
+       <!-- <SplitView x:Name="SplitView" OpenPaneLength="100" CompactPaneLength="120"   
 			DisplayMode="CompactOverlay" IsPaneOpen="False" PaneBackground="DarkGray" Grid.ColumnSpan="2">
             <SplitView.Pane>
                 <StackPanel x:Name="SplitViewPanePanel">
@@ -390,14 +390,14 @@
                 <Frame x:Name="MyFrame"/>
             </SplitView.Content>
 
-        </SplitView>
+        </SplitView>-->
    
-        <StackPanel Margin="0,0,0,200" Grid.ColumnSpan="2">
+       <!-- <StackPanel Margin="0,0,0,200" Grid.ColumnSpan="2">
             
-            <Image Source="/Images/user.png" Height="40" Width="60" Margin="260,20,0,60"/>
+            <Image Source="/Assets/user.png" Height="40" Width="60" Margin="260,20,0,60"/>
 
 
-            <!-- <Image x:Name="LoaderRing" Height="100" Width="100" 
+            <Image x:Name="LoaderRing" Height="100" Width="100" 
                    Source="/Assets/loading.png" Stretch="UniformToFill"
                    RenderTransformOrigin="0.5,0.5"
                    VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -406,13 +406,13 @@
                     <CompositeTransform/>
                 </Image.RenderTransform>
             </Image>
-           -->
+           
 
 
-        </StackPanel>
+        </StackPanel>-->
         <StackPanel x:Name="second" Margin="0,400,0,50" Grid.ColumnSpan="2">
 
-            <Image Source="/Images/itsme.jpg" Height="50"/>
+            <Image Source="/Assets/itsme.jpg" Height="50"/>
 
         </StackPanel>
 

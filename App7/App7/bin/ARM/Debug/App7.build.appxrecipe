@@ -354,23 +354,23 @@
     <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\logo_icon.png">
       <PackagePath>Assets\logo_icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\Add.png">
-      <PackagePath>Images\Add.png</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\Add.png">
+      <PackagePath>Assets\Add.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\Apply.png">
-      <PackagePath>Images\Apply.png</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\Apply.png">
+      <PackagePath>Assets\Apply.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\Configuration.png">
-      <PackagePath>Images\Configuration.png</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\Configuration.png">
+      <PackagePath>Assets\Configuration.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\Dustbin.png">
-      <PackagePath>Images\Dustbin.png</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\Dustbin.png">
+      <PackagePath>Assets\Dustbin.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\searching.png">
-      <PackagePath>Images\searching.png</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\searching.png">
+      <PackagePath>Assets\searching.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\user.png">
-      <PackagePath>Images\user.png</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\user.png">
+      <PackagePath>Assets\user.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -390,11 +390,11 @@
     <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\mario.jpeg">
-      <PackagePath>Images\mario.jpeg</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\mario.jpeg">
+      <PackagePath>Assets\mario.jpeg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Images\itsme.jpg">
-      <PackagePath>Images\itsme.jpg</PackagePath>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\itsme.jpg">
+      <PackagePath>Assets\itsme.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

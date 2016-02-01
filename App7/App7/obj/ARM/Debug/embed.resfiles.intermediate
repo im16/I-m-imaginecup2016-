@@ -1,5 +1,5 @@
 App.xbf
-LoginPage.xbf
-MainPage.xbf
-MenuPage.xbf
-SettingPage.xbf
+Views\LoginPage.xbf
+Views\MainPage.xbf
+Views\MenuPage.xbf
+Views\SettingPage.xbf

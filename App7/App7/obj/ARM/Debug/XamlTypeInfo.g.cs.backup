@@ -133,7 +133,7 @@ namespace App7.App7_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[19];
-            _typeNameTable[0] = "App7.Views.LoginPage";
+            _typeNameTable[0] = "App7.LoginPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Microsoft.Xaml.Interactivity.Interaction";
@@ -149,12 +149,12 @@ namespace App7.App7_XamlTypeInfo
             _typeNameTable[13] = "Microsoft.Xaml.Interactions.Media.ControlStoryboardOption";
             _typeNameTable[14] = "System.Enum";
             _typeNameTable[15] = "System.ValueType";
-            _typeNameTable[16] = "App7.Views.MainPage";
-            _typeNameTable[17] = "App7.Views.MenuPage";
-            _typeNameTable[18] = "App7.Views.SettingPage";
+            _typeNameTable[16] = "App7.MainPage";
+            _typeNameTable[17] = "App7.MenuPage";
+            _typeNameTable[18] = "App7.SettingPage";
 
             _typeTable = new global::System.Type[19];
-            _typeTable[0] = typeof(global::App7.Views.LoginPage);
+            _typeTable[0] = typeof(global::App7.LoginPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
@@ -170,9 +170,9 @@ namespace App7.App7_XamlTypeInfo
             _typeTable[13] = typeof(global::Microsoft.Xaml.Interactions.Media.ControlStoryboardOption);
             _typeTable[14] = typeof(global::System.Enum);
             _typeTable[15] = typeof(global::System.ValueType);
-            _typeTable[16] = typeof(global::App7.Views.MainPage);
-            _typeTable[17] = typeof(global::App7.Views.MenuPage);
-            _typeTable[18] = typeof(global::App7.Views.SettingPage);
+            _typeTable[16] = typeof(global::App7.MainPage);
+            _typeTable[17] = typeof(global::App7.MenuPage);
+            _typeTable[18] = typeof(global::App7.SettingPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -207,14 +207,14 @@ namespace App7.App7_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_LoginPage() { return new global::App7.Views.LoginPage(); }
+        private object Activate_0_LoginPage() { return new global::App7.LoginPage(); }
         private object Activate_5_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
         private object Activate_8_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
         private object Activate_9_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
         private object Activate_11_ControlStoryboardAction() { return new global::Microsoft.Xaml.Interactions.Media.ControlStoryboardAction(); }
-        private object Activate_16_MainPage() { return new global::App7.Views.MainPage(); }
-        private object Activate_17_MenuPage() { return new global::App7.Views.MenuPage(); }
-        private object Activate_18_SettingPage() { return new global::App7.Views.SettingPage(); }
+        private object Activate_16_MainPage() { return new global::App7.MainPage(); }
+        private object Activate_17_MenuPage() { return new global::App7.MenuPage(); }
+        private object Activate_18_SettingPage() { return new global::App7.SettingPage(); }
         private void VectorAdd_5_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
@@ -238,7 +238,7 @@ namespace App7.App7_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  App7.Views.LoginPage
+            case 0:   //  App7.LoginPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_LoginPage;
                 userType.SetIsLocalType();
@@ -333,21 +333,21 @@ namespace App7.App7_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 16:   //  App7.Views.MainPage
+            case 16:   //  App7.MainPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_16_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  App7.Views.MenuPage
+            case 17:   //  App7.MenuPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_17_MenuPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  App7.Views.SettingPage
+            case 18:   //  App7.SettingPage
                 userType = new global::App7.App7_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_18_SettingPage;
                 userType.SetIsLocalType();
