@@ -348,6 +348,15 @@
     <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\150x150-icon.png">
+      <PackagePath>Assets\150x150-icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\44x44-icon.png">
+      <PackagePath>Assets\44x44-icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\71x71-icon.png">
+      <PackagePath>Assets\71x71-icon.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="\\mac\home\documents\visual studio 2015\Projects\App7\App7\Assets\loading.png">
       <PackagePath>Assets\loading.png</PackagePath>
     </AppxPackagedFile>

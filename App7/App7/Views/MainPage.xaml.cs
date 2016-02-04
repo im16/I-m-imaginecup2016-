@@ -23,70 +23,126 @@ namespace App7.Views
     public sealed partial class MainPage : Page
     {
         bool flag = true;
+        public static MainPage Current;
 
         public MainPage()
         {
             this.InitializeComponent();
-            
+            Current = this;
+
         }
 
-     /*   private void click_menu(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MenuPage));
-        }
-        private void click_find(object sender, RoutedEventArgs e)
-        {
-            bool A = true;
-            if (A)
-            {
-                this.second.Visibility = Visibility.Collapsed;
-                A = false;
-            }
-            if(A)
-            {
-                this.second.Visibility = Visibility.Visible;
-                A = true;
-            }
-        }
-        private void click_setting(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(SettingPage));
-        }
+        /*   private void click_menu(object sender, RoutedEventArgs e)
+           {
+               this.Frame.Navigate(typeof(MenuPage));
+           }
+           private void click_find(object sender, RoutedEventArgs e)
+           {
+               bool A = true;
+               if (A)
+               {
+                   this.second.Visibility = Visibility.Collapsed;
+                   A = false;
+               }
+               if(A)
+               {
+                   this.second.Visibility = Visibility.Visible;
+                   A = true;
+               }
+           }
+           private void click_setting(object sender, RoutedEventArgs e)
+           {
+               this.Frame.Navigate(typeof(SettingPage));
+           }
 
-    */
+       */
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-          /*  LoaderStoryBoard.Begin();
-            LoaderRing.Visibility = Visibility.Visible;*/
-            
-        }
-
-        private void BackRadioButton_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
-        {
+        /*   private void ScenarioControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+           {
+               // Clear the status block when navigating scenarios.
+               NotifyUser(String.Empty, NotifyType.StatusMessage);
 
-        }
+               ListBox scenarioListBox = sender as ListBox;
+               Scenario s = scenarioListBox.SelectedItem as Scenario;
+               if (s != null)
+               {
+                   ScenarioFrame.Navigate(s.ClassType);
+                   if (Window.Current.Bounds.Width < 640)
+                   {
+                       Splitter.IsPaneOpen = false;
+                   }
+               }
+           }
 
-        private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
-        {
+           public List<Scenario> Scenarios
+           {
+               get { return this.scenarios; }
+           }
 
-        }
+           /// <summary>
+           /// Used to display messages to the user
+           /// </summary>
+           /// <param name="strMessage"></param>
+           /// <param name="type"></param>
+           public void NotifyUser(string strMessage, NotifyType type)
+           {
+               switch (type)
+               {
+                   case NotifyType.StatusMessage:
+                       StatusBorder.Background = new SolidColorBrush(Windows.UI.Colors.Green);
+                       break;
+                   case NotifyType.ErrorMessage:
+                       StatusBorder.Background = new SolidColorBrush(Windows.UI.Colors.Red);
+                       break;
+               }
+               StatusBlock.Text = strMessage;
 
-        private void SettingsRadioButton_Click(object sender, RoutedEventArgs e)
-        {
+               // Collapse the StatusBlock if it has no text to conserve real estate.
+               StatusBorder.Visibility = (StatusBlock.Text != String.Empty) ? Visibility.Visible : Visibility.Collapsed;
+               if (StatusBlock.Text != String.Empty)
+               {
+                   StatusBorder.Visibility = Visibility.Visible;
+                   StatusPanel.Visibility = Visibility.Visible;
+               }
+               else
+               {
+                   StatusBorder.Visibility = Visibility.Collapsed;
+                   StatusPanel.Visibility = Visibility.Collapsed;
+               }
+           }
+           */
 
-        }
 
-      
+        /*  private void BackRadioButton_Click(object sender, RoutedEventArgs e)
+          {
+
+          }
+
+          private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
+          {
+
+          }
+
+          private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
+          {
+
+          }
+
+          private void SettingsRadioButton_Click(object sender, RoutedEventArgs e)
+          {
+
+          }
+          */
+
 
         private void ProgressRing_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (flag)
             {
                 Storyboard1.Pause();
@@ -98,5 +154,48 @@ namespace App7.Views
                 flag = true;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Splitter.IsPaneOpen = !Splitter.IsPaneOpen;
+        }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ScenarioControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MenuPage.IsSelected)
+            {
+                this.Frame.Navigate(typeof(MenuPage));
+            }
+            else if (SettingPage.IsSelected)
+            {
+                this.Frame.Navigate(typeof(SettingPage));
+            }
+            else { }
+        }
+
+        /*  public enum NotifyType
+          {
+              StatusMessage,
+              ErrorMessage
+          };
+
+          public class ScenarioBinding : IValueConverter
+          {
+              public object Convert(object value, Type targetType, object parameter, string language)
+              {
+                  Scenario s = value as Scenario;
+                  return (MainPage.Current.Scenarios.IndexOf(s) + 1) + ") " + s.Title;
+              }
+
+              public object ConvertBack(object value, Type targetType, object parameter, string language)
+              {
+                  return true;
+              }
+          }*/
     }
 }

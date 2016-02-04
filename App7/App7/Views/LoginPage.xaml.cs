@@ -31,5 +31,8 @@ namespace App7.Views
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+     
     }
+
 }
