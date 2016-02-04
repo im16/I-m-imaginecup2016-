@@ -2,10 +2,17 @@
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Diagnostics;
-using System;
 using System.Net.Http;
 using System.Net;
 using System.Text;
+using Windows.Storage;
+using Windows.UI.Xaml.Media.Imaging;
+using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
+using Windows.Storage.Streams;
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace realBluetoothTest__
 {
@@ -16,21 +23,44 @@ namespace realBluetoothTest__
 
     class Connect_Server
     {
-        public static async void Request_Json()
+
+        public static async void request_client_info(Client client)
         {
             try
             {
-                string url = "http://40.76.6.186:8888/member_register";
+                string url = "http://40.76.6.186:8888/member_find/near/json";
 
-                HttpClient httpclient = new HttpClient();
-                HttpWebRequest webrequest = (HttpWebRequest)HttpWebRequest.Create(url);
-                httpclient.DefaultRequestHeaders.Add("name", "value");
-                httpclient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
-                webrequest.Method = "POST";
-                HttpWebResponse response = (HttpWebResponse)await webrequest.GetResponseAsync();
-                StreamReader streamReader1 = new StreamReader(response.GetResponseStream());
-                Debug.WriteLine(streamReader1.ReadLine());
+                var httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+                httpWebRequest.ContentType = "application/json; charset=utf-8";
+                httpWebRequest.Method = "POST";
+
+                using (var streamWriter = new StreamWriter(await httpWebRequest.GetRequestStreamAsync()))
+                {
+
+                    //object to json
+                    StringBuilder sb = new StringBuilder();
+                    JsonWriter jw = new JsonTextWriter(new StringWriter(sb));
+                    jw.Formatting = Formatting.Indented;
+                    jw.WriteStartObject();
+                    jw.WritePropertyName("id");
+                    jw.WriteValue(client.id);
+                    jw.WriteEndObject();
+
+                    streamWriter.Write(sb.ToString());
+                    streamWriter.Flush();
+                }
+
+                var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    Debug.WriteLine(result);
+                }
+
+
             }
+
+
 
             catch (Exception ex)
 
@@ -45,5 +75,140 @@ namespace realBluetoothTest__
 
 
         }
+
+        public static async Task<byte []> request_image()
+        {
+            byte[] result = new byte[0];
+            //result.DecodePixelWidth = 320;
+
+            try
+            {
+                string url = "http://40.76.6.186:8888/member_find/near/image";
+
+                var httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+                httpWebRequest.ContentType = "application/json; charset=utf-8";
+                httpWebRequest.Method = "POST";
+
+                using (var streamWriter = new StreamWriter(await httpWebRequest.GetRequestStreamAsync()))
+                {
+                    string json = "{\"id\":\"shin\"}";
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                }
+
+                var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
+
+               
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+
+
+                  //  IRandomAccessStream imageStream = (IRandomAccessStream) streamReader.BaseStream;
+                     string s = await streamReader.ReadToEndAsync();
+                    //result = Encoding.ASCII.GetBytes(s);
+                    result = Convert.FromBase64String(s);
+
+                    Debug.WriteLine(" {0}   ====  {1} ", result, s);
+                    
+                }
+            }
+
+            catch (Exception ex)
+            {
+                // Need to convert int HResult to hex string
+                Debug.WriteLine("Error = " + ex.HResult.ToString("X") +
+                    "  Message: " + ex.Message);
+            }
+
+            return result;
+        }
+
+
+        public static async Task<bool> addImages(IRandomAccessStream filestream)
+        {
+            bool success = false;
+           
+
+            string serviceURL = "http://40.76.6.186:8888/member_register/shin";
+            string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");
+
+                success = false;
+                
+                //Rest request
+                HttpClient restClient = new HttpClient();
+                restClient.BaseAddress = new Uri("http://40.76.6.186:8888/member_register/shin");
+                restClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "multipart/form-data; boundary=" + boundary);
+
+
+                //falta la autenticacion
+               // setAuthorization(restClient, service, WEBSERVICE_REQUEST_TYPE_POST);
+
+                // This is the postdata
+                MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+                content.Add(new StringContent(boundary));
+                StringContent textPart = new StringContent("1234", Encoding.UTF8);
+                content.Add(textPart, "project");
+
+                StreamContent imagePart = new StreamContent(filestream.AsStream());
+                imagePart.Headers.Add("Content-Type", "image/jpeg");
+                content.Add(imagePart, "profile_picture","111" );
+
+
+                HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, serviceURL);
+                req.Content = content;
+                HttpResponseMessage response = null;
+                string responseBodyAsText = "";
+
+                try
+                {
+                    response = await restClient.SendAsync(req);
+                    response.EnsureSuccessStatusCode();
+                    responseBodyAsText = await response.Content.ReadAsStringAsync();
+                    if (response.StatusCode == HttpStatusCode.Created)
+                    {
+                   
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    string err = e.Message;
+                }
+
+
+            return success;
+        }
+
+
+
+        public static async Task<string> streamToString(IRandomAccessStream fileStream)
+        {
+                string Base64String = "";
+                var reader = new DataReader(fileStream.GetInputStreamAt(0));
+                await reader.LoadAsync((uint)fileStream.Size);
+                byte[] byteArray = new byte[fileStream.Size];
+                reader.ReadBytes(byteArray);
+                 Base64String = Convert.ToBase64String(byteArray);
+            //string s = ByteToString(byteArray);
+
+            return Base64String;
+                            
+          
+        }
+
+        // 바이트 배열을 String으로 변환 
+        private static string ByteToString(byte[] strByte)
+        {
+            string str = Encoding.UTF8.GetString(strByte);
+            return str;
+        }
+        // String을 바이트 배열로 변환 
+        private static byte[] StringToByte(string str)
+        {
+            byte[] StrByte = Encoding.UTF8.GetBytes(str);
+            return StrByte;
+        }
+
+        
     }
 }

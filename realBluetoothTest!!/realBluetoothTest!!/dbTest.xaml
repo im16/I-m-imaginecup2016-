@@ -11,8 +11,10 @@
         <StackPanel Orientation="Vertical">
             <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="SQLite Demo" FontSize="20" Foreground="Black" Margin="0 50 0 0 "/>
             <TextBlock x:Name="test" VerticalAlignment="Top" HorizontalAlignment="Center" Text="1111111111" FontSize="20" Foreground="Black" Margin="0 50 0 0 "/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="30 118 0 0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" Height="60"/>
+            <Button x:Name="photo_pick" Content="photo_pick" Margin="111,20,0,40" Click="Click_Photo_Button" Width="132" Height="40" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="30 0 0 0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" Height="60"/>
         </StackPanel>
+        <Image x:Name="image_show" HorizontalAlignment="Left" Height="230" Margin="0,354,0,0" VerticalAlignment="Top" Width="350"/>
     </Grid>
     <Page.BottomAppBar>
         <AppBar IsOpen="True" IsSticky="True">
@@ -21,7 +23,7 @@
                 <AppBarButton x:Name="Show" Label="Show All" Icon="Zoom" Click="Show_Click"/>
                 <AppBarButton x:Name="RemoveAll" Label="Show All" Icon="Delete" Click="Delete_Click"/>
                 <AppBarButton x:Name="refresh" Label="refresh" Icon="Contact" Click="Contact_Click"/>
-
+                <AppBarButton x:Name="image_b" Label="image" Icon="Video" Click="Image_Click"/>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>

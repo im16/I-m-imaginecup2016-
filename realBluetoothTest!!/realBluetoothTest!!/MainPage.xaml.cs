@@ -21,7 +21,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.Advertisement;
 using Windows.Devices.Bluetooth.Background;
-
+using System.Text;
 
 namespace realBluetoothTest__
 {
@@ -45,11 +45,14 @@ namespace realBluetoothTest__
         private DispatcherTimer dispatcherTimer;
         private Client_List current_client= new Client_List();
 
+        private My_Info my_info = new My_Info();
+
        
 
         public MainPage()
         {
             this.InitializeComponent();
+            my_info.id = "shin";
 
             // Create and initialize a new watcher instance.
             watcher = new BluetoothLEAdvertisementWatcher();
@@ -69,8 +72,8 @@ namespace realBluetoothTest__
             // Here, use a 16-bit UUID: 0x1234 -> {0x34, 0x12} (little-endian)
             var writer = new DataWriter();
 
-            UInt16 uuidData = 0x1234;
-            writer.WriteUInt16(uuidData);
+            string id = my_info.id;
+            writer.WriteString(id);
 
 
             // Make sure that the buffer length can fit within an advertisement payload. Otherwise you will get an exception.
@@ -330,7 +333,7 @@ namespace realBluetoothTest__
 
         async void dispatcherTimer_Tick(object sender, object e)
         {
-            Debug.WriteLine("hello");
+           // Debug.WriteLine("hello");
             current_client.remove_client();
 
 
@@ -401,8 +404,8 @@ namespace realBluetoothTest__
                     }
                     // Print the company ID + the raw data in hex format
                     client_ids[i] = string.Format("{0}",
-                      BitConverter.ToString(data));
-                  
+                      Encoding.UTF8.GetString(data));
+
                 }
             }
             // compare pre_member with current member

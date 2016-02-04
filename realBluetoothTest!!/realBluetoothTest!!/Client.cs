@@ -5,112 +5,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel;
 
 namespace realBluetoothTest__
 {
-    class Client_List
-    {
-        private ArrayList clients=null;
-        
-        public Client_List()
-        {
-            clients= new ArrayList();
-            client_num = 0;
-        }
-
-        public int client_num{get;set;}
-
-        public string client_id(int i)
-        {
-            Client member = (Client)clients[i];
-
-            return member.id;
-            
-        }
-
-        public void add_client(string id)
-        {   
-
-            Client new_client = new Client(id);
-            clients.Add(new_client);
-
-            this.client_num++;
-        }
-
-        public void check_exist(string[] ids)
-        {
-            Debug.WriteLine("start");
-
-            if (client_num > 0)
-            {
-                
-                foreach (string s in ids)
-                {
-                    Debug.WriteLine("id:{0}",s);
-
-                    // check existing member
-                    Boolean falg = false;
-
-                    foreach (Client i in clients)
-                    {
-                        if (i.equals(s))
-                        { i.use_bit = 10; falg = true; }
-                    }
-
-                    // add new member
-                    if (!falg)
-                        add_client(s);
-
-                }
-
-            }
-
-            else
-            {
-                foreach (string s in ids)
-                {
-                    add_client(s);
-                }
-            }
-
-            Debug.WriteLine("end");
-
-        }
-
-        // remove existing member(because already left)
-        public void remove_client()
-        {
-            Debug.WriteLine("remover start!");
-
-            foreach (Client i in clients)
-                i.use_bit -= 1;
-
-            for (int i=0; i<client_num; i++)
-            {
-                Client member =(Client) clients[i];
-
-                Debug.WriteLine("id: {0} , {1}", member.id, member.use_bit);
-
-                if (member.use_bit<=0)
-                { clients.Remove(member); client_num--;  }
-            }
-
-            System.Diagnostics.Debug.WriteLine("remove end");
-        }
-
-    }
-
-
+   
     class Client
     {
-       
+
+        private BackgroundWorker bw = new BackgroundWorker();
+
         public string id { get; set; }
         public int use_bit { get; set; }
+        public string nickName { get; set; }
+        public string phoneNum { get; set; }
+        public string status_message { get; set; }
+        public string other_sns { get; set; }
+        public ArrayList pictures { get; set; }
+        public ArrayList videos { get; set; }
 
         public Client(string id)
         {
             this.id = id;
             use_bit = 10;
+                       
+            //request found client information(background task)
+            bw.DoWork += new DoWorkEventHandler(bw_DoWork);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+            bw.RunWorkerAsync();
+
+        }
+
+        private void bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            Connect_Server.request_client_info(this);
+        }
+
+
+
+        private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (!(e.Error == null))
+            {
+                Debug.WriteLine("client {0} not found", this.id);
+            }
+
+            else
+            {
+                Debug.WriteLine("Done!!");
+            }
+        }
+
+        public void setClient_Info(string json)
+        {
+            JObject jObject = JObject.Parse(json);
+            JToken jUser = jObject["My"];
+            nickName = (string)jUser["nickName"];
+            phoneNum = (string)jUser["phoneNum"];
+            status_message = (string)jUser["status_message"];
+            other_sns = (string)jUser["other_sns"];
+
         }
 
         public bool equals(string id)
