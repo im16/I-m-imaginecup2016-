@@ -1,0 +1,8 @@
+/out:"\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Release\ilc\intermediate\SgGenerated\\"
+/int:"\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Release\ilc\intermediate\\"
+/ref:"\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Release\ilc\intermediate\PreMergeILTransformed\\"
+/ref:"\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\ARM\ilc\lib\Private\\"
+/ref:"\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Release\ilc\in\\"
+/ref:"\\mac\home\documents\visual studio 2015\Projects\App7\App7\obj\ARM\Release\ilc\in\WinMetadata\\"
+/ca:System.Private.CoreLib
