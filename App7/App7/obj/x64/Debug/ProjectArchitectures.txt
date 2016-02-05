@@ -1,1 +1,0 @@
-\\mac\home\documents\visual studio 2015\Projects\App7\App7\App7.csproj;x64
