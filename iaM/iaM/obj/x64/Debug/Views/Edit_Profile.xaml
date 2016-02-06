@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="iaM.Views.Edit_Profile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:iaM.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <!-- 프로필사진보기 및 상태메시지, 연락처 편집-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Row="0" Grid.Column="0" Source="/assets/mario.jpeg"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Text="I'm Mario" FontSize="20"/>
+            <TextBox Grid.RowSpan="2" Grid.Column="1" Text="Edit Here" Width="200" BorderThickness="0"/>
+        </Grid>
+
+        <!-- 사진, 동영상, 기타링크, -->
+
+        <Grid Grid.Row="1">
+            <AppBar IsOpen="True" Background="#E84A5F">
+                <StackPanel Orientation="Horizontal">
+                    <AppBarButton x:ConnectionId='1' x:Name="HighlighterButtoner" 
+                          
+                         />
+                    <AppBarButton x:ConnectionId='2' x:Name="PenButton" 
+                          Icon="Edit" Label="Pen" 
+                       />
+                    <AppBarButton x:ConnectionId='3' x:Name="EraserButton" 
+                          Icon="Delete" Label="Eraser" 
+                          />
+                    <AppBarButton x:ConnectionId='4' x:Name="RecognizeButton" 
+                          Icon="Font" Label="Recognize" 
+                    />
+                   <!-- <AppBarButton x:Name="SaveButton" 
+                          Icon="Save" Label="Save" 
+                          Click="SaveButton_Click" />
+                    <AppBarButton x:Name="LoadButton" 
+                          Icon="OpenFile" Label="Load" 
+                          Click="LoadButton_Click" />-->
+                </StackPanel>
+            </AppBar>
+        </Grid>
+    </Grid>
+</Page>
+
