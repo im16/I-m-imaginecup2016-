@@ -7,23 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid>
+        <Grid.Background>
+            <ImageBrush  ImageSource="/Assets/itsme.jpg" Opacity="30"/>
+        </Grid.Background>
         <!-- 로그인 페이지 구성-->
-        <StackPanel x:ConnectionId='1' x:Name="contentPanel" Margin="8,50,0,0" HorizontalAlignment="Center">
-            <StackPanel x:ConnectionId='2' x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Ellipse Grid.Row="0">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/Assets/71-71icon.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <StackPanel x:ConnectionId='1' Grid.Row="1" x:Name="contentPanel" Margin="8,50,0,0" HorizontalAlignment="Center">
+            <StackPanel x:ConnectionId='3' x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
                 <TextBox x:ConnectionId='7' x:Name="nameInput" Width="280"/>
 
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
-                <TextBox x:ConnectionId='3' x:Name="nameInput2" Width="280" />
-                <Button x:ConnectionId='4' x:Name="inputButton" Margin="0,20,0,0" Content="로그인" HorizontalAlignment="Center"                   />
-                <Button x:ConnectionId='5' x:Name="inputButton2" Margin="0,20,0,0" Content="회원가입" HorizontalAlignment="Center"/>
+                <TextBox x:ConnectionId='4' x:Name="nameInput2" Width="280" />
+                <Button x:ConnectionId='5' x:Name="inputButton" Margin="0,20,0,0" Content="로그인" HorizontalAlignment="Center"                   />
+                
                 <Button x:ConnectionId='6' x:Name="inputButton3" Margin="0,20,0,0" Content="비번찾기" HorizontalAlignment="Center"/>
             </StackPanel>
 
         </StackPanel>
+        <Button x:ConnectionId='2' Grid.Row="2" x:Name="inputButton2" Margin="0,20,0,0" Content="회원가입" HorizontalAlignment="Center"               />
     </Grid>
 </Page>
 

@@ -7,10 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid>
+        <Grid.Background>
+            <ImageBrush  ImageSource="/Assets/itsme.jpg" Opacity="30"/>
+        </Grid.Background>
         <!-- 로그인 페이지 구성-->
-        <StackPanel x:Name="contentPanel" Margin="8,50,0,0" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Ellipse Grid.Row="0">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/Assets/71-71icon.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <StackPanel Grid.Row="1" x:Name="contentPanel" Margin="8,50,0,0" HorizontalAlignment="Center">
             <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
                 <TextBox x:Name="nameInput" Width="280"/>
 
@@ -19,10 +31,11 @@
             <StackPanel HorizontalAlignment="Center">
                 <TextBox x:Name="nameInput2" Width="280" />
                 <Button x:Name="inputButton" Margin="0,20,0,0" Content="로그인" HorizontalAlignment="Center" Click="ToMainPage"/>
-                <Button x:Name="inputButton2" Margin="0,20,0,0" Content="회원가입" HorizontalAlignment="Center"/>
+                
                 <Button x:Name="inputButton3" Margin="0,20,0,0" Content="비번찾기" HorizontalAlignment="Center"/>
             </StackPanel>
 
         </StackPanel>
+        <Button Grid.Row="2" x:Name="inputButton2" Margin="0,20,0,0" Content="회원가입" HorizontalAlignment="Center" Click="Signup"/>
     </Grid>
 </Page>

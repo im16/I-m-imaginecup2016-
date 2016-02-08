@@ -203,4 +203,13 @@
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\qualifiers.txt.intermediate
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\ProjectArchitectures.txt
-\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\iaM.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\bin\ARM\Debug\Views\Signup.xbf
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\Signup.g.i.cs
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\Signup.g.cs
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\Signup.xaml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\Signup.xbf
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\bin\ARM\Debug\Views\See_Others.xbf
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.g.i.cs
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.g.cs
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.xaml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.xbf

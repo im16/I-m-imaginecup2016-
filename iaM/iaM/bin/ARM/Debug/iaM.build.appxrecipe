@@ -351,6 +351,9 @@
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\71x71-icon.png">
       <PackagePath>Assets\71x71-icon.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\splash-img.png">
+      <PackagePath>Assets\splash-img.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
