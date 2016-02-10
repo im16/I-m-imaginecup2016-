@@ -132,23 +132,33 @@ namespace iaM.iaM_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[7];
+            _typeNameTable = new string[12];
             _typeNameTable[0] = "iaM.Views.Edit_Profile";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "iaM.Views.LoginPage";
             _typeNameTable[4] = "iaM.Views.MainPage";
-            _typeNameTable[5] = "iaM.Views.See_Others";
-            _typeNameTable[6] = "iaM.Views.Signup";
+            _typeNameTable[5] = "System.Collections.Generic.List`1<iaM.Views.List_item>";
+            _typeNameTable[6] = "Object";
+            _typeNameTable[7] = "iaM.Views.List_item";
+            _typeNameTable[8] = "Windows.UI.Xaml.Media.Imaging.BitmapImage";
+            _typeNameTable[9] = "String";
+            _typeNameTable[10] = "iaM.Views.See_Others";
+            _typeNameTable[11] = "iaM.Views.Signup";
 
-            _typeTable = new global::System.Type[7];
+            _typeTable = new global::System.Type[12];
             _typeTable[0] = typeof(global::iaM.Views.Edit_Profile);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::iaM.Views.LoginPage);
             _typeTable[4] = typeof(global::iaM.Views.MainPage);
-            _typeTable[5] = typeof(global::iaM.Views.See_Others);
-            _typeTable[6] = typeof(global::iaM.Views.Signup);
+            _typeTable[5] = typeof(global::System.Collections.Generic.List<global::iaM.Views.List_item>);
+            _typeTable[6] = typeof(global::System.Object);
+            _typeTable[7] = typeof(global::iaM.Views.List_item);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Media.Imaging.BitmapImage);
+            _typeTable[9] = typeof(global::System.String);
+            _typeTable[10] = typeof(global::iaM.Views.See_Others);
+            _typeTable[11] = typeof(global::iaM.Views.Signup);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -186,8 +196,16 @@ namespace iaM.iaM_XamlTypeInfo
         private object Activate_0_Edit_Profile() { return new global::iaM.Views.Edit_Profile(); }
         private object Activate_3_LoginPage() { return new global::iaM.Views.LoginPage(); }
         private object Activate_4_MainPage() { return new global::iaM.Views.MainPage(); }
-        private object Activate_5_See_Others() { return new global::iaM.Views.See_Others(); }
-        private object Activate_6_Signup() { return new global::iaM.Views.Signup(); }
+        private object Activate_5_List() { return new global::System.Collections.Generic.List<global::iaM.Views.List_item>(); }
+        private object Activate_7_List_item() { return new global::iaM.Views.List_item(); }
+        private object Activate_10_See_Others() { return new global::iaM.Views.See_Others(); }
+        private object Activate_11_Signup() { return new global::iaM.Views.Signup(); }
+        private void VectorAdd_5_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::iaM.Views.List_item>)instance;
+            var newItem = (global::iaM.Views.List_item)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -224,20 +242,50 @@ namespace iaM.iaM_XamlTypeInfo
             case 4:   //  iaM.Views.MainPage
                 userType = new global::iaM.iaM_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_4_MainPage;
+                userType.AddMemberName("items");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  iaM.Views.See_Others
-                userType = new global::iaM.iaM_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_See_Others;
+            case 5:   //  System.Collections.Generic.List`1<iaM.Views.List_item>
+                userType = new global::iaM.iaM_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_5_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Object
+                xamlType = new global::iaM.iaM_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  iaM.Views.List_item
+                userType = new global::iaM.iaM_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_7_List_item;
+                userType.AddMemberName("UserImage");
+                userType.AddMemberName("UserName");
+                userType.AddMemberName("UserComment");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  iaM.Views.Signup
+            case 8:   //  Windows.UI.Xaml.Media.Imaging.BitmapImage
+                xamlType = new global::iaM.iaM_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  String
+                xamlType = new global::iaM.iaM_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 10:   //  iaM.Views.See_Others
                 userType = new global::iaM.iaM_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_Signup;
+                userType.Activator = Activate_10_See_Others;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  iaM.Views.Signup
+                userType = new global::iaM.iaM_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_11_Signup;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -246,11 +294,79 @@ namespace iaM.iaM_XamlTypeInfo
         }
 
 
+        private object get_0_MainPage_items(object instance)
+        {
+            var that = (global::iaM.Views.MainPage)instance;
+            return that.items;
+        }
+        private void set_0_MainPage_items(object instance, object Value)
+        {
+            var that = (global::iaM.Views.MainPage)instance;
+            that.items = (global::System.Collections.Generic.List<global::iaM.Views.List_item>)Value;
+        }
+        private object get_1_List_item_UserImage(object instance)
+        {
+            var that = (global::iaM.Views.List_item)instance;
+            return that.UserImage;
+        }
+        private void set_1_List_item_UserImage(object instance, object Value)
+        {
+            var that = (global::iaM.Views.List_item)instance;
+            that.UserImage = (global::Windows.UI.Xaml.Media.Imaging.BitmapImage)Value;
+        }
+        private object get_2_List_item_UserName(object instance)
+        {
+            var that = (global::iaM.Views.List_item)instance;
+            return that.UserName;
+        }
+        private void set_2_List_item_UserName(object instance, object Value)
+        {
+            var that = (global::iaM.Views.List_item)instance;
+            that.UserName = (global::System.String)Value;
+        }
+        private object get_3_List_item_UserComment(object instance)
+        {
+            var that = (global::iaM.Views.List_item)instance;
+            return that.UserComment;
+        }
+        private void set_3_List_item_UserComment(object instance, object Value)
+        {
+            var that = (global::iaM.Views.List_item)instance;
+            that.UserComment = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::iaM.iaM_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::iaM.iaM_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "iaM.Views.MainPage.items":
+                userType = (global::iaM.iaM_XamlTypeInfo.XamlUserType)GetXamlTypeByName("iaM.Views.MainPage");
+                xamlMember = new global::iaM.iaM_XamlTypeInfo.XamlMember(this, "items", "System.Collections.Generic.List`1<iaM.Views.List_item>");
+                xamlMember.Getter = get_0_MainPage_items;
+                xamlMember.Setter = set_0_MainPage_items;
+                break;
+            case "iaM.Views.List_item.UserImage":
+                userType = (global::iaM.iaM_XamlTypeInfo.XamlUserType)GetXamlTypeByName("iaM.Views.List_item");
+                xamlMember = new global::iaM.iaM_XamlTypeInfo.XamlMember(this, "UserImage", "Windows.UI.Xaml.Media.Imaging.BitmapImage");
+                xamlMember.Getter = get_1_List_item_UserImage;
+                xamlMember.Setter = set_1_List_item_UserImage;
+                break;
+            case "iaM.Views.List_item.UserName":
+                userType = (global::iaM.iaM_XamlTypeInfo.XamlUserType)GetXamlTypeByName("iaM.Views.List_item");
+                xamlMember = new global::iaM.iaM_XamlTypeInfo.XamlMember(this, "UserName", "String");
+                xamlMember.Getter = get_2_List_item_UserName;
+                xamlMember.Setter = set_2_List_item_UserName;
+                break;
+            case "iaM.Views.List_item.UserComment":
+                userType = (global::iaM.iaM_XamlTypeInfo.XamlUserType)GetXamlTypeByName("iaM.Views.List_item");
+                xamlMember = new global::iaM.iaM_XamlTypeInfo.XamlMember(this, "UserComment", "String");
+                xamlMember.Getter = get_3_List_item_UserComment;
+                xamlMember.Setter = set_3_List_item_UserComment;
+                break;
+            }
             return xamlMember;
         }
     }

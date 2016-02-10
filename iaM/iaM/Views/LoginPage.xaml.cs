@@ -22,14 +22,21 @@ namespace iaM.Views
     /// </summary>
     public sealed partial class LoginPage : Page
     {
+        //로컬 앱 데이터 저장소
+        Windows.Storage.ApplicationDataContainer localSettings;
+
         public LoginPage()
         {
             this.InitializeComponent();
+            localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         }
 
         /* 메인페이지로 네비게이션*/
         private void ToMainPage(object sender, RoutedEventArgs e)
         {
+            localSettings.Values["id"] = nameInput.Text;
+            
             this.Frame.Navigate(typeof(MainPage));
         }
 

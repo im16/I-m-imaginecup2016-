@@ -21,6 +21,12 @@
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\bin\ARM\Debug\iaM.exe">
       <PackagePath>entrypoint\iaM.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\client\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
     </AppxPackagedFile>
@@ -74,6 +80,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\client\.nuget\packages\Microsoft.Win32.Primitives\4.0.0\lib\dotnet\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\client\.nuget\packages\Newtonsoft.Json\8.0.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\client\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -351,8 +360,53 @@
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\71x71-icon.png">
       <PackagePath>Assets\71x71-icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\splash-img.png">
-      <PackagePath>Assets\splash-img.png</PackagePath>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_background.png">
+      <PackagePath>Assets\login_background.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_email.png">
+      <PackagePath>Assets\login_email.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_forgotpassword.png">
+      <PackagePath>Assets\login_forgotpassword.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_help.png">
+      <PackagePath>Assets\login_help.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_logo.png">
+      <PackagePath>Assets\login_logo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_password.png">
+      <PackagePath>Assets\login_password.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_signup.png">
+      <PackagePath>Assets\login_signup.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_start.png">
+      <PackagePath>Assets\login_start.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\signup_add_profile_pic.png">
+      <PackagePath>Assets\signup_add_profile_pic.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\signup_howto.png">
+      <PackagePath>Assets\signup_howto.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\signup_register.png">
+      <PackagePath>Assets\signup_register.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\signup_topbar.png">
+      <PackagePath>Assets\signup_topbar.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\signup_user_info.png">
+      <PackagePath>Assets\signup_user_info.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\singup.png">
+      <PackagePath>Assets\singup.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\splash11.png">
+      <PackagePath>Assets\splash11.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\test.png">
+      <PackagePath>Assets\test.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
