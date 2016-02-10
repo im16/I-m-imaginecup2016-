@@ -1,25 +1,15 @@
-﻿
-using Newtonsoft.Json.Linq;
-using System.IO;
+﻿using System.IO;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net;
 using System.Text;
-using Windows.Storage;
-using Windows.UI.Xaml.Media.Imaging;
 using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
 using Windows.Storage.Streams;
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
+using System;
 
 namespace realBluetoothTest__
 {
-    class Message
-    {
-        public string user { get; set; }
-    }
 
     class Connect_Server
     {
@@ -28,7 +18,7 @@ namespace realBluetoothTest__
         {
             try
             {
-                string url = "http://40.76.6.186:8888/member_find/near/json";
+                string url = "http://40.76.6.186:8888/member_find/near";
 
                 var httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
                 httpWebRequest.ContentType = "application/json; charset=utf-8";
@@ -43,7 +33,7 @@ namespace realBluetoothTest__
                     jw.Formatting = Formatting.Indented;
                     jw.WriteStartObject();
                     jw.WritePropertyName("id");
-                    jw.WriteValue(client.id);
+                    jw.WriteValue(client.Id);
                     jw.WriteEndObject();
 
                     streamWriter.Write(sb.ToString());
@@ -53,7 +43,9 @@ namespace realBluetoothTest__
                 var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                    var result = streamReader.ReadToEnd();
+                    var result = await streamReader.ReadToEndAsync();
+
+                    client.setClient_info(result);
                     Debug.WriteLine(result);
                 }
 
@@ -61,24 +53,22 @@ namespace realBluetoothTest__
             }
 
 
-
             catch (Exception ex)
-
             {
                 // Need to convert int HResult to hex string
                 Debug.WriteLine("Error = " + ex.HResult.ToString("X") +
                     "  Message: " + ex.Message);
             }
 
-         
-            
+
+
 
 
         }
 
-        public static async Task<byte []> request_image()
+        public static async Task<String> request_image()
         {
-            byte[] result = new byte[0];
+            string result = "" ;
             //result.DecodePixelWidth = 320;
 
             try
@@ -101,12 +91,10 @@ namespace realBluetoothTest__
                
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-
-
                   //  IRandomAccessStream imageStream = (IRandomAccessStream) streamReader.BaseStream;
                      string s = await streamReader.ReadToEndAsync();
                     //result = Encoding.ASCII.GetBytes(s);
-                    result = Convert.FromBase64String(s);
+                    result = s;
 
                     Debug.WriteLine(" {0}   ====  {1} ", result, s);
                     
@@ -181,33 +169,7 @@ namespace realBluetoothTest__
 
 
 
-        public static async Task<string> streamToString(IRandomAccessStream fileStream)
-        {
-                string Base64String = "";
-                var reader = new DataReader(fileStream.GetInputStreamAt(0));
-                await reader.LoadAsync((uint)fileStream.Size);
-                byte[] byteArray = new byte[fileStream.Size];
-                reader.ReadBytes(byteArray);
-                 Base64String = Convert.ToBase64String(byteArray);
-            //string s = ByteToString(byteArray);
-
-            return Base64String;
-                            
-          
-        }
-
-        // 바이트 배열을 String으로 변환 
-        private static string ByteToString(byte[] strByte)
-        {
-            string str = Encoding.UTF8.GetString(strByte);
-            return str;
-        }
-        // String을 바이트 배열로 변환 
-        private static byte[] StringToByte(string str)
-        {
-            byte[] StrByte = Encoding.UTF8.GetBytes(str);
-            return StrByte;
-        }
+       
 
         
     }

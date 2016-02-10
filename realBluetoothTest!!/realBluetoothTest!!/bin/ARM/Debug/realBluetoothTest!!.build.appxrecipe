@@ -36,17 +36,8 @@
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.ApplicationInsights.WindowsApps\1.0.0\lib\win81\Microsoft.ApplicationInsights.Extensibility.Windows.dll">
       <PackagePath>Microsoft.ApplicationInsights.Extensibility.Windows.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.AspNet.WebApi.Client\5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
-      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.Net.Http\2.2.29\lib\win8\System.Net.Http.Extensions.dll">
-      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.Net.Http\2.2.29\lib\win8\System.Net.Http.Primitives.dll">
-      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Microsoft.NETCore.Portable.Compatibility\1.0.0\lib\netcore50\System.ComponentModel.DataAnnotations.dll">
       <PackagePath>System.ComponentModel.DataAnnotations.dll</PackagePath>
@@ -92,9 +83,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\Newtonsoft.Json\8.0.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\runtime.win7.System.Net.Http\4.0.1-beta-23516\runtimes\win7\lib\netcore50\System.Net.Http.dll">
-      <PackagePath>System.Net.Http.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\SQLite.Core.UAP\3.8.11.158\runtimes\win10-arm\native\SQLite.Core.dll">
       <PackagePath>SQLite.Core.dll</PackagePath>
@@ -197,6 +185,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\System.Linq.Queryable\4.0.0\lib\netcore50\System.Linq.Queryable.dll">
       <PackagePath>System.Linq.Queryable.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\System.Net.Http\4.0.0\lib\netcore50\System.Net.Http.dll">
+      <PackagePath>System.Net.Http.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\System.Net.Http.Rtc\4.0.0\lib\netcore50\System.Net.Http.Rtc.dll">
       <PackagePath>System.Net.Http.Rtc.dll</PackagePath>
@@ -369,14 +360,20 @@
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\SQLite.Core.UAP\3.8.11.158\lib\uap\SQLite.Core.winmd">
       <PackagePath>SQLite.Core.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UAP.2015\3.10.2\Redist\Debug\ARM\sqlite3.dll">
-      <PackagePath>sqlite3.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\profile.png">
-      <PackagePath>Assets\profile.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\p2.jpg">
+      <PackagePath>Assets\p2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\p3.jpg">
+      <PackagePath>Assets\p3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\profile.JPG">
+      <PackagePath>Assets\profile.JPG</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -405,9 +402,6 @@
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\realBluetoothTest!!.xr.xml">
       <PackagePath>realBluetoothTest!!.xr.xml</PackagePath>
     </AppxPackagedFile>
@@ -422,30 +416,6 @@
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
-      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
-      <Version>1.1.23406.0</Version>
-      <Architecture>ARM</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23406.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\ARM\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
-      <MoreInfo></MoreInfo>
-    </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
-      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
-      <Version>1.1.23406.0</Version>
-      <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23406.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x64\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
-      <MoreInfo></MoreInfo>
-    </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
-      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
-      <Version>1.1.23406.0</Version>
-      <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23406.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x86\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
-      <MoreInfo></MoreInfo>
-    </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.CoreRuntime\1.0\">
       <Name>Microsoft.NET.CoreRuntime.1.0</Name>
       <Version>1.0.23430.0</Version>

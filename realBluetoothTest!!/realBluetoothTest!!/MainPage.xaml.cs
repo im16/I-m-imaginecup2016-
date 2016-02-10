@@ -1,26 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.ComponentModel;
-using System.Linq;
 using System.Diagnostics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Storage;
 using Windows.Storage.Streams;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 using Windows.ApplicationModel.Background;
-using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.Advertisement;
-using Windows.Devices.Bluetooth.Background;
 using System.Text;
 
 namespace realBluetoothTest__
@@ -52,6 +39,7 @@ namespace realBluetoothTest__
         public MainPage()
         {
             this.InitializeComponent();
+
             my_info.id = "shin";
 
             // Create and initialize a new watcher instance.
@@ -210,26 +198,28 @@ namespace realBluetoothTest__
 
         }
 
-      
+
+        /*
+    private async void Background_button_text_change(bool status)
+    {
+        // button text change!
+        await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+        {
+            if(status)
+                BackGroundButton.Content = "Background_Start!!";
+            else
+                BackGroundButton.Content = "Background_Stop!!";
+
+        });
+
+    }
+
+        */
+
 
         /***********************************  publisher!!  ***************************************************/
 
-            /*
-        private async void Background_button_text_change(bool status)
-        {
-            // button text change!
-            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                if(status)
-                    BackGroundButton.Content = "Background_Start!!";
-                else
-                    BackGroundButton.Content = "Background_Stop!!";
 
-            });
-
-        }
-
-            */
 
         private async void Background_Start(object sender, RoutedEventArgs e)
         {
@@ -343,7 +333,12 @@ namespace realBluetoothTest__
 
                 // Display these information on the list
                 for (int i = 0; i < current_client.client_num; i++)
+                {
+
+                   
+
                     ReceivedAdvertisementListBox.Items.Add(string.Format("Found client=[{0}]", current_client.client_id(i)));
+                }
             });
         }
         /// <summary>

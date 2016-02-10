@@ -1,38 +1,139 @@
 ﻿using System;
-using System.Collections;
-using System.Diagnostics;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel;
+using Windows.UI.Xaml.Media.Imaging;
+using System.Diagnostics;
 
 namespace realBluetoothTest__
 {
-   
-    class Client
+
+    class Client : IDisposable
     {
 
         private BackgroundWorker bw = new BackgroundWorker();
 
-        public string id { get; set; }
-        public int use_bit { get; set; }
-        public string nickName { get; set; }
-        public string phoneNum { get; set; }
-        public string status_message { get; set; }
-        public string other_sns { get; set; }
-        public ArrayList pictures { get; set; }
-        public ArrayList videos { get; set; }
+        private string id;
+        private int use_bit;
+        private string nickname;
+        private string phone_number;
+        private string status_message;
+        private string other_sns;
+        private BitmapImage profile_image;
+        private Array images;
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public int Use_bit
+        {
+            get
+            {
+                return use_bit;
+            }
+
+            set
+            {
+                use_bit = value;
+            }
+        }
+
+        public string Nickname
+        {
+            get
+            {
+                return nickname;
+            }
+
+            set
+            {
+                nickname = value;
+            }
+        }
+
+        public string Phone_number
+        {
+            get
+            {
+                return phone_number;
+            }
+
+            set
+            {
+                phone_number = value;
+            }
+        }
+
+        public string Status_message
+        {
+            get
+            {
+                return status_message;
+            }
+
+            set
+            {
+                status_message = value;
+            }
+        }
+
+        public string Other_sns
+        {
+            get
+            {
+                return other_sns;
+            }
+
+            set
+            {
+                other_sns = value;
+            }
+        }
+
+        public BitmapImage Profile_image
+        {
+            get
+            {
+                return profile_image;
+            }
+
+            set
+            {
+                profile_image = value;
+            }
+        }
+
+        public Array Images
+        {
+            get
+            {
+                return images;
+            }
+
+            set
+            {
+                images = value;
+            }
+        }
 
         public Client(string id)
         {
-            this.id = id;
-            use_bit = 10;
+            this.Id = id;
+            Use_bit = 10;
                        
             //request found client information(background task)
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+
             bw.RunWorkerAsync();
 
         }
@@ -45,34 +146,39 @@ namespace realBluetoothTest__
         }
 
 
-
-        private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        public async void setClient_info(string json)
         {
-            if (!(e.Error == null))
+            try {
+                JObject jObject = JObject.Parse(json);
+                JToken jUser = jObject["user"];
+                Nickname = (string)jUser["nickname"];
+                Status_message = (string)jUser["status_message"];
+                Profile_image = await Convert_module.convert_base64_to_bitmapImage((string)jUser["profile_image"]);
+            }
+            catch(Exception e)
             {
-                Debug.WriteLine("client {0} not found", this.id);
+                Debug.WriteLine(e);
             }
 
-            else
-            {
-                Debug.WriteLine("Done!!");
-            }
         }
 
-        public void setClient_Info(string json)
+
+        public void setClient_more_info(string json)
         {
             JObject jObject = JObject.Parse(json);
-            JToken jUser = jObject["My"];
-            nickName = (string)jUser["nickName"];
-            phoneNum = (string)jUser["phoneNum"];
-            status_message = (string)jUser["status_message"];
-            other_sns = (string)jUser["other_sns"];
+            JToken jUser = jObject["user"];
+            Nickname = (string)jUser["nickname"];
+            Phone_number = (string)jUser["phone_number"];
+            Status_message = (string)jUser["status_message"];
+            Other_sns = (string)jUser["other_sns"];
+            Images = jUser["profile_image"].ToArray();
 
         }
+
 
         public bool equals(string id)
         {
-            if (this.id == id)
+            if (this.Id == id)
                 return true;
             else
                 return false;
@@ -80,7 +186,18 @@ namespace realBluetoothTest__
 
         public void reduce_use()
         {
-            use_bit--;
+            Use_bit--;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool v)
+        {
+            throw new NotImplementedException();
         }
     }
 

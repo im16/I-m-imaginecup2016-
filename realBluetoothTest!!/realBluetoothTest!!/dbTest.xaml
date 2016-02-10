@@ -4,27 +4,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:realBluetoothTest__"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Width="329" Height="547"
+   >
+
+
+   
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,10,0,-10">
+
         <StackPanel Orientation="Vertical">
-            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="SQLite Demo" FontSize="20" Foreground="Black" Margin="0 50 0 0 "/>
-            <TextBlock x:Name="test" VerticalAlignment="Top" HorizontalAlignment="Center" Text="1111111111" FontSize="20" Foreground="Black" Margin="0 50 0 0 "/>
-            <Button x:Name="photo_pick" Content="photo_pick" Margin="111,20,0,40" Click="Click_Photo_Button" Width="132" Height="40" VerticalAlignment="Bottom"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="30 0 0 0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" Height="60"/>
+            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="SQLite Demo" FontSize="20" Foreground="Black" Margin="0 80 0 0 "/>
+            <TextBox x:Name="textBox_id" HorizontalAlignment="Left" Margin="30 10 0 0" TextWrapping="Wrap" Text="mk" VerticalAlignment="Top" Width="189" Height="30"/>
+            <TextBox x:Name="textBox_nickname" HorizontalAlignment="Left" Margin="30 10 0 0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="189" Height="30"/>
         </StackPanel>
-        <Image x:Name="image_show" HorizontalAlignment="Left" Height="230" Margin="0,354,0,0" VerticalAlignment="Top" Width="350"/>
+        <TextBlock x:Name="id" VerticalAlignment="Top"  Text="mk" FontSize="20" Foreground="Black" Margin="20,200,206,0"/>
+        <TextBlock x:Name="nickname" VerticalAlignment="Top"  Text="1234" FontSize="20" Foreground="Black" Margin="200,200,26,0"/>
+        <Button x:Name="photo_down" Content="photo_down" Margin="200,20,0,40" Click="Click_Photo_Down" Width="103" Height="43"  />
+        <Button x:Name="photo_up" Grid.Row="1" Content="photo_up" Margin="20,20,0,40" Click="Click_Photo_Up" Width="103" Height="43" />
+        <Image x:Name="image_show" HorizontalAlignment="Left" Height="220" Margin="0,290,0,0" VerticalAlignment="Top" Width="320"/>
     </Grid>
     <Page.BottomAppBar>
         <AppBar IsOpen="True" IsSticky="True">
             <StackPanel Orientation="Horizontal">
-                <AppBarButton x:Name="Add" Label="Add" Icon="Add" Click="Add_Click"/>
-                <AppBarButton x:Name="Show" Label="Show All" Icon="Zoom" Click="Show_Click"/>
-                <AppBarButton x:Name="RemoveAll" Label="Show All" Icon="Delete" Click="Delete_Click"/>
-                <AppBarButton x:Name="refresh" Label="refresh" Icon="Contact" Click="Contact_Click"/>
-                <AppBarButton x:Name="image_b" Label="image" Icon="Video" Click="Image_Click"/>
+                <AppBarButton x:Name="Add" Label="Add" Icon="Add" Click="Add_Click" />
+                <AppBarButton x:Name="Show" Label="Show All" Icon="Zoom" Click="Show_Click" />
+                <AppBarButton x:Name="refresh" Label="refresh" Icon="Contact" Click="Contact_Click" />
+                <AppBarButton x:Name="image_b" Label="image" Icon="Video" Click="Image_Click" RenderTransformOrigin="0.515,0.5" />
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
+    
+    
 </Page>
+    
+    

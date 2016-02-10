@@ -24,7 +24,7 @@ namespace realBluetoothTest__
         {
             Client member = (Client)clients[i];
 
-            return member.id;
+            return member.Id;
 
         }
 
@@ -54,7 +54,7 @@ namespace realBluetoothTest__
                     foreach (Client i in clients)
                     {
                         if (i.equals(s))
-                        { i.use_bit = 10; falg = true; }
+                        { i.Use_bit = 10; falg = true; }
                     }
 
                     // add new member
@@ -83,7 +83,7 @@ namespace realBluetoothTest__
            // Debug.WriteLine("remover start!");
 
             foreach (Client i in clients)
-                i.use_bit -= 1;
+                i.Use_bit -= 1;
 
             for (int i = 0; i < client_num; i++)
             {
@@ -91,7 +91,7 @@ namespace realBluetoothTest__
 
               //  Debug.WriteLine("id: {0} , {1}", member.id, member.use_bit);
 
-                if (member.use_bit <= 0)
+                if (member.Use_bit <= 0)
                 { clients.Remove(member); client_num--; }
             }
 
