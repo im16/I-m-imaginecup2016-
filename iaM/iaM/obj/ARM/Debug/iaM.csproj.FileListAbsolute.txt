@@ -213,7 +213,7 @@
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.g.cs
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.xaml
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\Views\See_Others.xbf
-\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\iaM.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\bin\ARM\Debug\Newtonsoft.Json.dll
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\bin\ARM\Debug\Microsoft.Xaml.Interactions.dll
 \\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\bin\ARM\Debug\Microsoft.Xaml.Interactivity.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\ARM\Debug\iaM.csprojResolveAssemblyReference.cache

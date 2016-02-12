@@ -133,7 +133,7 @@ namespace iaM.Views
         public Client(string id)
         {
             this.Id = id;
-            Use_bit = 10;
+            Use_bit = 2;
 
             //request found client information(background task)
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);

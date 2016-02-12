@@ -30,7 +30,7 @@
             <uap:ShowOn Tile="square150x150Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\splash11.png" />
+        <uap:SplashScreen Image="Assets\Splash\Splash_Image.png" />
       </uap:VisualElements>
       <Extensions>
         <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.AdvertisementPublisherTask">

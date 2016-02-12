@@ -45,7 +45,7 @@ namespace iaM.Views
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                    result = await streamReader.ReadToEndAsync();
-                   // Debug.WriteLine(result);   
+                   Debug.WriteLine("{0} success",client.Id);   
                 }
 
 

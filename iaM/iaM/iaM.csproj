@@ -130,8 +130,30 @@
     <Content Include="Assets\150x150-icon.png" />
     <Content Include="Assets\44x44-icon.png" />
     <Content Include="Assets\71x71-icon.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Add.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_Image.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_Phone.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_Video.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Default_Profile.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Home.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Album.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Caliing.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Status.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Video.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Layout_Box.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Menu.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Selection_Icon.png" />
     <Content Include="Assets\itsme.jpg" />
-    <Content Include="Assets\login_background.png" />
+    <Content Include="Assets\LoginPage\Login_Account_icon.png" />
+    <Content Include="Assets\LoginPage\Login_Help.png" />
+    <Content Include="Assets\LoginPage\Login_Key_icon.png" />
+    <Content Include="Assets\LoginPage\Login_Logo.png" />
+    <Content Include="Assets\LoginPage\Login_Signup.png" />
+    <Content Include="Assets\LoginPage\Login_Start.png" />
+    <Content Include="Assets\LoginPage\login_background.png" />
     <Content Include="Assets\login_email.png" />
     <Content Include="Assets\login_forgotpassword.png" />
     <Content Include="Assets\login_help.png" />
@@ -139,7 +161,20 @@
     <Content Include="Assets\login_password.png" />
     <Content Include="Assets\login_signup.png" />
     <Content Include="Assets\login_start.png" />
+    <Content Include="Assets\MainPage\MainPage_Circle_Size1.png" />
+    <Content Include="Assets\MainPage\MainPage_Circle_Size2.png" />
+    <Content Include="Assets\MainPage\MainPage_Circle_Size3.png" />
+    <Content Include="Assets\MainPage\MainPage_Circle_Size4.png" />
+    <Content Include="Assets\MainPage\MainPage_Main_Icon.png" />
+    <Content Include="Assets\MainPage\MainPage_Main_Icon_Grey.png" />
+    <Content Include="Assets\MainPage\MainPage_Menu.png" />
+    <Content Include="Assets\MainPage\MainPage_Progress_Square1.png" />
+    <Content Include="Assets\MainPage\MainPage_Progress_Square2.png" />
+    <Content Include="Assets\MainPage\MainPage_Progress_Square3.png" />
+    <Content Include="Assets\MainPage\MainPage_Circle_Size5.png" />
     <Content Include="Assets\mario.jpeg" />
+    <Content Include="Assets\point.png" />
+    <Content Include="Assets\SignUp\SignUp_background.png" />
     <Content Include="Assets\signup_add_profile_pic.png" />
     <Content Include="Assets\signup_howto.png" />
     <Content Include="Assets\signup_register.png" />
@@ -147,6 +182,7 @@
     <Content Include="Assets\signup_user_info.png" />
     <Content Include="Assets\singup.png" />
     <Content Include="Assets\splash11.png" />
+    <Content Include="Assets\Splash\Splash_Image.png" />
     <Content Include="Assets\test.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -188,6 +224,7 @@
       <Name>Behaviors SDK %28XAML%29</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

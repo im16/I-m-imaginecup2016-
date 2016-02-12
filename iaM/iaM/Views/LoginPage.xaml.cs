@@ -35,12 +35,17 @@ namespace iaM.Views
         /* 메인페이지로 네비게이션*/
         private void ToMainPage(object sender, RoutedEventArgs e)
         {
-            localSettings.Values["id"] = nameInput.Text;
+            localSettings.Values["id"] = Input_Mail.Text;
             
             this.Frame.Navigate(typeof(MainPage));
         }
 
         private void Signup(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Signup));
+        }
+
+        private void Forgot_Password(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Signup));
         }

@@ -9,33 +9,33 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush  ImageSource="/Assets/login_background.png"/>
+            <ImageBrush  ImageSource="/Assets/SignUp/SignUp_background.png"/>
         </Grid.Background>
         
-        <Grid.RowDefinitions>
+       <!-- <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <!-- 로그인 페이지 구성-->
+        로그인 페이지 구성
         <Grid Grid.Row="0">
             <Image Source="/Assets/signup_topbar.png" VerticalAlignment="Top" Margin="0 20 0 0"/>
-            <Button x:ConnectionId='7' x:Name="InputPicture"  HorizontalAlignment="Center" Height="150" Width="150" Margin="0 20 0 0">
+            <Button x:Name="InputPicture"  HorizontalAlignment="Center" Height="150" Width="150" Margin="0 20 0 0">
                 <Button.Background>
                     <ImageBrush ImageSource="/Assets/signup_add_profile_pic.png"/>
                 </Button.Background>
         </Button>
         </Grid>
-        <StackPanel x:ConnectionId='1' Grid.Row="1" x:Name="contentPanel" Margin="8,50,0,0" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" x:Name="contentPanel" Margin="8,50,0,0" HorizontalAlignment="Center">
             
             
-                <TextBox x:ConnectionId='3' x:Name="UserName" Text="UserName" TextAlignment="Center" Width="280"/>
+                <TextBox x:Name="UserName" Text="UserName" TextAlignment="Center" Width="280"/>
                 
-                <TextBox x:ConnectionId='4' x:Name="Email" Text="Email" TextAlignment="Center" Width="280" />
+                <TextBox x:Name="Email" Text="Email" TextAlignment="Center" Width="280" />
 
-                <TextBox x:ConnectionId='5' x:Name="Password" Width="280" Text="Password" TextAlignment="Center"/>
+                <TextBox x:Name="Password" Width="280" Text="Password" TextAlignment="Center"/>
 
-                <TextBox x:ConnectionId='6' x:Name="PhoneNumber" Width="280" Text="PhoneNumber" TextAlignment="Center"/>
+                <TextBox x:Name="PhoneNumber" Width="280" Text="PhoneNumber" TextAlignment="Center"/>
 
             
            
@@ -44,13 +44,13 @@
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
 
-            <Button x:ConnectionId='2' x:Name="in2putButton" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Width="200">
+            <Button x:Name="in2putButton" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Width="200">
                 <Button.Background>
                     <ImageBrush ImageSource="/Assets/signup_register.png"/>
                 </Button.Background>
             </Button>
 
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Page>
 

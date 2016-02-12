@@ -54,7 +54,7 @@ namespace iaM.Views
 
                 foreach (string s in ids)
                 {
-                    //  Debug.WriteLine("id:{0}", s);
+                   //   Debug.WriteLine("id:{0}", s);
 
                     // check existing member
                     Boolean falg = false;

@@ -8,22 +8,27 @@ using Windows.Storage.Streams;
 using Windows.ApplicationModel.Background;
 using Windows.Devices.Bluetooth.Advertisement;
 using System.Text;
-using System.IO;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Collections.Generic;
+using Windows.UI.Xaml.Media;
+using System.Threading;
+using Windows.UI;
+
+
 
 // 빈 페이지 항목 템플릿은 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 에 문서화되어 있습니다.
 
 namespace iaM.Views
 {
+
     /// <summary>
     /// 자체적으로 사용하거나 프레임 내에서 탐색할 수 있는 빈 페이지입니다.
     /// </summary>
     public sealed partial class MainPage : Page
     {
         Windows.Storage.ApplicationDataContainer localSettings;
-
- 
+        
+        bool menu_flag = true;
         bool flag = true;
         bool visibility_flag = true;
         public static MainPage Current;
@@ -40,10 +45,14 @@ namespace iaM.Views
 
         private BluetoothLEAdvertisementWatcher watcher;
         private DispatcherTimer dispatcherTimer;
+        private DispatcherTimer _dispatcherTimer;
         private Client_List current_client = new Client_List();
+
+        private int timer = 1;
 
         private My_Info my_info = new My_Info();
        
+
         public List<List_item> items { get; set; }
 
         public MainPage()
@@ -62,10 +71,12 @@ namespace iaM.Views
 
             // Add a manufacturer-specific section:
             // First, create a manufacturer data section
-            var manufacturerData = new BluetoothLEManufacturerData();
+            var manufacturerData_publisher = new BluetoothLEManufacturerData();
+            var manufacturerData_watcher = new BluetoothLEManufacturerData();
 
             // Then, set the company ID for the manufacturer data. Here we picked an unused value: 0xFF00
-            // manufacturerData.CompanyId = 0x4C;
+            manufacturerData_publisher.CompanyId = 0xFF00;
+            manufacturerData_watcher.CompanyId = 0xFF00;
 
 
             // Finally set the data payload within the manufacturer-specific section
@@ -75,14 +86,17 @@ namespace iaM.Views
             string id = my_info.id;
             writer.WriteString(id);
 
-
+            
             // Make sure that the buffer length can fit within an advertisement payload. Otherwise you will get an exception.
-            manufacturerData.Data = writer.DetachBuffer();
+            manufacturerData_publisher.Data = writer.DetachBuffer();
 
 
             //(publisher)
             // Add the manufacturer data to the advertisement publisher: 
-            trigger.Advertisement.ManufacturerData.Add(manufacturerData);
+            trigger.Advertisement.ManufacturerData.Add(manufacturerData_publisher);
+
+            // 여기 필터추가
+            watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData_watcher);
 
 
             // Configure the signal strength filter to only propagate events when in-range
@@ -103,10 +117,8 @@ namespace iaM.Views
             // the advertisement received is returned in the Received event
 
             // End of watcher configuration. There is no need to comment out any code beyond this point.
-
-        }
-
-
+        
+    }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -207,42 +219,117 @@ namespace iaM.Views
         }
         private void ProgressRing_Click(object sender, RoutedEventArgs e)
         {
-              /* if (flag)
-             {
-                 Storyboard1.Pause();
-                 flag = false;
-             }
-             else
-             {
-                 Storyboard1.Begin();
-                 flag = true;
-             }*/
+            /* if (flag)
+           {
+               Storyboard1.Pause();
+               flag = false;
+           }
+           else
+           {
+               Storyboard1.Begin();
+               flag = true;
+           }*/
+           
+            /*일단여기서 불러오기*/
+            //Image test_img = new Image { Source = new BitmapImage(new Uri(@"/Assets/mario.jpeg", UriKind.Relative)) };
+            //ReceivedAdvertisementListBox.Items.Add(test_img);
+            //test_img.Visibility = Visibility.Visible;
             if (flag)
             {
                 // Calling watcher start will start the scanning if not already initiated by another client
-
+                
                 watcher.Start();
-                /*ReceivedAdvertisementListBox.Items.Clear();*/
-
+                // ReceivedAdvertisementListBox.Items.Clear();
+              /*      
                 dispatcherTimer = new DispatcherTimer();
                 dispatcherTimer.Tick += dispatcherTimer_Tick;
-                dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+                dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
                 dispatcherTimer.Start();
+                */
+                ScrollViewer.Visibility = Visibility.Visible;
+                
+                Scroll_2.Height = new GridLength(315);
+                Circle_View.Margin = new Thickness(0,0,0,0);
+                _dispatcherTimer = new DispatcherTimer();
+                _dispatcherTimer.Tick += _dispatcherTimer_Tick;
+                _dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+                _dispatcherTimer.Start();
+                flag = false;
+
+               
+               
             }
             else
             {
                 watcher.Stop();
+                Search_Circle1.Visibility = Visibility.Visible;
+                Search_Circle2.Visibility = Visibility.Collapsed;
+                Search_Circle3.Visibility = Visibility.Collapsed;
+                Search_Circle4.Visibility = Visibility.Collapsed;
+                Search_Circle5.Visibility = Visibility.Collapsed;
+                Scroll_2.Height = new GridLength(0);
+                Thickness margin = Circle_View.Margin;
+                margin.Top = 100;
+                Circle_View.Margin = margin;
+                flag = true;
+                _dispatcherTimer.Stop();
             }
+        }
+
+        private async void _dispatcherTimer_Tick(object sender, object e)
+        {
+            
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                switch(timer++)
+                {
+                    case 1: Search_Circle2.Visibility = Visibility.Visible;  break;
+                    case 2: Search_Circle3.Visibility = Visibility.Visible;  break;
+                    case 3: Search_Circle4.Visibility = Visibility.Visible;  break;
+                    case 4: Search_Circle5.Visibility = Visibility.Visible; break;
+                    case 5: Search_Circle2.Visibility = Search_Circle3.Visibility = Search_Circle4.Visibility = Search_Circle5.Visibility = Visibility.Collapsed;  timer = 1; break;
+                }
+
+            });
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Splitter.IsPaneOpen = !Splitter.IsPaneOpen;
-        }
+            if (menu_flag)
+            {
+                Splitter.IsPaneOpen = true;
+                menu_flag = false;
+            }
+            else if (!menu_flag)
+            {
+                Splitter.IsPaneOpen = false;
+                menu_flag = true;
+            }
+            else { }
 
+            
+         /*   if (toggle_menu_flag)
+            {
+                ImageBrush ib = new ImageBrush();
+                ib.ImageSource = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Progress_Square1.png"));
+                this.Toggle_Menu.Background = ib;
+                toggle_menu_flag = false;
+            }
+            if(!toggle_menu_flag)
+            {
+                ImageBrush ib = new ImageBrush();
+                ib.ImageSource = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Menu.png"));
+                this.Toggle_Menu.Background = ib;
+                toggle_menu_flag = true;
+            }*/
+        }
+        
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            ImageBrush ib = new ImageBrush();
+            ib.ImageSource = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Menu.png"));
+            this.Toggle_Menu.Background = ib;
         }
 
         private void ScenarioControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -366,41 +453,52 @@ namespace iaM.Views
         
         async void dispatcherTimer_Tick(object sender, object e)
         {
-            // Debug.WriteLine("hello");
+             Debug.WriteLine("remover running!!");
             current_client.remove_client();
 
-            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,()=>
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
             {
-                /*
-              //  items.Clear();
 
-                // Display these information on the list
-                for (int i = 0; i < current_client.client_num; i++)
+                for (int i = current_client.client_num; i > 0; i--)
                 {
 
-                    Client client = current_client.client_id(i);
-
-                    Debug.WriteLine(client.Id);
+                    Client client = current_client.client_id(i - 1);
 
 
-                    if (client.Profile_image != null)
+                    BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
+
+                    if (i == current_client.client_num)
                     {
-                        BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
-                        items.Add(new List_item { UserName = client.Id, UserComment = client.Nickname, UserImage = bi });
-
+                        UserList0_Image.Source = bi;
+                        UserList0_Name.Text = client.Nickname;
+                        UserList0_Status.Text = client.Status_message;
+                    }
+                    else if (i == current_client.client_num - 1)
+                    {
+                        UserList1_Image.Source = bi;
+                        UserList1_Name.Text = client.Nickname;
+                        UserList1_Status.Text = client.Status_message;
+                    }
+                    else if (i == current_client.client_num - 2)
+                    {
+                        UserList2_Image.Source = bi;
+                        UserList2_Name.Text = client.Nickname;
+                        UserList2_Status.Text = client.Status_message;
+                    }
+                    else if (i == current_client.client_num - 3)
+                    {
+                        UserList3_Image.Source = bi;
+                        UserList3_Name.Text = client.Nickname;
+                        UserList3_Status.Text = client.Status_message;
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Not show more than 4 peoples");
                     }
 
                 }
-
-            */
-
-                items.Add(new List_item { UserName = "asdas11d", UserComment = "as11dasd", UserImage = null });
-
-                ReceivedAdvertisementListBox.ItemsSource = items;
-
             });
 
-    
         }
         /// <summary>
         /// Invoked as an event handler when the Stop button is pressed.
@@ -410,13 +508,13 @@ namespace iaM.Views
         /// 
 
 
-      /*  private void StopButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Stopping the watcher will stop scanning if this is the only client requesting scan
-            watcher.Stop();
+        /*  private void StopButton_Click(object sender, RoutedEventArgs e)
+          {
+              // Stopping the watcher will stop scanning if this is the only client requesting scan
+              watcher.Stop();
 
 
-        }*/
+          }*/
 
         /// <summary>
         /// Invoked as an event handler when an advertisement is received.
@@ -428,7 +526,7 @@ namespace iaM.Views
 
             // We can obtain various information about the advertisement we just received by accessing 
             // the properties of the EventArgs class
-            
+
             // The timestamp of the event
             DateTimeOffset timestamp = eventArgs.Timestamp;
 
@@ -444,12 +542,26 @@ namespace iaM.Views
             // Check if there are any manufacturer-specific sections.
             // If there is, print the raw data of the first manufacturer section (if there are multiple).
             var manufacturerSections = eventArgs.Advertisement.ManufacturerData;
-            int client_num = manufacturerSections.Count;
+            int client_num = manufacturerSections.Count+3;
 
             string[] client_ids = new string[client_num];
-
+            
             if (client_num > 0)
             {
+                client_ids[0]="shin";
+                client_ids[1] = "mk";
+                client_ids[2] = "jh";
+
+                var manufacturerData = manufacturerSections[0];
+                var data = new byte[manufacturerData.Data.Length];
+                using (var reader = DataReader.FromBuffer(manufacturerData.Data))
+                {
+                    reader.ReadBytes(data);
+                }
+                // Print the company ID + the raw data in hex format
+                client_ids[3] = string.Format("{0}", Encoding.UTF8.GetString(data));
+
+                /*
                 for (int i = 0; i < client_num; i++)
                 {
                     var manufacturerData = manufacturerSections[i];
@@ -459,36 +571,65 @@ namespace iaM.Views
                         reader.ReadBytes(data);
                     }
                     // Print the company ID + the raw data in hex format
-                    client_ids[i] = string.Format("{0}",
-                      Encoding.UTF8.GetString(data));
+                    client_ids[i] = string.Format("{0}", Encoding.UTF8.GetString(data));
 
-                }
+                }*/
             }
             // compare pre_member with current member
             current_client.check_exist(client_ids);
 
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
             {
-                //items.Clear();
 
-                // Display these information on the list
-                for (int i = 0; i < current_client.client_num; i++)
+                for (int i = current_client.client_num; i > 0; i--)
                 {
 
-                    Client client = current_client.client_id(i);
+                    Client client = current_client.client_id(i - 1);
 
-                    Debug.WriteLine(client.Id);
+                    //   Debug.WriteLine(client.Id);
+                    
+                        if (client.Profile_image != null)
+                        {
+                            Debug.WriteLine("show!");
 
+                            BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
 
-                    if (client.Profile_image != null)
-                    {
-                        Debug.WriteLine("{0} , {1}", client.Nickname,client.Profile_image);
-                        BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
-                        items.Add(new List_item { UserName = client.Id, UserComment = client.Nickname, UserImage = bi });
+                        if (i == current_client.client_num)
+                        {
+                            UserList0_Image.Source = bi;
+                            UserList0_Name.Text = client.Nickname;
+                            UserList0_Status.Text = client.Status_message;
+                        }
+                        else if (i == current_client.client_num - 1)
+                        {
+                            UserList1_Image.Source = bi;
+                            UserList1_Name.Text = client.Nickname;
+                            UserList1_Status.Text = client.Status_message;
+                        }
+                        else if (i == current_client.client_num - 2)
+                        {
+                            UserList2_Image.Source = bi;
+                            UserList2_Name.Text = client.Nickname;
+                            UserList2_Status.Text = client.Status_message;
+                        }
+                        else if (i == current_client.client_num - 3)
+                        {
+                            UserList3_Image.Source = bi;
+                            UserList3_Name.Text = client.Nickname;
+                            UserList3_Status.Text = client.Status_message;
+                        }
+                        else
+                        {
+                            Debug.WriteLine("Not show more than 4 peoples");
+                        }
+                    }
+                        else
+                        {
+                            Debug.WriteLine("wait Server Message");
+                        }
 
                     }
 
-                }
             });
 
 
@@ -590,8 +731,42 @@ namespace iaM.Views
             }
             
         }
-        
 
+        private void To_See_Others_Page(object sender, RoutedEventArgs e)
+        {
+            /* Button b = (Button)sender;
+
+             Debug.WriteLine("Tag : {0}",b.Tag);
+
+             int clients_num = current_client.client_num;
+
+             object obj = null;
+
+             switch (b.Tag.ToString())
+             {
+                 case "0": obj = current_client.client_id(clients_num - 1);  break;
+                 case "1": obj = current_client.client_id(clients_num - 2); break;
+                 case "2":  obj = current_client.client_id(clients_num - 3); break;
+                 case "3": obj = current_client.client_id(clients_num - 4); break;
+                 case "4": obj = current_client.client_id(clients_num - 5); break;
+                 case "5": obj = current_client.client_id(clients_num - 6); break;
+                 case "6": obj = current_client.client_id(clients_num - 7); break;
+                 case "7": obj = current_client.client_id(clients_num - 8); break;
+
+                 default: break;
+             }
+
+
+
+             
+             this.Frame.Navigate(typeof(See_Others),obj);*/
+            this.Frame.Navigate(typeof(See_Others));
+        }
+
+        private void To_Edit_Profile(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Edit_Profile));
+        }
     }
 
     public class List_item

@@ -360,8 +360,74 @@
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\71x71-icon.png">
       <PackagePath>Assets\71x71-icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_background.png">
-      <PackagePath>Assets\login_background.png</PackagePath>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Add.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Add.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Image.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Image.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Phone.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Phone.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Video.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Video.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Default_Profile.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Default_Profile.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Home.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Home.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Album.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Album.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Caliing.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Caliing.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Status.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Status.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Video.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Video.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Layout_Box.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Layout_Box.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Menu.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Menu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Selection_Icon.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Selection_Icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\Login_Account_icon.png">
+      <PackagePath>Assets\LoginPage\Login_Account_icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\Login_Help.png">
+      <PackagePath>Assets\LoginPage\Login_Help.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\Login_Key_icon.png">
+      <PackagePath>Assets\LoginPage\Login_Key_icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\Login_Logo.png">
+      <PackagePath>Assets\LoginPage\Login_Logo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\Login_Signup.png">
+      <PackagePath>Assets\LoginPage\Login_Signup.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\Login_Start.png">
+      <PackagePath>Assets\LoginPage\Login_Start.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\LoginPage\login_background.png">
+      <PackagePath>Assets\LoginPage\login_background.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_email.png">
       <PackagePath>Assets\login_email.png</PackagePath>
@@ -384,6 +450,45 @@
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\login_start.png">
       <PackagePath>Assets\login_start.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Circle_Size1.png">
+      <PackagePath>Assets\MainPage\MainPage_Circle_Size1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Circle_Size2.png">
+      <PackagePath>Assets\MainPage\MainPage_Circle_Size2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Circle_Size3.png">
+      <PackagePath>Assets\MainPage\MainPage_Circle_Size3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Circle_Size4.png">
+      <PackagePath>Assets\MainPage\MainPage_Circle_Size4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Main_Icon.png">
+      <PackagePath>Assets\MainPage\MainPage_Main_Icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Main_Icon_Grey.png">
+      <PackagePath>Assets\MainPage\MainPage_Main_Icon_Grey.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Menu.png">
+      <PackagePath>Assets\MainPage\MainPage_Menu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Progress_Square1.png">
+      <PackagePath>Assets\MainPage\MainPage_Progress_Square1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Progress_Square2.png">
+      <PackagePath>Assets\MainPage\MainPage_Progress_Square2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Progress_Square3.png">
+      <PackagePath>Assets\MainPage\MainPage_Progress_Square3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\MainPage\MainPage_Circle_Size5.png">
+      <PackagePath>Assets\MainPage\MainPage_Circle_Size5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\point.png">
+      <PackagePath>Assets\point.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\SignUp\SignUp_background.png">
+      <PackagePath>Assets\SignUp\SignUp_background.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\signup_add_profile_pic.png">
       <PackagePath>Assets\signup_add_profile_pic.png</PackagePath>
     </AppxPackagedFile>
@@ -404,6 +509,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\splash11.png">
       <PackagePath>Assets\splash11.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\Splash\Splash_Image.png">
+      <PackagePath>Assets\Splash\Splash_Image.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\Assets\test.png">
       <PackagePath>Assets\test.png</PackagePath>
