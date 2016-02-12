@@ -1,0 +1,8 @@
+/out:"\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\x86\Release\ilc\intermediate\\"
+/ref:"\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\\"
+/ref:"\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\x86\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Private\\"
+/ref:"\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\x86\Release\ilc\in\\"
+/ref:"\\Mac\Home\Documents\Visual Studio 2015\Projects\iaM\iaM\obj\x86\Release\ilc\in\WinMetadata\\"
+/ca:System.Private.CoreLib

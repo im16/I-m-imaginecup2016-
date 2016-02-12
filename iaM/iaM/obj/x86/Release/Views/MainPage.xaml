@@ -1,0 +1,322 @@
+﻿<Page
+    x:Class="iaM.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:iaM.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--페이지에서 이용하기 위한 리소스들-->
+    <Page.Resources>
+
+        <!--그리드 라인 색변경-->
+        <Style TargetType="Grid">
+            <Setter Property="BorderBrush" Value="Black" />
+        </Style>
+
+       
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!-- 프로그래스 애니메이션을 위한 데이터템플릿-->
+        <Grid.Resources>
+            <DataTemplate x:ConnectionId='1' x:Name="Ring">
+                <Ellipse Width="15" Height="15" Fill="DarkGray" VerticalAlignment="Top"  />
+            </DataTemplate>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <SplitView x:ConnectionId='2' x:Name="Splitter" Background="White" IsPaneOpen="False"  DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="230">
+           <!-- 메뉴 판 열었을 때 나오는 메뉴판 구성-->
+            <SplitView.Pane>
+                <!-- 개인정보 구성 메뉴 -->
+                <Grid Background="DarkGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid  Background="Wheat" Grid.Row="0" HorizontalAlignment="Stretch" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                        <Ellipse Grid.Row="1" Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/Assets/itsme.jpg"/>
+                            </Ellipse.Fill>               
+                        </Ellipse>
+                        </Grid>
+                        <Grid Grid.Row="1" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                
+                            </Grid.ColumnDefinitions>
+
+                            <ListBox x:ConnectionId='13'                                  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                
+                                <ListBoxItem x:ConnectionId='17' Name="Profile" Background="Orange">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE8CF;" Margin="0 3 0 0"/>
+                                        <TextBlock Text="  Profile" FontSize="15"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                                
+                            </ListBox>
+                            <ListBox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <ListBoxItem x:ConnectionId='16' Name="MailBox" Background="DarkOrange">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE8C3;" Margin="0 3 0 0"/>
+                                        <TextBlock Text=" InBox" FontSize="15"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                            </ListBox>
+
+                            <ListBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <ListBoxItem x:ConnectionId='15' Name="Storage" Background="DarkOrange">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE716;" Margin="0 3 0 0"/>
+                                        <TextBlock Text="  Storage" FontSize="15"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                            </ListBox>
+                            <ListBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <ListBoxItem x:ConnectionId='14' Name="Promotion" Background="Orange">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE720;" Margin="0 3 0 0"/>
+                                        <TextBlock Text="  Promotion" FontSize="15"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+                            </ListBox>
+                        </Grid>
+                       
+                    </Grid>
+                    
+                    <!-- 개인정보 외 기타 메뉴들-->
+                    <Grid Grid.Row="1">
+                        <ListBox x:ConnectionId='7' x:Name="ScenarioControl" Background="Orange"                                                     
+                 SelectionMode="Single" HorizontalAlignment="Left" BorderThickness="0"
+                 Margin="0,0,0,0">
+
+                            <ListBoxItem x:ConnectionId='8' Name="Help" Background="DarkOrange" >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE897;" Margin="0 3 0 0"/>
+                                    <TextBlock Text=" Help" FontSize="15"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='9' Name="Charge" Background="DarkOrange" >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE719;" Margin="0 3 0 0"/>
+                                    <TextBlock Text=" Charge" FontSize="15"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='10' Name="Setting">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE713;" Margin="0 3 0 0"/>
+                                    <TextBlock Text=" Setting" FontSize="15"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='11' Name="Recommend" Background="DarkOrange">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE72D;" Margin="0 3 0 0"/>
+                                    <TextBlock Text=" Recommend" FontSize="15"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='12' Name="Leave">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE8C9;" Margin="0 3 0 0"/>
+                                    <TextBlock Text=" Leave" FontSize="15"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+            </SplitView.Pane>
+
+            <!-- 메뉴판이 나오기 전 메인화면-->
+            <SplitView.Content>
+
+                <Grid>
+                    <Grid Grid.Row="1" Height="150" Width="150" Margin="0 0 0 200">
+                        <Grid x:ConnectionId='28' x:Name="Ring1" RenderTransformOrigin="0.5,0.5" Opacity="1.5">
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <ContentControl ContentTemplate="{StaticResource Ring}" Content="{x:Null}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid x:ConnectionId='29' x:Name="Ring2" RenderTransformOrigin="0.5,0.5" Opacity="1.5" >
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <ContentControl ContentTemplate="{StaticResource Ring}" Content="{x:Null}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid x:ConnectionId='30' x:Name="Ring3" RenderTransformOrigin="0.5,0.5" Opacity="1.5" >
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <ContentControl ContentTemplate="{StaticResource Ring}" Content="{x:Null}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid x:ConnectionId='31' x:Name="Ring4" RenderTransformOrigin="0.5,0.5" Opacity="1.5" >
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <ContentControl ContentTemplate="{StaticResource Ring}" Content="{x:Null}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid x:ConnectionId='32' x:Name="Ring5" RenderTransformOrigin="0.5,0.5" Opacity="1.5" >
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <ContentControl ContentTemplate="{StaticResource Ring}" Content="{x:Null}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <!--  <Button Height="100" Width="100" x:Name="ProgessRingClick" Click="ProgressRing_Click" HorizontalAlignment="Center" BorderThickness="0">
+                           
+                            <Image Source="/Assets/71x71-icon.png"/>
+                                
+                        </Button>-->
+                        <Button x:ConnectionId='33' Background="White" x:Name="ProgessRingClick"                            HorizontalAlignment="Center" BorderThickness="0">
+                            <Ellipse Height="100" Width="100">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Assets/71x71-icon.png" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Button>
+                    </Grid>
+
+                    <ScrollViewer x:ConnectionId='18' x:Name="ScrollViewer" Height="200" VerticalAlignment="Bottom">
+
+                        <Grid x:ConnectionId='19' x:Name="ScrollGrid" Height="400" HorizontalAlignment="Stretch" BorderThickness="0 1 0 0">
+
+                            <Grid x:ConnectionId='20' x:Name="UserList1" Height="50" MaxHeight="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/itsme.jpg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='21' x:Name="UserList2" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0 50 0 0" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/mario.jpeg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='22' x:Name="UserList3" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0 100 0 0" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/itsme.jpg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='23' x:Name="UserList4" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,150,0,0" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/mario.jpeg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='24' x:Name="UserList5" Height="50" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0,200,0,0" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/itsme.jpg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='25' x:Name="UserList6" Height="50" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0,250,0,0" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/mario.jpeg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='26' x:Name="UserList7" Height="50" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0,300,0,0" BorderThickness="0 0 0 1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/itsme.jpg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:ConnectionId='27' x:Name="UserList8" Height="50" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0,350,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="/Assets/mario.jpeg"  Height="50" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Column="1" Text="이름" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="앗살라말라이쿰" HorizontalAlignment="Right" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+
+
+
+
+            </SplitView.Content>
+
+        </SplitView>
+        
+        <!-- 맨 위 메뉴판-->
+        <StackPanel x:ConnectionId='3' x:Name="HeaderPanel" Orientation="Horizontal">
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Grid.Row="0">
+                <ToggleButton x:ConnectionId='5'                      VerticalAlignment="Top" Background="Orange" Foreground="{ThemeResource ApplicationForegroundThemeBrush}"                               >
+                    <ToggleButton.Content>
+                        <FontIcon x:ConnectionId='6' x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" Margin="0,10,0,0"/>
+                    </ToggleButton.Content>
+                </ToggleButton>
+            </Border>
+            <TextBlock x:ConnectionId='4' x:Name="Header" Text="2016 02 06 테스트" Margin="50,10,0,0"/>
+        </StackPanel>
+        
+        <!-- 메뉴판 우측 화면-->
+        <Grid>
+            <Image Source="/Assets/itsme.jpg" Height="50" HorizontalAlignment="Right"/>
+
+        </Grid>
+
+    </Grid>
+</Page>
+
