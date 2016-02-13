@@ -138,7 +138,7 @@ namespace iaM.Views
             //request found client information(background task)
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
-            //  bw.RunWorkerAsync();
+          //  bw.RunWorkerAsync();
 
         }
 

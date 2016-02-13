@@ -88,10 +88,10 @@ namespace iaM.Views
             });
         }
 
+    
 
 
-
-
+  
 
         private void Button_Menu_Click(object sender, RoutedEventArgs e)
         {
@@ -197,7 +197,7 @@ namespace iaM.Views
             Sign_1.Visibility = Visibility.Collapsed;
             Sign_2.Visibility = Visibility.Collapsed;
             Sign_3.Visibility = Visibility.Collapsed;
-            Sign_4.Visibility = Visibility.Visible;
+            Sign_4.Visibility = Visibility.Visible ;
         }
 
         private void Button_Slide_To_Left(object sender, RoutedEventArgs e)
@@ -208,6 +208,6 @@ namespace iaM.Views
         {
 
         }
-
+        
     }
 }
