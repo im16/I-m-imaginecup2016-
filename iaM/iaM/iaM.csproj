@@ -11,7 +11,7 @@
     <AssemblyName>iaM</AssemblyName>
     <DefaultLanguage>ko-KR</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -168,6 +168,17 @@
     <Content Include="Assets\MainPage\MainPage_Main_Icon.png" />
     <Content Include="Assets\MainPage\MainPage_Main_Icon_Grey.png" />
     <Content Include="Assets\MainPage\MainPage_Menu.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Bar.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Charge.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Go_Public.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Help.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Mail.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Notice.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Recommend.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Setting.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_SignOut.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Toggle_Off.png" />
+    <Content Include="Assets\MainPage\MainPage_Pane_Toggle_On.png" />
     <Content Include="Assets\MainPage\MainPage_Progress_Square1.png" />
     <Content Include="Assets\MainPage\MainPage_Progress_Square2.png" />
     <Content Include="Assets\MainPage\MainPage_Progress_Square3.png" />
@@ -184,6 +195,7 @@
     <Content Include="Assets\splash11.png" />
     <Content Include="Assets\Splash\Splash_Image.png" />
     <Content Include="Assets\test.png" />
+    <Content Include="Assets\Video\video.mp4" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -25,7 +25,7 @@ namespace iaM.Views
     /// </summary>
     public sealed partial class See_Others : Page
     {
-        Client client;
+        Client client=null;
 
         bool photo_progress_flag = true;
         bool menu_flag = true;
@@ -34,6 +34,14 @@ namespace iaM.Views
         public See_Others()
         {
             this.InitializeComponent();
+
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        { 
+            client = e.Parameter as Client;
+
+            Debug.WriteLine("{0} , {1} , {2}", client.Nickname, client.Phone_number, client.Status_message);
 
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.RunWorkerAsync();
@@ -47,7 +55,6 @@ namespace iaM.Views
 
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            client = new Client("hi");
 
             await Connect_Server.request_client_more_info(client);
 
@@ -70,7 +77,7 @@ namespace iaM.Views
 
 
                     if (i == 1)
-                        photo1.Background = new ImageBrush { ImageSource = image };
+                        photo1.Source = image;
                     else if (i == 2)
                         photo2.Background = new ImageBrush { ImageSource = image };
                     else if (i == 3)
@@ -88,10 +95,22 @@ namespace iaM.Views
             });
         }
 
-    
+        private void kn_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            UIElement element = sender as UIElement;
+            CompositeTransform transform = element.RenderTransform as CompositeTransform;
+            if (transform != null)
+            {
+
+                transform.ScaleX *= e.Delta.Scale;
+                transform.ScaleY *= e.Delta.Scale;
+                transform.Rotation += e.Delta.Scale / Math.PI;
+                transform.TranslateX += e.Delta.Translation.X;
+                transform.TranslateY += e.Delta.Translation.Y;
+            }
+        }
 
 
-  
 
         private void Button_Menu_Click(object sender, RoutedEventArgs e)
         {
@@ -157,7 +176,7 @@ namespace iaM.Views
 
 
                     if (i == 1)
-                        photo1.Background = new ImageBrush { ImageSource = image };
+                        photo1.Source = image;
                     else if (i == 2)
                         photo2.Background = new ImageBrush { ImageSource = image };
                     else if (i == 3)
@@ -200,14 +219,10 @@ namespace iaM.Views
             Sign_4.Visibility = Visibility.Visible ;
         }
 
-        private void Button_Slide_To_Left(object sender, RoutedEventArgs e)
+        private void Photo22(object sender, TappedRoutedEventArgs e)
         {
-
+            photo2.Height = 300;
+            photo2.Width = 300;
         }
-        private void Button_Slide_To_Right(object sender, RoutedEventArgs e)
-        {
-
-        }
-        
     }
 }

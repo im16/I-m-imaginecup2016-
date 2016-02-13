@@ -138,7 +138,7 @@ namespace iaM.Views
             //request found client information(background task)
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
-          //  bw.RunWorkerAsync();
+            bw.RunWorkerAsync();
 
         }
 
@@ -171,7 +171,7 @@ namespace iaM.Views
                 JToken jUser = jObject["user"];
                 Nickname = (string)jUser["nickname"];
                 Status_message = (string)jUser["status_message"];
-
+                Phone_number = (string)jUser["phone_number"];
                 Profile_image = (string)jUser["profile_image"];
             }
             catch (Exception e)

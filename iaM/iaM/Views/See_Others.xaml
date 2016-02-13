@@ -305,17 +305,6 @@
                             </Button>
 
 
-                            <Button Click="Button_Slide_To_Left" Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" Height="25" Width="25">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Left_Sign.png"/>
-                                </Button.Background>
-                            </Button>
-                            <Button  Click="Button_Slide_To_Right" Grid.Row="1" Grid.Column="6" Margin="5 0 5 0" Height="25" Width="25">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Right_Sign.png"/>
-                                </Button.Background>
-                            </Button>
-
                             <Image x:Name="Sign_1" Grid.Row="2" Grid.Column="2" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Visible"/>
                             <Image x:Name="Sign_2" Grid.Row="2" Grid.Column="3" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
                             <Image x:Name="Sign_3" Grid.Row="2" Grid.Column="4" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
@@ -327,7 +316,7 @@
                             <RowDefinition Height="4*"/>
                             <RowDefinition Height="15*"/>
                             <RowDefinition Height="15*"/>
-                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -359,12 +348,12 @@
                             </Button.Background>
                         </Button>
                     </Grid>
-                    <Grid x:Name="Profile_Album"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
+                    <Grid x:Name="Profile_Album"  Grid.Row="1" Background="#B3E3FA" Visibility="Visible">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="4*"/>
                             <RowDefinition Height="15*"/>
                             <RowDefinition Height="15*"/>
-                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -375,12 +364,11 @@
                         <Image Grid.Row="0" Grid.ColumnSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Bar_Image.png" VerticalAlignment="Top"/>
 
 
-                        <Button x:Name="photo1" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button x:Name="photo2"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <FlipView Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image x:Name="photo1"></Image>
+                        </FlipView>
+
+                        <Button x:Name="photo2"  Tapped="Photo22" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Button.Background>
                                 <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
                             </Button.Background>
@@ -420,7 +408,7 @@
                             <RowDefinition Height="4*"/>
                             <RowDefinition Height="15*"/>
                             <RowDefinition Height="15*"/>
-                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -439,6 +427,7 @@
 
                             <!--    <WebView x:Name="media"  Height="253" Source="https://youtu.be/tz7-9Bk9gew" Width="360"  />  -->
 
+                            
                             <MediaElement x:Name="media" 
                                               Source="/Assets/Video/video.mp4" 
                                               Width="357" 

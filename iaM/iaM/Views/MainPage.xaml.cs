@@ -172,6 +172,8 @@ namespace iaM.Views
             // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
             // scanning will be stopped automatically if the watcher is destroyed.
             watcher.Stop();
+            dispatcherTimer.Stop();
+            seacrch_IsActive.Stop();
             // Always unregister the handlers to release the resources to prevent leaks.
             watcher.Received -= OnAdvertisementReceived;
             watcher.Stopped -= OnAdvertisementWatcherStopped;
@@ -240,21 +242,22 @@ namespace iaM.Views
                 
                 watcher.Start();
                 // ReceivedAdvertisementListBox.Items.Clear();
-              /*      
+               
                 dispatcherTimer = new DispatcherTimer();
                 dispatcherTimer.Tick += dispatcherTimer_Tick;
                 dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
                 dispatcherTimer.Start();
-                */
+                
+            
                 ScrollViewer.Visibility = Visibility.Visible;
                 
                
                 Scroll_2.Height = new GridLength(315);
                 Circle_View.Margin = new Thickness(0,0,0,0);
-             /*   seacrch_IsActive = new DispatcherTimer();
+               seacrch_IsActive = new DispatcherTimer();
                 seacrch_IsActive.Tick += seacrch_IsActive_Tick;
                 seacrch_IsActive.Interval = new TimeSpan(0, 0, 0, 0, 500);
-                seacrch_IsActive.Start();*/
+                seacrch_IsActive.Start();
                 flag = false;
 
                
@@ -469,43 +472,50 @@ namespace iaM.Views
 
                 for (int i = current_client.client_num; i > 0; i--)
                 {
-
                     Client client = current_client.client_id(i - 1);
 
+                    if (client != null)
+                    {
 
-                    BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
+                        if (client.Profile_image != null)
+                        {
 
-                    if (i == current_client.client_num)
-                    {
-                        UserList0_Ring.Visibility = Visibility.Collapsed;
-                        UserList0_Image.Source = bi;
-                        UserList0_Name.Text = client.Nickname;
-                        UserList0_Status.Text = client.Status_message;
-                    }
-                    else if (i == current_client.client_num - 1)
-                    {
-                        UserList1_Image.Source = bi;
-                        UserList1_Name.Text = client.Nickname;
-                        UserList1_Status.Text = client.Status_message;
-                    }
-                    else if (i == current_client.client_num - 2)
-                    {
-                        UserList2_Image.Source = bi;
-                        UserList2_Name.Text = client.Nickname;
-                        UserList2_Status.Text = client.Status_message;
-                    }
-                    else if (i == current_client.client_num - 3)
-                    {
-                        UserList3_Image.Source = bi;
-                        UserList3_Name.Text = client.Nickname;
-                        UserList3_Status.Text = client.Status_message;
-                    }
-                    else
-                    {
-                        Debug.WriteLine("Not show more than 4 peoples");
-                    }
+                            BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
 
-                }
+
+                            if (i == current_client.client_num)
+                            {
+                                UserList0_Image.Source = bi;
+                                UserList0_Name.Text = client.Nickname;
+                                UserList0_Status.Text = client.Status_message;
+                            }
+                            else if (i == current_client.client_num - 1)
+                            {
+                                UserList1_Image.Source = bi;
+                                UserList1_Name.Text = client.Nickname;
+                                UserList1_Status.Text = client.Status_message;
+                            }
+                            else if (i == current_client.client_num - 2)
+                            {
+                                UserList2_Image.Source = bi;
+                                UserList2_Name.Text = client.Nickname;
+                                UserList2_Status.Text = client.Status_message;
+                            }
+                            else if (i == current_client.client_num - 3)
+                            {
+                                UserList3_Image.Source = bi;
+                                UserList3_Name.Text = client.Nickname;
+                                UserList3_Status.Text = client.Status_message;
+                            }
+                            else
+                            {
+                                Debug.WriteLine("Not show more than 4 peoples");
+                            }
+                        }
+                    }
+                  }
+
+                
             });
 
         }
@@ -533,6 +543,7 @@ namespace iaM.Views
         private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
         {
 
+            Debug.WriteLine("signal!");
             // We can obtain various information about the advertisement we just received by accessing 
             // the properties of the EventArgs class
 
@@ -569,7 +580,7 @@ namespace iaM.Views
                 }
                 // Print the company ID + the raw data in hex format
                 client_ids[3] = string.Format("{0}", Encoding.UTF8.GetString(data));
-
+                Debug.WriteLine(client_ids[3]);
                 /*
                 for (int i = 0; i < client_num; i++)
                 {
@@ -599,12 +610,13 @@ namespace iaM.Views
                     
                         if (client.Profile_image != null)
                         {
-                            Debug.WriteLine("show!");
 
                             BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
 
                         if (i == current_client.client_num)
                         {
+                            UserList0_Ring.IsActive = false;
+                            UserList0_Ring.Visibility = Visibility.Collapsed;
                             UserList0_Image.Source = bi;
                             UserList0_Name.Text = client.Nickname;
                             UserList0_Status.Text = client.Status_message;
@@ -632,11 +644,6 @@ namespace iaM.Views
                             Debug.WriteLine("Not show more than 4 peoples");
                         }
                     }
-                        else
-                        {
-                            Debug.WriteLine("wait Server Message");
-                        }
-
                     }
 
             });
@@ -743,7 +750,7 @@ namespace iaM.Views
 
         private void To_See_Others_Page(object sender, RoutedEventArgs e)
         {
-            /* Button b = (Button)sender;
+             Button b = (Button)sender;
 
              Debug.WriteLine("Tag : {0}",b.Tag);
 
@@ -765,11 +772,8 @@ namespace iaM.Views
                  default: break;
              }
 
-
-
              
-             this.Frame.Navigate(typeof(See_Others),obj);*/
-            this.Frame.Navigate(typeof(See_Others));
+             this.Frame.Navigate(typeof(See_Others),obj);
         }
 
         private void To_Edit_Profile(object sender, RoutedEventArgs e)

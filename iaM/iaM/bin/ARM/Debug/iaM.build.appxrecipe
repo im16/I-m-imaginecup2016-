@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>21b8cd3c-049f-455c-b60a-e87329085385</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>\\Mac\Home\Documents\IM166\iaM\iaM\obj\ARM\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="\\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\bin\ARM\Debug\iaM.exe">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\iaM.exe">
       <PackagePath>entrypoint\iaM.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
@@ -348,220 +348,250 @@
     <AppxPackagedFile Include="C:\Users\KMK\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\ApplicationInsights.config">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\150x150-icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\150x150-icon.png">
       <PackagePath>Assets\150x150-icon.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\44x44-icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\44x44-icon.png">
       <PackagePath>Assets\44x44-icon.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\71x71-icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\71x71-icon.png">
       <PackagePath>Assets\71x71-icon.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Add.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Add.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Add.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Image.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Image.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Image.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Phone.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Phone.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Phone.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Video.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Video.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Video.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Default_Profile.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Default_Profile.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Default_Profile.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Home.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Home.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Home.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Album.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Album.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Album.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Caliing.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Caliing.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Caliing.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Status.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Status.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Status.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Video.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Video.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Video.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Layout_Box.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Layout_Box.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Layout_Box.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Menu.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Menu.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Menu.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Selection_Icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Selection_Icon.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Selection_Icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\Login_Account_icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\Login_Account_icon.png">
       <PackagePath>Assets\LoginPage\Login_Account_icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\Login_Help.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\Login_Help.png">
       <PackagePath>Assets\LoginPage\Login_Help.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\Login_Key_icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\Login_Key_icon.png">
       <PackagePath>Assets\LoginPage\Login_Key_icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\Login_Logo.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\Login_Logo.png">
       <PackagePath>Assets\LoginPage\Login_Logo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\Login_Signup.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\Login_Signup.png">
       <PackagePath>Assets\LoginPage\Login_Signup.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\Login_Start.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\Login_Start.png">
       <PackagePath>Assets\LoginPage\Login_Start.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LoginPage\login_background.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LoginPage\login_background.png">
       <PackagePath>Assets\LoginPage\login_background.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_email.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_email.png">
       <PackagePath>Assets\login_email.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_forgotpassword.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_forgotpassword.png">
       <PackagePath>Assets\login_forgotpassword.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_help.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_help.png">
       <PackagePath>Assets\login_help.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_logo.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_logo.png">
       <PackagePath>Assets\login_logo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_password.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_password.png">
       <PackagePath>Assets\login_password.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_signup.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_signup.png">
       <PackagePath>Assets\login_signup.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\login_start.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\login_start.png">
       <PackagePath>Assets\login_start.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Circle_Size1.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Circle_Size1.png">
       <PackagePath>Assets\MainPage\MainPage_Circle_Size1.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Circle_Size2.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Circle_Size2.png">
       <PackagePath>Assets\MainPage\MainPage_Circle_Size2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Circle_Size3.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Circle_Size3.png">
       <PackagePath>Assets\MainPage\MainPage_Circle_Size3.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Circle_Size4.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Circle_Size4.png">
       <PackagePath>Assets\MainPage\MainPage_Circle_Size4.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Main_Icon.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Main_Icon.png">
       <PackagePath>Assets\MainPage\MainPage_Main_Icon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Main_Icon_Grey.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Main_Icon_Grey.png">
       <PackagePath>Assets\MainPage\MainPage_Main_Icon_Grey.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Menu.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Menu.png">
       <PackagePath>Assets\MainPage\MainPage_Menu.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Progress_Square1.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Bar.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Bar.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Charge.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Charge.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Go_Public.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Go_Public.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Help.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Help.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Mail.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Mail.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Notice.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Notice.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Recommend.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Recommend.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Setting.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Setting.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_SignOut.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_SignOut.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Toggle_Off.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Toggle_Off.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Pane_Toggle_On.png">
+      <PackagePath>Assets\MainPage\MainPage_Pane_Toggle_On.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Progress_Square1.png">
       <PackagePath>Assets\MainPage\MainPage_Progress_Square1.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Progress_Square2.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Progress_Square2.png">
       <PackagePath>Assets\MainPage\MainPage_Progress_Square2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Progress_Square3.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Progress_Square3.png">
       <PackagePath>Assets\MainPage\MainPage_Progress_Square3.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\MainPage\MainPage_Circle_Size5.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\MainPage\MainPage_Circle_Size5.png">
       <PackagePath>Assets\MainPage\MainPage_Circle_Size5.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\point.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\point.png">
       <PackagePath>Assets\point.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\SignUp\SignUp_background.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\SignUp\SignUp_background.png">
       <PackagePath>Assets\SignUp\SignUp_background.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\signup_add_profile_pic.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\signup_add_profile_pic.png">
       <PackagePath>Assets\signup_add_profile_pic.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\signup_howto.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\signup_howto.png">
       <PackagePath>Assets\signup_howto.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\signup_register.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\signup_register.png">
       <PackagePath>Assets\signup_register.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\signup_topbar.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\signup_topbar.png">
       <PackagePath>Assets\signup_topbar.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\signup_user_info.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\signup_user_info.png">
       <PackagePath>Assets\signup_user_info.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\singup.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\singup.png">
       <PackagePath>Assets\singup.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\splash11.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\splash11.png">
       <PackagePath>Assets\splash11.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Splash\Splash_Image.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Splash\Splash_Image.png">
       <PackagePath>Assets\Splash\Splash_Image.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\test.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\test.png">
       <PackagePath>Assets\test.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\itsme.jpg">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\itsme.jpg">
       <PackagePath>Assets\itsme.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Assets\mario.jpeg">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\mario.jpeg">
       <PackagePath>Assets\mario.jpeg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Video\video.mp4">
+      <PackagePath>Assets\Video\video.mp4</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\bin\ARM\Debug\iaM.xr.xml">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\iaM.xr.xml">
       <PackagePath>iaM.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\bin\ARM\Debug\Core\iaM.exe">
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\Core\iaM.exe">
       <PackagePath>iaM.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

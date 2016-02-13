@@ -1,4 +1,3 @@
-WinMetadata\Windows.winmd
 ApplicationInsights.config
 Assets\150x150-icon.png
 Assets\44x44-icon.png
@@ -43,6 +42,17 @@ Assets\MainPage\MainPage_Circle_Size5.png
 Assets\MainPage\MainPage_Main_Icon.png
 Assets\MainPage\MainPage_Main_Icon_Grey.png
 Assets\MainPage\MainPage_Menu.png
+Assets\MainPage\MainPage_Pane_Bar.png
+Assets\MainPage\MainPage_Pane_Charge.png
+Assets\MainPage\MainPage_Pane_Go_Public.png
+Assets\MainPage\MainPage_Pane_Help.png
+Assets\MainPage\MainPage_Pane_Mail.png
+Assets\MainPage\MainPage_Pane_Notice.png
+Assets\MainPage\MainPage_Pane_Recommend.png
+Assets\MainPage\MainPage_Pane_Setting.png
+Assets\MainPage\MainPage_Pane_SignOut.png
+Assets\MainPage\MainPage_Pane_Toggle_Off.png
+Assets\MainPage\MainPage_Pane_Toggle_On.png
 Assets\MainPage\MainPage_Progress_Square1.png
 Assets\MainPage\MainPage_Progress_Square2.png
 Assets\MainPage\MainPage_Progress_Square3.png
@@ -63,6 +73,8 @@ Assets\Square44x44Logo.scale-200.png
 Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
 Assets\test.png
+Assets\Video\video.mp4
 Assets\Wide310x150Logo.scale-200.png
 iaM.xr.xml
 Properties\Default.rd.xml
+WinMetadata\Windows.winmd
