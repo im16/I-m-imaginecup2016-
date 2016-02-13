@@ -45,7 +45,7 @@ namespace iaM.Views
 
         private BluetoothLEAdvertisementWatcher watcher;
         private DispatcherTimer dispatcherTimer;
-        private DispatcherTimer _dispatcherTimer;
+        private DispatcherTimer seacrch_IsActive;
         private Client_List current_client = new Client_List();
 
         private int timer = 1;
@@ -248,12 +248,13 @@ namespace iaM.Views
                 */
                 ScrollViewer.Visibility = Visibility.Visible;
                 
+               
                 Scroll_2.Height = new GridLength(315);
                 Circle_View.Margin = new Thickness(0,0,0,0);
-                _dispatcherTimer = new DispatcherTimer();
-                _dispatcherTimer.Tick += _dispatcherTimer_Tick;
-                _dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 500);
-                _dispatcherTimer.Start();
+             /*   seacrch_IsActive = new DispatcherTimer();
+                seacrch_IsActive.Tick += seacrch_IsActive_Tick;
+                seacrch_IsActive.Interval = new TimeSpan(0, 0, 0, 0, 500);
+                seacrch_IsActive.Start();*/
                 flag = false;
 
                
@@ -272,11 +273,11 @@ namespace iaM.Views
                 margin.Top = 100;
                 Circle_View.Margin = margin;
                 flag = true;
-                _dispatcherTimer.Stop();
+                seacrch_IsActive.Stop();
             }
         }
 
-        private async void _dispatcherTimer_Tick(object sender, object e)
+        private async void seacrch_IsActive_Tick(object sender, object e)
         {
             
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -300,11 +301,18 @@ namespace iaM.Views
             {
                 Splitter.IsPaneOpen = true;
                 menu_flag = false;
+                
+                
+               
             }
             else if (!menu_flag)
             {
                 Splitter.IsPaneOpen = false;
                 menu_flag = true;
+                
+                
+                
+
             }
             else { }
 
@@ -469,6 +477,7 @@ namespace iaM.Views
 
                     if (i == current_client.client_num)
                     {
+                        UserList0_Ring.Visibility = Visibility.Collapsed;
                         UserList0_Image.Source = bi;
                         UserList0_Name.Text = client.Nickname;
                         UserList0_Status.Text = client.Status_message;

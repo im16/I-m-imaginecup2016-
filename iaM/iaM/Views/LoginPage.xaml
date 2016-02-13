@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-       
+
         <Style x:Key="Login_Button" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -120,8 +120,10 @@
                         <ColumnDefinition Width="50"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.RowSpan="2" Grid.Column="0" Source="/Assets/LoginPage/Login_Account_icon.png"/>
-                    <TextBox Grid.RowSpan="2" Grid.Column="1" x:Name="Input_Mail" Background="Transparent" Text="Email" FontSize="18" Foreground="#FFE78E" BorderThickness="0"/>
+                    <Image Grid.RowSpan="2" Grid.Column="0" Source="/Assets/LoginPage/Login_Account_icon.png" Margin="0 0 0 5"/>
+                    <TextBox Grid.RowSpan="2" Grid.Column="1" x:Name="Input_Mail" Background="Transparent" Text="" FontSize="18" Foreground="#FFE78E" BorderThickness="0">
+                       
+                    </TextBox>
                     <Grid Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="{StaticResource brush}" BorderThickness="1 0 1 1"/>
                 </Grid>
 
@@ -138,9 +140,9 @@
                         <ColumnDefinition Width="50"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.RowSpan="2" Grid.Column="0" Source="/Assets/LoginPage/Login_Key_icon.png"/>
-                    <TextBox Grid.RowSpan="2" Grid.Column="1" x:Name="Input_Password" Background="Transparent" Text="Password" FontSize="18" Foreground="#FFE78E" BorderThickness="0" PlaceholderText="">
-                           
+                    <Image Grid.RowSpan="2" Grid.Column="0" Source="/Assets/LoginPage/Login_Key_icon.png" Margin="0 0 0 5"/>
+                    <TextBox Grid.RowSpan="2" Grid.Column="1" x:Name="Input_Password" Background="Transparent" Text="" FontSize="18" BorderThickness="0">
+                       
                     </TextBox>
                     <Button Grid.RowSpan="2" Grid.Column="2" Height="30" Width="30" Margin="0 0 0 5" HorizontalAlignment="Center" Click="Forgot_Password">
                         <Button.Background>
