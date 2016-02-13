@@ -22,7 +22,7 @@ namespace iaM.Views
         private string nickname;
         private string phone_number;
         private string status_message;
-        private string other_sns;
+        private Array other_sns;
         private string profile_image;
         private Array images;
 
@@ -91,7 +91,7 @@ namespace iaM.Views
             }
         }
 
-        public string Other_sns
+        public Array Other_sns
         {
             get
             {
@@ -138,7 +138,7 @@ namespace iaM.Views
             //request found client information(background task)
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
-            bw.RunWorkerAsync();
+            //  bw.RunWorkerAsync();
 
         }
 
@@ -146,9 +146,7 @@ namespace iaM.Views
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            string s = await Connect_Server.request_client_info(this);
-            Debug.WriteLine(s);
-            this.setClient_info(s);
+            await Connect_Server.request_client_info(this);
         }
 
 
@@ -167,23 +165,46 @@ namespace iaM.Views
 
         public void setClient_info(string json)
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jUser = jObject["user"];
-            Nickname = (string)jUser["nickname"];
-            Status_message = (string)jUser["status_message"];
-            Profile_image = (string)jUser["profile_image"];
+            try
+            {
+                JObject jObject = JObject.Parse(json);
+                JToken jUser = jObject["user"];
+                Nickname = (string)jUser["nickname"];
+                Status_message = (string)jUser["status_message"];
+
+                Profile_image = (string)jUser["profile_image"];
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
         }
 
 
         public void setClient_more_info(string json)
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jUser = jObject["user"];
-            Nickname = (string)jUser["nickname"];
-            Phone_number = (string)jUser["phone_number"];
-            Status_message = (string)jUser["status_message"];
-            Other_sns = (string)jUser["other_sns"];
-            Images = jUser["profile_image"].ToArray();
+            {
+                try
+                {
+                    JObject jObject = JObject.Parse(json);
+                    JToken jUser = jObject["user"];
+                    Nickname = (string)jUser["nickname"];
+                    Phone_number = (string)jUser["phone_number"];
+                    Status_message = (string)jUser["status_message"];
+                    Other_sns = jUser["other_sns"].ToArray();
+
+                    Debug.WriteLine("{0},{1}", nickname, phone_number);
+
+                    Images = jUser["images"].ToArray();
+                }
+                catch (Exception e)
+                {
+
+                    Debug.WriteLine(e);
+                }
+
+
+            }
 
         }
 

@@ -13,10 +13,9 @@ namespace iaM.Views
 
     class Connect_Server
     {
-       
-        public static async Task<String> request_client_info(Client client)
+
+        public static async Task request_client_info(Client client)
         {
-            string result = "";
             try
             {
                 string url = "http://40.76.6.186:8888/member_find/near";
@@ -44,8 +43,11 @@ namespace iaM.Views
                 var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                   result = await streamReader.ReadToEndAsync();
-                   Debug.WriteLine("{0} success",client.Id);   
+                    var result = await streamReader.ReadToEndAsync();
+                    client.setClient_info(result);
+
+                    Debug.WriteLine("brief info success");
+
                 }
 
 
@@ -58,11 +60,54 @@ namespace iaM.Views
                 Debug.WriteLine("Error = " + ex.HResult.ToString("X") +
                     "  Message: " + ex.Message);
             }
+        }
 
 
+        public static async Task request_client_more_info(Client client)
+        {
+            try
+            {
+                string url = "http://40.76.6.186:8888/member_find/likeable";
 
-            return result;
+                var httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+                httpWebRequest.ContentType = "application/json; charset=utf-8";
+                httpWebRequest.Method = "POST";
 
+                using (var streamWriter = new StreamWriter(await httpWebRequest.GetRequestStreamAsync()))
+                {
+
+                    //object to json
+                    StringBuilder sb = new StringBuilder();
+                    JsonWriter jw = new JsonTextWriter(new StringWriter(sb));
+                    jw.Formatting = Formatting.Indented;
+                    jw.WriteStartObject();
+                    jw.WritePropertyName("id");
+                    jw.WriteValue(client.Id);
+                    jw.WriteEndObject();
+
+                    streamWriter.Write(sb.ToString());
+                    streamWriter.Flush();
+                }
+
+                var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = await streamReader.ReadToEndAsync();
+
+                    client.setClient_more_info(result);
+                    Debug.WriteLine("more_info success");
+                }
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+                // Need to convert int HResult to hex string
+                Debug.WriteLine("Error = " + ex.HResult.ToString("X") +
+                    "  Message: " + ex.Message);
+            }
 
         }
 

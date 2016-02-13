@@ -1,3 +1,4 @@
+WinMetadata\Windows.winmd
 ApplicationInsights.config
 Assets\150x150-icon.png
 Assets\44x44-icon.png
@@ -65,4 +66,3 @@ Assets\test.png
 Assets\Wide310x150Logo.scale-200.png
 iaM.xr.xml
 Properties\Default.rd.xml
-WinMetadata\Windows.winmd
