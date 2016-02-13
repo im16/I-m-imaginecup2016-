@@ -44,6 +44,14 @@
     <uap:Capability Name="userAccountInformation" />
     <DeviceCapability Name="bluetooth" />
   </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>SQLite.Core.dll</Path>
+        <ActivatableClass ActivatableClassId="SQLite.Core.Sqlite3" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="14.0" />

@@ -18,8 +18,8 @@ namespace realBluetoothTest__
         private string nickname;
         private string phone_number;
         private string status_message;
-        private string other_sns;
-        private BitmapImage profile_image;
+        private Array other_sns;
+        private string profile_image;
         private Array images;
 
         public string Id
@@ -87,7 +87,7 @@ namespace realBluetoothTest__
             }
         }
 
-        public string Other_sns
+        public Array Other_sns
         {
             get
             {
@@ -100,7 +100,7 @@ namespace realBluetoothTest__
             }
         }
 
-        public BitmapImage Profile_image
+        public string Profile_image
         {
             get
             {
@@ -129,12 +129,13 @@ namespace realBluetoothTest__
         public Client(string id)
         {
             this.Id = id;
-            Use_bit = 10;
-                       
+            Use_bit = 2;
+               /*        
             //request found client information(background task)
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
 
             bw.RunWorkerAsync();
+            */
 
         }
 
@@ -146,14 +147,15 @@ namespace realBluetoothTest__
         }
 
 
-        public async void setClient_info(string json)
+        public void setClient_info(string json)
         {
             try {
                 JObject jObject = JObject.Parse(json);
                 JToken jUser = jObject["user"];
                 Nickname = (string)jUser["nickname"];
                 Status_message = (string)jUser["status_message"];
-                Profile_image = await Convert_module.convert_base64_to_bitmapImage((string)jUser["profile_image"]);
+
+                Profile_image = (string)jUser["profile_image"];
             }
             catch(Exception e)
             {
@@ -165,13 +167,24 @@ namespace realBluetoothTest__
 
         public void setClient_more_info(string json)
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jUser = jObject["user"];
-            Nickname = (string)jUser["nickname"];
-            Phone_number = (string)jUser["phone_number"];
-            Status_message = (string)jUser["status_message"];
-            Other_sns = (string)jUser["other_sns"];
-            Images = jUser["profile_image"].ToArray();
+            try {
+                JObject jObject = JObject.Parse(json);
+                JToken jUser = jObject["user"];
+                Nickname = (string)jUser["nickname"];
+                Phone_number = (string)jUser["phone_number"];
+                Status_message = (string)jUser["status_message"];
+                Other_sns = jUser["other_sns"].ToArray();
+
+                Debug.WriteLine("{0},{1}", nickname, phone_number);
+
+                Images = jUser["images"].ToArray();
+            }
+            catch(Exception e)
+            {
+
+                Debug.WriteLine(e);
+            }
+      
 
         }
 

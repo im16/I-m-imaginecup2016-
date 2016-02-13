@@ -101,6 +101,9 @@
     <Compile Include="Client.cs" />
     <Compile Include="Client_List.cs" />
     <Compile Include="Convert_module.cs" />
+    <Compile Include="More.xaml.cs">
+      <DependentUpon>More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="My_Info.cs" />
     <Compile Include="Client_Token.cs" />
     <Compile Include="Connect_Server.cs" />
@@ -143,6 +146,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="More.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

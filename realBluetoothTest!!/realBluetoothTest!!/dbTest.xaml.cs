@@ -15,21 +15,19 @@ using Windows.UI.Xaml.Media.Imaging;
 namespace realBluetoothTest__
 {
 
-   
+  
 
     public sealed partial class dbTest : Page
     {
-       //로컬 앱 데이터 저장소
-       Windows.Storage.ApplicationDataContainer localSettings;
-
-
+        //로컬 앱 데이터 저장소
+        Windows.Storage.ApplicationDataContainer localSettings;
+        Client c1;
 
         public dbTest()
         {
             this.InitializeComponent();
-            
-           localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-          
+
+              localSettings = ApplicationData.Current.LocalSettings;
 
         }
 
@@ -43,17 +41,25 @@ namespace realBluetoothTest__
             //  var add = conn.Insert(new Client_Token() { token_num = textBox.Text });
             //  Debug.WriteLine(path);
 
-           
+
         }
 
         private void Show_Click(object sender, RoutedEventArgs e)
-        {   
+        {
+            c1 = new Client("hi");
+            object obj = c1;
+            this.Frame.Navigate(typeof(More),c1);
+            /*
             // 로컬에서 id,nickname 정보 가져옴
             Object value_id = localSettings.Values["my_id"];
             Object value_nickname = localSettings.Values["my_nickname"];
 
             id.Text = value_id.ToString();
             nickname.Text = value_nickname.ToString();
+
+            */
+
+
 
         }
 
@@ -63,33 +69,48 @@ namespace realBluetoothTest__
             // Get thumbnail
             try
             {
+                /*
                 // 로컬 저장소에서 특정 사진 가져와서 thumnail을 만듦
                 StorageFolder appInstalledFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                 StorageFolder assets = await appInstalledFolder.GetFolderAsync("Assets");
                 StorageFile file = await assets.GetFileAsync("p2.JPG");
 
+                */
+
+                FileOpenPicker open = new FileOpenPicker();
+                
+
+                open.ViewMode = PickerViewMode.Thumbnail;
+                open.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+                open.FileTypeFilter.Add(".jpg");
+                open.FileTypeFilter.Add(".jpeg");
+                open.FileTypeFilter.Add(".png");
+
+                // Open a stream for the selected file 
+                StorageFile file = await open.PickSingleFileAsync();
 
                 // Get thumbnail
-                const uint requestedSize= 100;
+                const uint requestedSize = 500;
 
 
                 const ThumbnailMode thumbnailMode = ThumbnailMode.SingleItem;
                 const ThumbnailOptions thumbnailOptions = ThumbnailOptions.ResizeThumbnail;
                 var thumbnail = await file.GetThumbnailAsync(thumbnailMode, requestedSize, thumbnailOptions);
-                
+
+
                 // show image
                 var img = new BitmapImage();
                 img.SetSource(thumbnail);
-                image_show.Source = img;
-              //  image_show.Width= requestedSize_width;
-               // image_show.Height = requestedSize_height;
+                //image_show.Source = img;
+                //  image_show.Width= requestedSize_width;
+                // image_show.Height = requestedSize_height;
 
-                var bmp = new WriteableBitmap(1,1);
+                var bmp = new WriteableBitmap(1, 1);
                 await bmp.SetSourceAsync(thumbnail.CloneStream());
 
 
                 // thumnail save
-               Convert_module.SaveSoftwareBitmapToFile(bmp, thumbnail.OriginalWidth, thumbnail.OriginalHeight);
+                Convert_module.SaveSoftwareBitmapToFile(bmp, thumbnail.OriginalWidth, thumbnail.OriginalHeight);
 
 
             }
@@ -101,16 +122,20 @@ namespace realBluetoothTest__
 
         }
 
-       
+
 
 
 
 
         private void Image_Click(object sender, RoutedEventArgs e)
         {
-             
-        }
+            c1 = new Client("shin");
+            Connect_Server.request_client_info(c1);
 
+
+            Debug.WriteLine("{0} , {1} ", c1.Nickname, c1.Status_message);
+
+        }
 
 
         private async void Click_Photo_Up(object sender, RoutedEventArgs e)
@@ -122,14 +147,14 @@ namespace realBluetoothTest__
             open.FileTypeFilter.Add(".jpg");
             open.FileTypeFilter.Add(".jpeg");
             open.FileTypeFilter.Add(".png");
-            
+
             // Open a stream for the selected file 
             StorageFile file = await open.PickSingleFileAsync();
-       
+
             IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
-            
+
             await Connect_Server.addImages(fileStream);
-        
+
 
             /*
             
@@ -152,10 +177,42 @@ namespace realBluetoothTest__
 
         private async void Click_Photo_Down(object sender, RoutedEventArgs e)
         {
-            // base 64를 서버에서 받아와서
-            string base64 = await Connect_Server.request_image();
-            //이미지 띄우기
-            image_show.Source = await Convert_module.convert_base64_to_bitmapImage(base64);
+            c1 = new Client("shin");
+           await Connect_Server.request_client_more_info(c1);
+
+           Debug.WriteLine("{0} , {1} , {2}, {3} ", c1.Nickname, c1.Phone_number, c1.Status_message, c1.Other_sns);
+
+            for (int i = 0; i < c1.Images.Length; i++)
+            {
+                BitmapImage image = new BitmapImage();
+                image = await Convert_module.convert_base64_to_bitmapImage(c1.Images.GetValue(i).ToString());
+                image.DecodePixelHeight = 150;
+                image.DecodePixelWidth = 150;
+
+                if (i == 0)
+                    image1.Source = image;
+                else if (i == 1)
+                    image2.Source = image;
+                else if (i == 2)
+                    image3.Source = image;
+                else if (i == 3)
+                    image4.Source = image;
+                else if (i == 4)
+                    image5.Source = image ;
+                else if (i == 5)
+                    image6.Source = image;
+                else if (i == 6)
+                    image7.Source = image;
+                else if (i == 7)
+                    image8.Source = image;
+            }
+   
+            Debug.WriteLine("success image show");
+
         }
+        
+
+       
+
     }
 }

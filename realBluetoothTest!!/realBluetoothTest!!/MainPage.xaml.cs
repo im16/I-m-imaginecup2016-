@@ -34,13 +34,12 @@ namespace realBluetoothTest__
 
         private My_Info my_info = new My_Info();
 
-       
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            my_info.id = "shin";
+            my_info.id = "hi";
 
             // Create and initialize a new watcher instance.
             watcher = new BluetoothLEAdvertisementWatcher();
@@ -50,10 +49,12 @@ namespace realBluetoothTest__
 
             // Add a manufacturer-specific section:
             // First, create a manufacturer data section
-            var manufacturerData = new BluetoothLEManufacturerData();
+            var manufacturerData_publisher = new BluetoothLEManufacturerData();
+            var manufacturerData_watcher = new BluetoothLEManufacturerData();
 
             // Then, set the company ID for the manufacturer data. Here we picked an unused value: 0xFF00
-           // manufacturerData.CompanyId = 0x4C;
+            manufacturerData_publisher.CompanyId = 0xFF00;
+            manufacturerData_watcher.CompanyId = 0xFF00;
 
 
             // Finally set the data payload within the manufacturer-specific section
@@ -65,12 +66,15 @@ namespace realBluetoothTest__
 
 
             // Make sure that the buffer length can fit within an advertisement payload. Otherwise you will get an exception.
-            manufacturerData.Data = writer.DetachBuffer();
+            manufacturerData_publisher.Data = writer.DetachBuffer();
          
 
             //(publisher)
             // Add the manufacturer data to the advertisement publisher: 
-            trigger.Advertisement.ManufacturerData.Add(manufacturerData);
+            trigger.Advertisement.ManufacturerData.Add(manufacturerData_publisher);
+
+            // 여기 필터추가
+            watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData_watcher);
 
 
             // Configure the signal strength filter to only propagate events when in-range
@@ -194,7 +198,6 @@ namespace realBluetoothTest__
         {
             watcher.Received += OnAdvertisementReceived;
             watcher.Stopped += OnAdvertisementWatcherStopped;
-
 
         }
 
@@ -334,9 +337,6 @@ namespace realBluetoothTest__
                 // Display these information on the list
                 for (int i = 0; i < current_client.client_num; i++)
                 {
-
-                   
-
                     ReceivedAdvertisementListBox.Items.Add(string.Format("Found client=[{0}]", current_client.client_id(i)));
                 }
             });
@@ -383,12 +383,14 @@ namespace realBluetoothTest__
             // Check if there are any manufacturer-specific sections.
             // If there is, print the raw data of the first manufacturer section (if there are multiple).
             var manufacturerSections = eventArgs.Advertisement.ManufacturerData;
-            int client_num = manufacturerSections.Count;
+            int client_num = manufacturerSections.Count+3;
  
             string [] client_ids = new string[client_num];
-
+            
             if (client_num > 0)
             {
+
+
                 for (int i=0; i< client_num; i++)
                 {
                     var manufacturerData = manufacturerSections[i];

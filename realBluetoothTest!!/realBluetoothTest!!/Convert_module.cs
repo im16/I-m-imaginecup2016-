@@ -94,7 +94,7 @@ namespace realBluetoothTest__
             {
                 // Create an encoder with the desired format
                 BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
-
+              
                 // Set the software bitmap
                 encoder.SetSoftwareBitmap(outputBitmap);
 

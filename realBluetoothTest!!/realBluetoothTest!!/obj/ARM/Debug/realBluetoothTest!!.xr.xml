@@ -100,5 +100,13 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="realBluetoothTest__.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Foreground" />
+    </RootType>
+    <RootType FullName="realBluetoothTest__.More" />
   </Roots.RootTypes>
 </Roots>

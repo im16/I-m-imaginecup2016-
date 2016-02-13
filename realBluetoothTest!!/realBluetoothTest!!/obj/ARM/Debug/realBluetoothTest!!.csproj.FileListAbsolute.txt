@@ -201,8 +201,13 @@ C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\De
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\qualifiers.txt.intermediate
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\ProjectArchitectures.txt
-C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\realBluetoothTest!!.csprojResolveAssemblyReference.cache
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\SQLite.Core.dll
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\SQLite.Core.winmd
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\SQLite.Net.Platform.WinRT.dll
 C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\SQLite.Net.dll
+C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\More.g.i.cs
+C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\More.g.cs
+C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\More.xaml
+C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\More.xbf
+C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\bin\ARM\Debug\More.xbf
+C:\Users\KMK\Videos\IM16\IM16\realBluetoothTest!!\realBluetoothTest!!\obj\ARM\Debug\realBluetoothTest!!.csprojResolveAssemblyReference.cache

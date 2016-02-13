@@ -132,17 +132,21 @@ namespace realBluetoothTest__.realBluetoothTest___XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[6];
             _typeNameTable[0] = "realBluetoothTest__.dbTest";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "realBluetoothTest__.MainPage";
+            _typeNameTable[4] = "realBluetoothTest__.More";
+            _typeNameTable[5] = "Windows.UI.Xaml.Media.Imaging.BitmapImage";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[6];
             _typeTable[0] = typeof(global::realBluetoothTest__.dbTest);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::realBluetoothTest__.MainPage);
+            _typeTable[4] = typeof(global::realBluetoothTest__.More);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Media.Imaging.BitmapImage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -179,6 +183,7 @@ namespace realBluetoothTest__.realBluetoothTest___XamlTypeInfo
 
         private object Activate_0_dbTest() { return new global::realBluetoothTest__.dbTest(); }
         private object Activate_3_MainPage() { return new global::realBluetoothTest__.MainPage(); }
+        private object Activate_4_More() { return new global::realBluetoothTest__.More(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -211,16 +216,43 @@ namespace realBluetoothTest__.realBluetoothTest___XamlTypeInfo
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 4:   //  realBluetoothTest__.More
+                userType = new global::realBluetoothTest__.realBluetoothTest___XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_More;
+                userType.AddMemberName("Image1");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Windows.UI.Xaml.Media.Imaging.BitmapImage
+                xamlType = new global::realBluetoothTest__.realBluetoothTest___XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
 
+        private object get_0_More_Image1(object instance)
+        {
+            var that = (global::realBluetoothTest__.More)instance;
+            return that.Image1;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::realBluetoothTest__.realBluetoothTest___XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::realBluetoothTest__.realBluetoothTest___XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "realBluetoothTest__.More.Image1":
+                userType = (global::realBluetoothTest__.realBluetoothTest___XamlTypeInfo.XamlUserType)GetXamlTypeByName("realBluetoothTest__.More");
+                xamlMember = new global::realBluetoothTest__.realBluetoothTest___XamlTypeInfo.XamlMember(this, "Image1", "Windows.UI.Xaml.Media.Imaging.BitmapImage");
+                xamlMember.Getter = get_0_More_Image1;
+                xamlMember.SetIsReadOnly();
+                break;
+            }
             return xamlMember;
         }
     }
