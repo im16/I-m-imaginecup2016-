@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // 빈 페이지 항목 템플릿에 대한 설명은 http://go.microsoft.com/fwlink/?LinkId=234238에 나와 있습니다.
@@ -22,6 +23,7 @@ namespace iaM.Views
     /// </summary>
     public sealed partial class Edit_Profile : Page
     {
+        bool flag_togglebutton_ispublic = true;
         bool menu_flag = true;
         public Edit_Profile()
         {
@@ -99,12 +101,27 @@ namespace iaM.Views
             Sign_4.Visibility = Visibility.Visible;
         }
 
-        private void Button_Slide_To_Left(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(LoginPage));
         }
-        private void Button_Slide_To_Right(object sender, RoutedEventArgs e)
+        private void ToggleButton_IsPublic_Change(object sender, RoutedEventArgs e)
         {
+            if (flag_togglebutton_ispublic)
+            {
+
+                Image ib = new Image();
+                ib.Source = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Pane_Toggle_Off.png"));
+                this.ToggleButton_IsPublic.Source = ib.Source;
+                flag_togglebutton_ispublic = false;
+            }
+            else
+            {
+                Image ib = new Image();
+                ib.Source = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Pane_Toggle_On.png"));
+                this.ToggleButton_IsPublic.Source = ib.Source;
+                flag_togglebutton_ispublic = true;
+            }
 
         }
     }

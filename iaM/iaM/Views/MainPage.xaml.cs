@@ -27,7 +27,8 @@ namespace iaM.Views
     public sealed partial class MainPage : Page
     {
         Windows.Storage.ApplicationDataContainer localSettings;
-        
+
+        bool flag_togglebutton_ispublic = true;
         bool menu_flag = true;
         bool flag = true;
         bool visibility_flag = true;
@@ -171,9 +172,9 @@ namespace iaM.Views
 
             // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
             // scanning will be stopped automatically if the watcher is destroyed.
-            watcher.Stop();
+           /* watcher.Stop();
             dispatcherTimer.Stop();
-            seacrch_IsActive.Stop();
+            seacrch_IsActive.Stop();*/
             // Always unregister the handlers to release the resources to prevent leaks.
             watcher.Received -= OnAdvertisementReceived;
             watcher.Stopped -= OnAdvertisementWatcherStopped;
@@ -243,11 +244,11 @@ namespace iaM.Views
                 watcher.Start();
                 // ReceivedAdvertisementListBox.Items.Clear();
                
-                dispatcherTimer = new DispatcherTimer();
+            /*2/14    dispatcherTimer = new DispatcherTimer();
                 dispatcherTimer.Tick += dispatcherTimer_Tick;
                 dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
                 dispatcherTimer.Start();
-                
+                */
             
                 ScrollViewer.Visibility = Visibility.Visible;
                 
@@ -357,10 +358,7 @@ namespace iaM.Views
         }
 
 
-        private void ToEditProfile(object sender, SelectionChangedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Edit_Profile));
-        }
+       
 
 
 
@@ -623,18 +621,24 @@ namespace iaM.Views
                         }
                         else if (i == current_client.client_num - 1)
                         {
+                            UserList1_Ring.IsActive = false;
+                            UserList1_Ring.Visibility = Visibility.Collapsed;
                             UserList1_Image.Source = bi;
                             UserList1_Name.Text = client.Nickname;
                             UserList1_Status.Text = client.Status_message;
                         }
                         else if (i == current_client.client_num - 2)
                         {
+                            UserList2_Ring.IsActive = false;
+                            UserList2_Ring.Visibility = Visibility.Collapsed;
                             UserList2_Image.Source = bi;
                             UserList2_Name.Text = client.Nickname;
                             UserList2_Status.Text = client.Status_message;
                         }
                         else if (i == current_client.client_num - 3)
                         {
+                            UserList3_Ring.IsActive = false;
+                            UserList3_Ring.Visibility = Visibility.Collapsed;
                             UserList3_Image.Source = bi;
                             UserList3_Name.Text = client.Nickname;
                             UserList3_Status.Text = client.Status_message;
@@ -750,36 +754,63 @@ namespace iaM.Views
 
         private void To_See_Others_Page(object sender, RoutedEventArgs e)
         {
-             Button b = (Button)sender;
+            /*  Button b = (Button)sender;
 
-             Debug.WriteLine("Tag : {0}",b.Tag);
+              Debug.WriteLine("Tag : {0}",b.Tag);
 
-             int clients_num = current_client.client_num;
+              int clients_num = current_client.client_num;
 
-             object obj = null;
+              object obj = null;
 
-             switch (b.Tag.ToString())
-             {
-                 case "0": obj = current_client.client_id(clients_num - 1);  break;
-                 case "1": obj = current_client.client_id(clients_num - 2); break;
-                 case "2":  obj = current_client.client_id(clients_num - 3); break;
-                 case "3": obj = current_client.client_id(clients_num - 4); break;
-                 case "4": obj = current_client.client_id(clients_num - 5); break;
-                 case "5": obj = current_client.client_id(clients_num - 6); break;
-                 case "6": obj = current_client.client_id(clients_num - 7); break;
-                 case "7": obj = current_client.client_id(clients_num - 8); break;
+              switch (b.Tag.ToString())
+              {
+                  case "0": obj = current_client.client_id(clients_num - 1);  break;
+                  case "1": obj = current_client.client_id(clients_num - 2); break;
+                  case "2":  obj = current_client.client_id(clients_num - 3); break;
+                  case "3": obj = current_client.client_id(clients_num - 4); break;
+                  case "4": obj = current_client.client_id(clients_num - 5); break;
+                  case "5": obj = current_client.client_id(clients_num - 6); break;
+                  case "6": obj = current_client.client_id(clients_num - 7); break;
+                  case "7": obj = current_client.client_id(clients_num - 8); break;
 
-                 default: break;
-             }
+                  default: break;
+              }
 
-             
-             this.Frame.Navigate(typeof(See_Others),obj);
+
+              this.Frame.Navigate(typeof(See_Others),obj);*/
+            this.Frame.Navigate(typeof(See_Others));
         }
 
         private void To_Edit_Profile(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Edit_Profile));
         }
+
+        private void ToggleButton_IsPublic_Change(object sender, RoutedEventArgs e)
+        {
+            if (flag_togglebutton_ispublic)
+            {
+               
+                Image ib = new Image();
+                ib.Source = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Pane_Toggle_Off.png"));
+                this.ToggleButton_IsPublic.Source = ib.Source;
+                flag_togglebutton_ispublic = false;
+            }
+            else
+            {
+                Image ib = new Image();
+                ib.Source = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Pane_Toggle_On.png"));
+                this.ToggleButton_IsPublic.Source = ib.Source;
+                flag_togglebutton_ispublic = true;
+            }
+           
+        }
+
+        private void ToEditProfile(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Edit_Profile));
+        }
+
     }
 
     public class List_item

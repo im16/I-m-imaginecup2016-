@@ -115,125 +115,86 @@
             <!-- 메뉴 판 열었을 때 나오는 메뉴판 구성-->
             <SplitView.Pane>
                 <!-- 개인정보 구성 메뉴 -->
-                <Grid Background="DarkGray">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="230"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Grid  Background="Wheat" Grid.Row="0" HorizontalAlignment="Stretch" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="1*"/>
+                    <Button x:Name="Menu_Profile" Grid.Row="0" Background="#FFE38C" Height="230" Width="230">
 
-                        </Grid.RowDefinitions>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="1*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <Ellipse Grid.Row="1" Grid.Column="1">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Assets/itsme.jpg"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                            <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="검색 허용" VerticalAlignment="Center"/>
-                            <ToggleSwitch Grid.Row="2" Grid.Column="2" Height="30" Width="15" HorizontalAlignment="Left" IsOn="True"/>
-
-                        </Grid>
-                        <Grid Grid.Row="1" >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="1*"/>
-
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-
-                            </Grid.ColumnDefinitions>
-
-                            <ListBox Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                                <ListBoxItem Name="Profile" Background="Orange">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE8CF;" Margin="0 3 0 0"/>
-                                        <TextBlock Text="  Profile" FontSize="15"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-
-                            </ListBox>
-                            <ListBox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <ListBoxItem Name="MailBox" Background="DarkOrange">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE8C3;" Margin="0 3 0 0"/>
-                                        <TextBlock Text=" InBox" FontSize="15"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                            </ListBox>
-
-                            <ListBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <ListBoxItem Name="Storage" Background="DarkOrange">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE716;" Margin="0 3 0 0"/>
-                                        <TextBlock Text="  Storage" FontSize="15"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                            </ListBox>
-                            <ListBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <ListBoxItem Name="Promotion" Background="Orange">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE720;" Margin="0 3 0 0"/>
-                                        <TextBlock Text="  Promotion" FontSize="15"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                            </ListBox>
+                        <Grid Height="230" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Default_Profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
+                            <TextBlock Text="User A" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
+                            <TextBlock Text="Status" Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
                         </Grid>
 
-                    </Grid>
-
-                    <!-- 개인정보 외 기타 메뉴들-->
+                    </Button>
                     <Grid Grid.Row="1">
-                        <ListBox x:Name="ScenarioControl" Background="Orange"
-                 SelectionMode="Single" HorizontalAlignment="Left" BorderThickness="0"
-                 Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="/Assets/MainPage/MainPage_Pane_Bar.png"/>
 
-                            <ListBoxItem Name="Help" Background="DarkOrange">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE897;" Margin="0 3 0 0"/>
-                                    <TextBlock Text=" Help" FontSize="15"/>
-                                </StackPanel>
-                            </ListBoxItem>
-                            <ListBoxItem Name="Charge" Background="DarkOrange" >
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE719;" Margin="0 3 0 0"/>
-                                    <TextBlock Text=" Charge" FontSize="15"/>
-                                </StackPanel>
-                            </ListBoxItem>
-                            <ListBoxItem Name="Setting">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE713;" Margin="0 3 0 0"/>
-                                    <TextBlock Text=" Setting" FontSize="15"/>
-                                </StackPanel>
-                            </ListBoxItem>
-                            <ListBoxItem Name="Recommend" Background="DarkOrange">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE72D;" Margin="0 3 0 0"/>
-                                    <TextBlock Text=" Recommend" FontSize="15"/>
-                                </StackPanel>
-                            </ListBoxItem>
-                            <ListBoxItem Name="Leave">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text="&#xE8C9;" Margin="0 3 0 0"/>
-                                    <TextBlock Text=" Leave" FontSize="15"/>
-                                </StackPanel>
-                            </ListBoxItem>
-                        </ListBox>
+
+                        <Image x:Name="ToggleButton_IsPublic" Grid.Row="1" Height="20" Width="40" HorizontalAlignment="Right" Margin="0 0 10 0"  Source="/Assets/MainPage/MainPage_Pane_Toggle_On.png"/>
+
+                        <Button Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Margin="0 3 0 3" Click="ToggleButton_IsPublic_Change">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Go_Public.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Recommend.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Charge.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Mail.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Setting.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Notice.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Help.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Grid.Row="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="Back" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_SignOut.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Image Grid.Row="9" Source="/Assets/MainPage/MainPage_Pane_Bar.png"/>
                     </Grid>
                 </Grid>
             </SplitView.Pane>
@@ -242,17 +203,25 @@
             <SplitView.Content>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#B3E3FA">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"/>
-                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
+                        <ToggleButton x:Name="Toggle_Menu" Click="Button_Menu_Click" VerticalAlignment="Top" Height="35" Width="35" Style="{StaticResource ToggleButtonStyle}">
+
+                        </ToggleButton>
+                        <TextBlock Text="Name" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Margin="0 5 0 0"/>
+
+                        <Button HorizontalAlignment="Right" x:Name="Toggle_Men1u" Click="Button_Home_Click" VerticalAlignment="Top" Height="35" Width="35" GotFocus="Button_Home_Click" Style="{StaticResource Home_Button}">
+
+                        </Button>
                         <Grid Grid.Row="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -260,10 +229,10 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Row="0" Grid.Column="1" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ProfileButtonStyle}">
+                            <Button Grid.Row="0" Grid.Column="1" Height="65" Width="65" HorizontalAlignment="Center" Style="{StaticResource ProfileButtonStyle}" Margin="0 60 0 0">
                                
                             </Button>
-                            <TextBox Background="Transparent " Grid.Row="1" Grid.ColumnSpan="3" Width="180" TextWrapping="Wrap" Text="안녕하세요 저는 서울에 사는 25살 윤형일입니다. 관심 있으신 분은 010-5136-6402 로 카톡 주셈 싫음 꺼지구 사실 난 스크롤이 생기는지 보려고 적은거야" BorderBrush="Transparent"  InputScope="AlphanumericFullWidth" FontSize="13" Foreground="#607E8C"/>
+                            <TextBox Background="Transparent " VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="3" Width="210" TextWrapping="Wrap" Text="안녕하세요 저는 서울에 사는 25살 윤형일입니다" BorderBrush="Transparent"  InputScope="AlphanumericFullWidth" FontSize="13" Foreground="#607E8C"/>
                         </Grid>
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
@@ -273,62 +242,49 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Row="1" Grid.Column="2" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_Contact">
+                            <Button Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_Contact" Height="50" Width="50">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Caliing.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Grid.Row="1" Grid.Column="3" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_Album">
+                            <Button Grid.Row="1" Grid.Column="2" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_Album"  Height="50" Width="50">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Album.png"/>
                                 </Button.Background>
                             </Button>
 
 
-                            <Button Grid.Row="1" Grid.Column="4" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_Video">
+                            <Button Grid.Row="1" Grid.Column="3" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_Video"  Height="50" Width="50">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Video.png"/>
                                 </Button.Background>
                             </Button>
 
-                            <Button Grid.Row="1" Grid.Column="5" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_SNS">
+                            <Button Grid.Row="1" Grid.Column="4" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Show_SNS"  Height="50" Width="50">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_ShareSNS.png"/>
                                 </Button.Background>
                             </Button>
-                            
-
-                            <Button Click="Button_Slide_To_Left" Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" Height="25" Width="25">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Left_Sign.png"/>
-                                </Button.Background>
-                            </Button>
-                            <Button  Click="Button_Slide_To_Right" Grid.Row="1" Grid.Column="6" Margin="5 0 5 0" Height="25" Width="25">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Right_Sign.png"/>
-                                </Button.Background>
-                            </Button>
                            
-                            <Image x:Name="Sign_1" Grid.Row="2" Grid.Column="2" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Visible"/>
-                            <Image x:Name="Sign_2" Grid.Row="2" Grid.Column="3" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
-                            <Image x:Name="Sign_3" Grid.Row="2" Grid.Column="4" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
-                            <Image x:Name="Sign_4" Grid.Row="2" Grid.Column="5" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
+                            
+                            <Image x:Name="Sign_1" Grid.Row="2" Grid.Column="1" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Visible"/>
+                            <Image x:Name="Sign_2" Grid.Row="2" Grid.Column="2" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
+                            <Image x:Name="Sign_3" Grid.Row="2" Grid.Column="3" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
+                            <Image x:Name="Sign_4" Grid.Row="2" Grid.Column="4" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
                         </Grid>
                     </Grid>
                     <Grid x:Name="Profile_Contact"  Grid.Row="1" Background="#B3E3FA" Visibility="Visible">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="15*"/>
                             <RowDefinition Height="4*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -359,14 +315,14 @@
                                 <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
                             </Button.Background>
                         </Button>
-                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 30"/>
+                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
                     </Grid>
                     <Grid x:Name="Profile_Album"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="15*"/>
                             <RowDefinition Height="4*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -406,7 +362,7 @@
                                 <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
                             </Button.Background>
                         </Button>
-                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 30"/>
+                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
                     </Grid>
                     <Grid x:Name="Profile_Video"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
                         <Grid.RowDefinitions>
@@ -463,16 +419,13 @@
         </SplitView>
 
         <!-- 맨 위 메뉴판-->
-        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Background="#C1E8F8" HorizontalAlignment="Stretch">
+      <!--  <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Background="#C1E8F8" HorizontalAlignment="Stretch">
            
             <ToggleButton x:Name="Toggle_Menu1" Click="Button_Menu_Click" VerticalAlignment="Top" Height="35" Width="35" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left">
             </ToggleButton>
            
-        </StackPanel>
-        <TextBlock Text="Name" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <Button HorizontalAlignment="Right" x:Name="Toggle_Men1u" Click="Button_Home_Click" VerticalAlignment="Top" Height="35" Width="35" GotFocus="Button_Home_Click" Style="{StaticResource Home_Button}">
-
-        </Button>
+        </StackPanel>-->
+       
       
     </Grid>
    

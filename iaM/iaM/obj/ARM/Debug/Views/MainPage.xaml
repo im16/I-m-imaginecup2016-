@@ -139,7 +139,10 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
+      
+       
+
 
         <!--그리드 라인 색변경-->
         <Style TargetType="Grid">
@@ -169,7 +172,7 @@
                         <RowDefinition Height="230"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Background="#FFE38C" Height="230" Width="230">
+                    <Button x:ConnectionId='4' x:Name="Menu_Profile" Grid.Row="0" Background="#FFE38C" Height="230" Width="230"                      >
                         
                             <Grid Height="230" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image Source="/Assets/Edit_Profile/Edit_Profile_Default_Profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
@@ -193,85 +196,55 @@
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source="/Assets/MainPage/MainPage_Pane_Bar.png"/>
 
-                        <Image Grid.Row="1" Source="/Assets/MainPage/MainPage_Pane_Go_Public.png"/>
 
+                        <Image x:ConnectionId='5' x:Name="ToggleButton_IsPublic" Grid.Row="1" Height="20" Width="40" HorizontalAlignment="Right" Margin="0 0 10 0"  Source="/Assets/MainPage/MainPage_Pane_Toggle_On.png"/>
 
-                        <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_Recommend.png"/>
-                                            
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                        <Button x:ConnectionId='6' Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Margin="0 3 0 3"                                     >
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Go_Public.png"/>
+                            </Button.Background>
+
                         </Button>
-                        <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="0 0 0 10">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_Charge.png"/>
-
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                        <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Recommend.png"/>
+                            </Button.Background>
                         </Button>
-                        <Button Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_Mail.png"/>
+                        <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Charge.png"/>
+                            </Button.Background>
 
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
                         </Button>
-                        <Button Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_Setting.png"/>
+                        <Button Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Mail.png"/>
+                            </Button.Background>
 
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
                         </Button>
-                        <Button Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_Notice.png"/>
+                        <Button Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Setting.png"/>
+                            </Button.Background>
 
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
                         </Button>
-                        <Button Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_Help.png"/>
+                        <Button Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Notice.png"/>
+                            </Button.Background>
 
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
                         </Button>
-                        <Button Grid.Row="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border>
-                                        <Border.BorderThickness>0 0 0 0</Border.BorderThickness>
-                                        <Image Source="/Assets/MainPage/MainPage_Pane_SignOut.png"/>
+                        <Button Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_Help.png"/>
+                            </Button.Background>
 
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                        </Button>
+                        <Button x:ConnectionId='7' Grid.Row="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"              Margin="0 0 0 3">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_SignOut.png"/>
+                            </Button.Background>
+                           
                         </Button>
                         <Image Grid.Row="9" Source="/Assets/MainPage/MainPage_Pane_Bar.png"/>
                     </Grid>
@@ -282,24 +255,24 @@
             <!-- 메뉴판이 나오기 전 메인화면-->
             <SplitView.Content>
 
-                <Grid x:ConnectionId='4' x:Name="Scroll_Root" Background="#B3E3FA">
+                <Grid x:ConnectionId='8' x:Name="Scroll_Root" Background="#B3E3FA">
                     <Grid.RowDefinitions>
-                        <RowDefinition x:ConnectionId='5' x:Name="Scroll_1" Height="Auto"/>
-                        <RowDefinition x:ConnectionId='6' x:Name="Scroll_2" Height="0"/>
+                        <RowDefinition x:ConnectionId='9' x:Name="Scroll_1" Height="1*"/>
+                        <RowDefinition x:ConnectionId='10' x:Name="Scroll_2" Height="200"/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0" Background="#B3E3FA">
-                        <ToggleButton x:ConnectionId='42' x:Name="Toggle_Menu"                      VerticalAlignment="Top"                                Height="35" Width="35"                         Style="{StaticResource ToggleButtonStyle}">
+                        <ToggleButton x:ConnectionId='51' x:Name="Toggle_Menu"                      VerticalAlignment="Top"                                Height="35" Width="35"                         Style="{StaticResource ToggleButtonStyle}">
 
                         </ToggleButton>
-                        <Grid x:ConnectionId='43' x:Name="Circle_View" Height="330"  Width="330" VerticalAlignment="Center" Margin="0 100 0 0">
+                        <Grid x:ConnectionId='52' x:Name="Circle_View" Height="330"  Width="330" VerticalAlignment="Center" Margin="0 100 0 0">
                            
-                            <Image x:ConnectionId='44' x:Name="Search_Circle5" Source="/Assets/MainPage/MainPage_Circle_Size5.png" Height="270" Width="270"  Visibility="Collapsed"/>
-                            <Image x:ConnectionId='45' x:Name="Search_Circle4" Source="/Assets/MainPage/MainPage_Circle_Size4.png" Height="220" Width="220"  Visibility="Collapsed"/>
-                            <Image x:ConnectionId='46' x:Name="Search_Circle3" Source="/Assets/MainPage/MainPage_Circle_Size3.png" Height="180" Width="180"  Visibility="Collapsed"/>
-                            <Image x:ConnectionId='47' x:Name="Search_Circle2" Source="/Assets/MainPage/MainPage_Circle_Size2.png" Height="150" Width="150" Visibility="Collapsed"/>
-                            <Image x:ConnectionId='48' x:Name="Search_Circle1" Source="/Assets/MainPage/MainPage_Circle_Size1.png" Height="130" Width="130"/>
-                            <Button x:ConnectionId='49' x:Name="Search_Button" HorizontalAlignment="Center"                            ClickMode="Release" Height="100" Width="100" Style="{StaticResource ResourceKey=Search_Button}"/>
+                            <Image x:ConnectionId='53' x:Name="Search_Circle5" Source="/Assets/MainPage/MainPage_Circle_Size5.png" Height="270" Width="270"  Visibility="Collapsed"/>
+                            <Image x:ConnectionId='54' x:Name="Search_Circle4" Source="/Assets/MainPage/MainPage_Circle_Size4.png" Height="220" Width="220"  Visibility="Collapsed"/>
+                            <Image x:ConnectionId='55' x:Name="Search_Circle3" Source="/Assets/MainPage/MainPage_Circle_Size3.png" Height="180" Width="180"  Visibility="Collapsed"/>
+                            <Image x:ConnectionId='56' x:Name="Search_Circle2" Source="/Assets/MainPage/MainPage_Circle_Size2.png" Height="150" Width="150" Visibility="Collapsed"/>
+                            <Image x:ConnectionId='57' x:Name="Search_Circle1" Source="/Assets/MainPage/MainPage_Circle_Size1.png" Height="130" Width="130"/>
+                            <Button x:ConnectionId='58' x:Name="Search_Button" HorizontalAlignment="Center"                            ClickMode="Release" Height="100" Width="100" Style="{StaticResource ResourceKey=Search_Button}"/>
                         
                     </Grid>
                 
@@ -309,9 +282,9 @@
 
                     </Grid>
 
-                    <ScrollViewer x:ConnectionId='7' Grid.Row="1" x:Name="ScrollViewer" VerticalAlignment="Bottom" Background="#C1E8F8" Visibility="Visible">
+                    <ScrollViewer x:ConnectionId='11' Grid.Row="1" x:Name="ScrollViewer" VerticalAlignment="Bottom" Background="#C1E8F8" Visibility="Visible">
 
-                        <Grid x:ConnectionId='8' x:Name="ScrollView_Grid" Height="400" HorizontalAlignment="Stretch" BorderThickness="0 0 0 0">
+                        <Grid x:ConnectionId='12' x:Name="ScrollView_Grid" Height="400" HorizontalAlignment="Stretch" BorderThickness="0 0 0 0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
@@ -325,119 +298,124 @@
 
                          
                             
-                            <Button x:ConnectionId='9' x:Name="UserList0" Grid.Row="0" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 3" Tag="0">
+                            <Button x:ConnectionId='13' x:Name="UserList0" Grid.Row="0" HorizontalAlignment="Stretch"                            Background="White" Margin="0 1 0 1" Tag="0">
                                
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="230"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <ProgressRing x:ConnectionId='38' x:Name="UserList0_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
-                                        <Image x:ConnectionId='39' x:Name="UserList0_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left" />
-                                        <TextBlock x:ConnectionId='40' x:Name="UserList0_Name"  Grid.Column="1" FontStyle="Oblique" ></TextBlock>
-                                        <TextBlock x:ConnectionId='41' x:Name="UserList0_Status" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
+                                        <ProgressRing x:ConnectionId='47' x:Name="UserList0_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
+                                        <Image x:ConnectionId='48' x:Name="UserList0_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left" />
+                                        <TextBlock x:ConnectionId='49' x:Name="UserList0_Name"  Grid.Column="1" FontStyle="Oblique" ></TextBlock>
+                                        <TextBlock x:ConnectionId='50' x:Name="UserList0_Status" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='10' x:Name="UserList1" Grid.Row="1" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 2" Tag="1">
+                            <Button x:ConnectionId='14' x:Name="UserList1" Grid.Row="1" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="1">
                               
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="230"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='35' x:Name="UserList1_Image"  Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left" />
-                                        <TextBlock x:ConnectionId='36' x:Name="UserList1_Name"  Grid.Column="1" FontSize="12" Foreground="#607E8C" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                                        <TextBlock x:ConnectionId='37' x:Name="UserList1_Status" Grid.Column="2" FontSize="12"  HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
+                                        <ProgressRing x:ConnectionId='43' x:Name="UserList1_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
+                                        <Image x:ConnectionId='44' x:Name="UserList1_Image"  Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left" />
+                                        <TextBlock x:ConnectionId='45' x:Name="UserList1_Name"  Grid.Column="1" FontSize="12" Foreground="#607E8C" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                        <TextBlock x:ConnectionId='46' x:Name="UserList1_Status" Grid.Column="2" FontSize="12"  HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='11' x:Name="UserList2" Grid.Row="2" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 2" Tag="2">
+                            <Button x:ConnectionId='15' x:Name="UserList2" Grid.Row="2" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="2">
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="230"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='32' x:Name="UserList2_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
-                                        <TextBlock x:ConnectionId='33' x:Name="UserList2_Name" Text="저에요저" Grid.Column="1" FontSize="13" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                                        <TextBlock x:ConnectionId='34' x:Name="UserList2_Status" Text="저 입니다" Grid.Column="2" FontSize="11" VerticalAlignment="Center" Foreground="#607E8C" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
+                                        <ProgressRing x:ConnectionId='39' x:Name="UserList2_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
+                                        <Image x:ConnectionId='40' x:Name="UserList2_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
+                                        <TextBlock x:ConnectionId='41' x:Name="UserList2_Name" Text="저에요저" Grid.Column="1" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"></TextBlock>
+                                        <TextBlock x:ConnectionId='42' x:Name="UserList2_Status" Text="저 입니다" Grid.Column="2" FontSize="11" VerticalAlignment="Center" Foreground="#607E8C" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='12' x:Name="UserList3" Grid.Row="3" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 2" Tag="3">
+                            <Button x:ConnectionId='16' x:Name="UserList3" Grid.Row="3" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="3">
                                 
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="230"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='29' x:Name="UserList3_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
-                                        <TextBlock x:ConnectionId='30' x:Name="UserList3_Name" Text="윤형일" Grid.Column="1" FontSize="11" Foreground="#607E8C" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                                        <TextBlock x:ConnectionId='31' x:Name="UserList3_Status" Text="윤형일의 에프엠뽀유." FontSize="11" VerticalAlignment="Center" Foreground="#607E8C" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
+                                        <ProgressRing x:ConnectionId='35' x:Name="UserList3_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
+                                        <Image x:ConnectionId='36' x:Name="UserList3_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
+                                        <TextBlock x:ConnectionId='37' x:Name="UserList3_Name" Text="윤형일" Grid.Column="1"  FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"></TextBlock>
+                                        <TextBlock x:ConnectionId='38' x:Name="UserList3_Status" Text="윤형일의 에프엠뽀유." FontSize="11" VerticalAlignment="Center" Foreground="#607E8C" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='13' x:Name="UserList4" Grid.Row="4" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 2" Tag="4">
+                            <Button x:ConnectionId='17' x:Name="UserList4" Grid.Row="4" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="4">
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="270"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='26' x:Name="UserList4_Image" Source="/Assets/itsme.jpg" Height="50"  Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
-                                        <TextBlock x:ConnectionId='27' x:Name="UserList4_Name" Text="asdasdasd" Grid.Column="1"></TextBlock>
-                                        <TextBlock x:ConnectionId='28' x:Name="UserList4_Status" Text="111111111111" Grid.Column="2"></TextBlock>
+                                        <ProgressRing x:ConnectionId='31' x:Name="UserList4_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
+                                        <Image x:ConnectionId='32' x:Name="UserList4_Image" Height="50"  Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
+                                        <TextBlock x:ConnectionId='33' x:Name="UserList4_Name" Grid.Column="1"></TextBlock>
+                                        <TextBlock x:ConnectionId='34' x:Name="UserList4_Status"  Grid.Column="2"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='14' x:Name="UserList5" Grid.Row="5" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 1" Tag="5">
+                            <Button x:ConnectionId='18' x:Name="UserList5" Grid.Row="5" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="5">
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="270"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='23' x:Name="UserList5_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
-                                        <TextBlock x:ConnectionId='24' x:Name="UserList5_Name" Text="asdasdasd" Grid.Column="1"></TextBlock>
-                                        <TextBlock x:ConnectionId='25' x:Name="UserList5_Status" Text="111111111111" Grid.Column="2"></TextBlock>
+                                        <ProgressRing x:ConnectionId='27' x:Name="UserList5_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
+                                        <Image x:ConnectionId='28' x:Name="UserList5_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
+                                        <TextBlock x:ConnectionId='29' x:Name="UserList5_Name" Grid.Column="1"></TextBlock>
+                                        <TextBlock x:ConnectionId='30' x:Name="UserList5_Status" Grid.Column="2"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='15' x:Name="UserList6" Grid.Row="6" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 1" Tag="6">
+                            <Button x:ConnectionId='19' x:Name="UserList6" Grid.Row="6" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="6">
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="270"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='20' x:Name="UserList6_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
-                                        <TextBlock x:ConnectionId='21' x:Name="UserList6_Name" Text="asdasdasd" Grid.Column="1"  FontSize="10" Foreground="#607E8C" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                                        <TextBlock x:ConnectionId='22' x:Name="UserList6_Status" Text="111111111111" Grid.Column="2" FontSize="10" VerticalAlignment="Center" Foreground="#607E8C" HorizontalAlignment="Right"></TextBlock>
+                                        <Image x:ConnectionId='24' x:Name="UserList6_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
+                                        <TextBlock x:ConnectionId='25' x:Name="UserList6_Name" Grid.Column="1"  FontSize="10" Foreground="#607E8C" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        <TextBlock x:ConnectionId='26' x:Name="UserList6_Status" Grid.Column="2" FontSize="10" VerticalAlignment="Center" Foreground="#607E8C" HorizontalAlignment="Right"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
-                            <Button x:ConnectionId='16' x:Name="UserList7" Grid.Row="7" HorizontalAlignment="Stretch"                            Background="White" BorderThickness="0 0 0 0" Tag="7">
+                            <Button x:ConnectionId='20' x:Name="UserList7" Grid.Row="7" HorizontalAlignment="Stretch"                            Background="White" Margin="0 0 0 1" Tag="7">
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
                                             <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="270"/>
+                                            <ColumnDefinition Width="210"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:ConnectionId='17' x:Name="UserList7_Image" Source="/Assets/itsme.jpg" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
-                                        <TextBlock x:ConnectionId='18' x:Name="UserList7_Name" Text="asdasdasd" Grid.Column="1"></TextBlock>
-                                        <TextBlock x:ConnectionId='19' x:Name="UserList7_Status" Text="111111111111" Grid.Column="2"></TextBlock>
+                                        <Image x:ConnectionId='21' x:Name="UserList7_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left"/>
+                                        <TextBlock x:ConnectionId='22' x:Name="UserList7_Name" Grid.Column="1"></TextBlock>
+                                        <TextBlock x:ConnectionId='23' x:Name="UserList7_Status" Grid.Column="2"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
