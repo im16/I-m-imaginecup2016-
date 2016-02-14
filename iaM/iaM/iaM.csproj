@@ -133,6 +133,7 @@
     <Content Include="Assets\Edit_Profile\Edit_Profile_Add.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_Image.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_Phone.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_SNS_Link.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Bar_Video.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Default_Profile.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Home.png" />
@@ -141,6 +142,12 @@
     <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Left_Sign.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Right_Sign.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_SNS_Facebook.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_SNS_Google.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_SNS_Skype.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_SNS_Tumblr.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_SNS_Twitter.png" />
+    <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_SNS_Youtube.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Status.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Icon_Video.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Layout_Box.png" />

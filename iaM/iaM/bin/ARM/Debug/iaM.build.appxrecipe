@@ -369,6 +369,9 @@
     <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Phone.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Phone.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_SNS_Link.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_SNS_Link.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Bar_Video.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Bar_Video.png</PackagePath>
     </AppxPackagedFile>
@@ -392,6 +395,24 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_ShareSNS.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_SNS_Facebook.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_SNS_Facebook.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_SNS_Google.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_SNS_Google.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_SNS_Skype.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_SNS_Skype.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_SNS_Tumblr.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_SNS_Tumblr.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_SNS_Twitter.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_SNS_Twitter.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_SNS_Youtube.png">
+      <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_SNS_Youtube.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Desktop\iaM\iaM\Assets\Edit_Profile\Edit_Profile_Icon_Status.png">
       <PackagePath>Assets\Edit_Profile\Edit_Profile_Icon_Status.png</PackagePath>

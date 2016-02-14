@@ -779,7 +779,6 @@ C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\obj\ARM\Debug\ProjectArchitectures.txt
 \\Mac\Home\Desktop\iaM\iaM\bin\ARM\Debug\System.Xml.XDocument.dll
 \\Mac\Home\Desktop\iaM\iaM\bin\ARM\Debug\System.Xml.XmlDocument.dll
 \\Mac\Home\Desktop\iaM\iaM\bin\ARM\Debug\System.Xml.XmlSerializer.dll
-\\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\iaM.csprojResolveAssemblyReference.cache
 \\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\App.g.i.cs
 \\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\App.g.cs
 \\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\Views\Edit_Profile.g.i.cs
@@ -874,3 +873,4 @@ C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\obj\ARM\Debug\ProjectArchitectures.txt
 \\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\qualifiers.txt.intermediate
 \\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
 \\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\ProjectArchitectures.txt
+\\Mac\Home\Desktop\iaM\iaM\obj\ARM\Debug\iaM.csprojResolveAssemblyReference.cache

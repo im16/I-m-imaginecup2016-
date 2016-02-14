@@ -66,18 +66,17 @@ namespace iaM.Views
 
             // Create and initialize a new watcher instance.
             watcher = new BluetoothLEAdvertisementWatcher();
-
             // Create and initialize a new trigger to configure it.
             trigger = new BluetoothLEAdvertisementPublisherTrigger();
-
+            
             // Add a manufacturer-specific section:
             // First, create a manufacturer data section
             var manufacturerData_publisher = new BluetoothLEManufacturerData();
             var manufacturerData_watcher = new BluetoothLEManufacturerData();
 
             // Then, set the company ID for the manufacturer data. Here we picked an unused value: 0xFF00
-            manufacturerData_publisher.CompanyId = 0xFF00;
-            manufacturerData_watcher.CompanyId = 0xFF00;
+            manufacturerData_publisher.CompanyId = 0xFFAA;
+            manufacturerData_watcher.CompanyId = 0xFFAA;
 
 
             // Finally set the data payload within the manufacturer-specific section
@@ -123,6 +122,7 @@ namespace iaM.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            Debug.WriteLine("onNavigatedTo");
             // Get the existing task if already registered
             if (taskRegistration == null)
             {
@@ -145,8 +145,10 @@ namespace iaM.Views
 
             // Attach a handler to process the received advertisement. 
             // The watcher cannot be started without a Received handler attached
+            Debug.WriteLine("onNavigated123123");
             watcher.Received += OnAdvertisementReceived;
 
+            Debug.WriteLine("onNavigatedTo444444");
             // Attach a handler to process watcher stopping due to various conditions,
             // such as the Bluetooth radio turning off or the Stop method was called
             watcher.Stopped += OnAdvertisementWatcherStopped;
@@ -158,29 +160,29 @@ namespace iaM.Views
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            // Remove local suspension handlers from the App since this page is no longer active.
-            App.Current.Suspending -= App_Suspending;
-            App.Current.Resuming -= App_Resuming;
+             // Remove local suspension handlers from the App since this page is no longer active.
+              App.Current.Suspending -= App_Suspending;
+              App.Current.Resuming -= App_Resuming;
 
-            // Since the publisher is registered in the background, the background task will be triggered when the App is closed 
-            // or in the background. To unregister the task, press the Stop button.
-            if (taskRegistration != null)
-            {
-                // Always unregister the handlers to release the resources to prevent leaks.
-                taskRegistration.Completed -= OnBackgroundTaskCompleted;
-            }
+              // Since the publisher is registered in the background, the background task will be triggered when the App is closed 
+              // or in the background. To unregister the task, press the Stop button.
+              if (taskRegistration != null)
+              {
+                  // Always unregister the handlers to release the resources to prevent leaks.
+                  taskRegistration.Completed -= OnBackgroundTaskCompleted;
+              }
 
-            // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
-            // scanning will be stopped automatically if the watcher is destroyed.
-           /* watcher.Stop();
-            dispatcherTimer.Stop();
-            seacrch_IsActive.Stop();*/
+              // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
+              // scanning will be stopped automatically if the watcher is destroyed.
+              watcher.Stop();
+              dispatcherTimer.Stop();
+            seacrch_IsActive.Stop();
             // Always unregister the handlers to release the resources to prevent leaks.
             watcher.Received -= OnAdvertisementReceived;
-            watcher.Stopped -= OnAdvertisementWatcherStopped;
+              watcher.Stopped -= OnAdvertisementWatcherStopped;
 
 
-            base.OnNavigatingFrom(e);
+              base.OnNavigatingFrom(e);
         }
 
         /// <summary>
@@ -217,52 +219,33 @@ namespace iaM.Views
         {
             watcher.Received += OnAdvertisementReceived;
             watcher.Stopped += OnAdvertisementWatcherStopped;
-
-
         }
         private void ProgressRing_Click(object sender, RoutedEventArgs e)
         {
-            /* if (flag)
-           {
-               Storyboard1.Pause();
-               flag = false;
-           }
-           else
-           {
-               Storyboard1.Begin();
-               flag = true;
-           }*/
-           
-            /*일단여기서 불러오기*/
-            //Image test_img = new Image { Source = new BitmapImage(new Uri(@"/Assets/mario.jpeg", UriKind.Relative)) };
-            //ReceivedAdvertisementListBox.Items.Add(test_img);
-            //test_img.Visibility = Visibility.Visible;
             if (flag)
             {
                 // Calling watcher start will start the scanning if not already initiated by another client
-                
                 watcher.Start();
-                // ReceivedAdvertisementListBox.Items.Clear();
-               
-            /*2/14    dispatcherTimer = new DispatcherTimer();
+                Debug.WriteLine("InProgressRing_Click");
+
+                
+                dispatcherTimer = new DispatcherTimer();
                 dispatcherTimer.Tick += dispatcherTimer_Tick;
                 dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
                 dispatcherTimer.Start();
-                */
-            
-                ScrollViewer.Visibility = Visibility.Visible;
-                
-               
-                Scroll_2.Height = new GridLength(315);
-                Circle_View.Margin = new Thickness(0,0,0,0);
-               seacrch_IsActive = new DispatcherTimer();
+
+                seacrch_IsActive = new DispatcherTimer();
                 seacrch_IsActive.Tick += seacrch_IsActive_Tick;
                 seacrch_IsActive.Interval = new TimeSpan(0, 0, 0, 0, 500);
                 seacrch_IsActive.Start();
+
+                ScrollViewer.Visibility = Visibility.Visible;
+                Scroll_2.Height = new GridLength(200);
+                Circle_View.Margin = new Thickness(0, 0, 0, 0);
                 flag = false;
 
-               
-               
+            
+
             }
             else
             {
@@ -283,7 +266,6 @@ namespace iaM.Views
 
         private async void seacrch_IsActive_Tick(object sender, object e)
         {
-            
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
                 switch(timer++)
@@ -294,9 +276,7 @@ namespace iaM.Views
                     case 4: Search_Circle5.Visibility = Visibility.Visible; break;
                     case 5: Search_Circle2.Visibility = Search_Circle3.Visibility = Search_Circle4.Visibility = Search_Circle5.Visibility = Visibility.Collapsed;  timer = 1; break;
                 }
-
             });
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -305,36 +285,13 @@ namespace iaM.Views
             {
                 Splitter.IsPaneOpen = true;
                 menu_flag = false;
-                
-                
-               
             }
             else if (!menu_flag)
             {
                 Splitter.IsPaneOpen = false;
                 menu_flag = true;
-                
-                
-                
-
             }
             else { }
-
-            
-         /*   if (toggle_menu_flag)
-            {
-                ImageBrush ib = new ImageBrush();
-                ib.ImageSource = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Progress_Square1.png"));
-                this.Toggle_Menu.Background = ib;
-                toggle_menu_flag = false;
-            }
-            if(!toggle_menu_flag)
-            {
-                ImageBrush ib = new ImageBrush();
-                ib.ImageSource = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Menu.png"));
-                this.Toggle_Menu.Background = ib;
-                toggle_menu_flag = true;
-            }*/
         }
         
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
@@ -454,11 +411,7 @@ namespace iaM.Views
         /// </summary>
         /// <param name="sender">Instance that triggered the event.</param>
         /// <param name="e">Event data describing the conditions that led to the event.</param>
-       /* private void RunButton_Click(object sender, RoutedEventArgs e)
-        {
-           
-
-        }*/
+      
         
         async void dispatcherTimer_Tick(object sender, object e)
         {
@@ -532,7 +485,7 @@ namespace iaM.Views
 
 
           }*/
-
+       
         /// <summary>
         /// Invoked as an event handler when an advertisement is received.
         /// </summary>
@@ -544,7 +497,7 @@ namespace iaM.Views
             Debug.WriteLine("signal!");
             // We can obtain various information about the advertisement we just received by accessing 
             // the properties of the EventArgs class
-
+            
             // The timestamp of the event
             DateTimeOffset timestamp = eventArgs.Timestamp;
 
@@ -734,27 +687,11 @@ namespace iaM.Views
             }
             
         }
-        private void Check_Offline(object sender, RoutedEventArgs e)
-        {
-            RadioButton.Visibility = Visibility.Collapsed;
-            // Unregistering the background task will stop advertising if this is the only client requesting
-            // First get the existing tasks to see if we already registered for it
-            if (taskRegistration != null)
-            {
-                taskRegistration.Unregister(true);
-                taskRegistration = null;
-
-            }
-            else
-            {
-
-            }
-            
-        }
+       
 
         private void To_See_Others_Page(object sender, RoutedEventArgs e)
         {
-            /*  Button b = (Button)sender;
+              Button b = (Button)sender;
 
               Debug.WriteLine("Tag : {0}",b.Tag);
 
@@ -766,7 +703,7 @@ namespace iaM.Views
               {
                   case "0": obj = current_client.client_id(clients_num - 1);  break;
                   case "1": obj = current_client.client_id(clients_num - 2); break;
-                  case "2":  obj = current_client.client_id(clients_num - 3); break;
+                  case "2": obj = current_client.client_id(clients_num - 3); break;
                   case "3": obj = current_client.client_id(clients_num - 4); break;
                   case "4": obj = current_client.client_id(clients_num - 5); break;
                   case "5": obj = current_client.client_id(clients_num - 6); break;
@@ -777,8 +714,8 @@ namespace iaM.Views
               }
 
 
-              this.Frame.Navigate(typeof(See_Others),obj);*/
-            this.Frame.Navigate(typeof(See_Others));
+              this.Frame.Navigate(typeof(See_Others),obj);
+            
         }
 
         private void To_Edit_Profile(object sender, RoutedEventArgs e)

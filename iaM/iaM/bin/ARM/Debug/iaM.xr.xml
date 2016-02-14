@@ -22,7 +22,6 @@
       <RootProperty Name="ClickMode" />
       <RootEvent Name="Click" />
       <RootEvent Name="GotFocus" />
-      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="Template" />
@@ -32,7 +31,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Style" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootEvent Name="Click" />
       <RootEvent Name="Checked" />
       <RootEvent Name="GotFocus" />
@@ -154,11 +152,12 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="FontStyle" />
-      <RootProperty Name="FontFamily" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension">
+      <RootProperty Name="ResourceKey" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Background" />
@@ -172,9 +171,6 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="BorderThickness" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension">
-      <RootProperty Name="ResourceKey" />
-    </RootType>
     <RootType FullName="iaM.Views.Edit_Profile" />
     <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
       <RootProperty Name="Color" />
@@ -184,8 +180,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
-      <RootProperty Name="Background" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="iaM.Views.LoginPage" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -212,37 +208,12 @@
       <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="iaM.Views.MainPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
-      <RootProperty Name="Background" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Items" />
-      <RootProperty Name="VerticalAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="IsOn" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
       <RootProperty Name="Source" />
       <RootProperty Name="Width" />
       <RootProperty Name="AutoPlay" />
       <RootProperty Name="AreTransportControlsEnabled" />
       <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="iaM.Views.See_Others" />
     <RootType FullName="iaM.Views.Signup" />

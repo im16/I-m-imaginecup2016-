@@ -26,7 +26,7 @@ namespace iaM.Views
     public sealed partial class See_Others : Page
     {
         Client client=null;
-
+        bool flag_togglebutton_ispublic = true;
         bool photo_progress_flag = true;
         bool menu_flag = true;
         private BackgroundWorker bw = new BackgroundWorker();
@@ -38,7 +38,7 @@ namespace iaM.Views
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        { 
+        {
             client = e.Parameter as Client;
 
             Debug.WriteLine("{0} , {1} , {2}", client.Nickname, client.Phone_number, client.Status_message);
@@ -77,7 +77,7 @@ namespace iaM.Views
 
 
                     if (i == 1)
-                        photo1.Source = image;
+                        photo1.Background = new ImageBrush { ImageSource = image };
                     else if (i == 2)
                         photo2.Background = new ImageBrush { ImageSource = image };
                     else if (i == 3)
@@ -176,7 +176,7 @@ namespace iaM.Views
 
 
                     if (i == 1)
-                        photo1.Source = image;
+                        photo1.Background = new ImageBrush { ImageSource = image };
                     else if (i == 2)
                         photo2.Background = new ImageBrush { ImageSource = image };
                     else if (i == 3)
@@ -219,10 +219,29 @@ namespace iaM.Views
             Sign_4.Visibility = Visibility.Visible ;
         }
 
-        private void Photo22(object sender, TappedRoutedEventArgs e)
+       
+        private void Back(object sender, RoutedEventArgs e)
         {
-            photo2.Height = 300;
-            photo2.Width = 300;
+            this.Frame.Navigate(typeof(LoginPage));
+        }
+        private void ToggleButton_IsPublic_Change(object sender, RoutedEventArgs e)
+        {
+            if (flag_togglebutton_ispublic)
+            {
+
+                Image ib = new Image();
+                ib.Source = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Pane_Toggle_Off.png"));
+                this.ToggleButton_IsPublic.Source = ib.Source;
+                flag_togglebutton_ispublic = false;
+            }
+            else
+            {
+                Image ib = new Image();
+                ib.Source = new BitmapImage(new Uri("ms-appx://iaM/Assets/MainPage/MainPage_Pane_Toggle_On.png"));
+                this.ToggleButton_IsPublic.Source = ib.Source;
+                flag_togglebutton_ispublic = true;
+            }
+
         }
     }
 }

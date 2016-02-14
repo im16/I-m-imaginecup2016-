@@ -8,6 +8,172 @@
     mc:Ignorable="d">
     <Page.Resources>
 
+        <Style x:Key="Button_Style_Contact" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="ContactGrid">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="ContactGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ContactGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Caliing.png"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="ContactGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Icon_Caliing.png">
+                            </Image>
+
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Style_Image" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="ImageGrid">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="ImageGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ImageGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Album.png"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="ImageGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Icon_Album.png">
+                            </Image>
+
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Style_Video" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="VideoGrid">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="VideoGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="VideoGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Video.png"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="VideoGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Icon_Video.png">
+                            </Image>
+
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Style_Share" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="ShareGrid">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="ShareGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ShareGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_ShareSNS.png"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="ShareGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Icon_ShareSNS.png">
+                            </Image>
+
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
         <Style x:ConnectionId='1' x:Key="ProfileButtonStyle" x:Name="Pl1style" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -221,15 +387,15 @@
                         </Button>
                         <Grid Grid.Row="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Row="0" Grid.Column="1" Height="65" Width="65" HorizontalAlignment="Center" Style="{StaticResource ProfileButtonStyle}" Margin="0 60 0 0">
+                            <Button Grid.Row="0" Grid.Column="1" Height="75" Width="75" HorizontalAlignment="Center" Style="{StaticResource ProfileButtonStyle}" Margin="0 75 0 0">
                                
                             </Button>
                             <TextBox Background="Transparent " VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="3" Width="210" TextWrapping="Wrap" Text="안녕하세요 저는 서울에 사는 25살 윤형일입니다" BorderBrush="Transparent"  InputScope="AlphanumericFullWidth" FontSize="13" Foreground="#607E8C"/>
@@ -248,25 +414,25 @@
                                 <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Button x:ConnectionId='13' Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                             Height="50" Width="50">
+                            <Button x:ConnectionId='13' Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                             Height="50" Width="50" Style="{StaticResource Button_Style_Contact}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Caliing.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button x:ConnectionId='14' Grid.Row="1" Grid.Column="2" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50">
+                            <Button x:ConnectionId='14' Grid.Row="1" Grid.Column="2" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50" Style="{StaticResource Button_Style_Image}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Album.png"/>
                                 </Button.Background>
                             </Button>
 
 
-                            <Button x:ConnectionId='15' Grid.Row="1" Grid.Column="3" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50">
+                            <Button x:ConnectionId='15' Grid.Row="1" Grid.Column="3" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50" Style="{StaticResource Button_Style_Video}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Video.png"/>
                                 </Button.Background>
                             </Button>
 
-                            <Button x:ConnectionId='16' Grid.Row="1" Grid.Column="4" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                          Height="50" Width="50">
+                            <Button x:ConnectionId='16' Grid.Row="1" Grid.Column="4" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                          Height="50" Width="50" Style="{StaticResource Button_Style_Share}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_ShareSNS.png"/>
                                 </Button.Background>
@@ -366,10 +532,10 @@
                     </Grid>
                     <Grid x:ConnectionId='9' x:Name="Profile_Video"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="15*"/>
                             <RowDefinition Height="4*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -407,10 +573,54 @@
                                 <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
                             </Button.Background>
                         </Button>
-                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 30"/>
+                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
                     </Grid>
                     <Grid x:ConnectionId='10' x:Name="Profile_Share"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.ColumnSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Bar_SNS_Link.png" VerticalAlignment="Top"/>
 
+
+                        <Button Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Facebook.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Google.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Skype.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Tumblr.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Twitter.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Youtube.png"/>
+                            </Button.Background>
+                        </Button>
+                       
                     </Grid>
                 </Grid>
                
