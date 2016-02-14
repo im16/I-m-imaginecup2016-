@@ -214,7 +214,9 @@
     <Content Include="Assets\singup.png" />
     <Content Include="Assets\splash11.png" />
     <Content Include="Assets\Splash\Splash_Image.png" />
+    <Content Include="Assets\team_page\team_profile.png" />
     <Content Include="Assets\test.png" />
+    <Content Include="Assets\Video\team_mov.mov" />
     <Content Include="Assets\Video\video.mp4" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

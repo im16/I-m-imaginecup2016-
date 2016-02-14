@@ -606,6 +606,9 @@
     <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Splash\Splash_Image.png">
       <PackagePath>Assets\Splash\Splash_Image.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\team_page\team_profile.png">
+      <PackagePath>Assets\team_page\team_profile.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\test.png">
       <PackagePath>Assets\test.png</PackagePath>
     </AppxPackagedFile>
@@ -635,6 +638,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\mario.jpeg">
       <PackagePath>Assets\mario.jpeg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Video\team_mov.mov">
+      <PackagePath>Assets\Video\team_mov.mov</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\Mac\Home\Documents\IM166\iaM\iaM\Assets\Video\video.mp4">
       <PackagePath>Assets\Video\video.mp4</PackagePath>

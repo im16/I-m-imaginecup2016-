@@ -573,7 +573,7 @@
 
 
                             <MediaElement x:Name="media" 
-                                              Source="/Assets/Video/video.mp4" 
+                                              Source="/Assets/Video/team_mov.mov" 
                                               Width="357" 
                                               AutoPlay="False"
                                               AreTransportControlsEnabled="True" Height="240" />

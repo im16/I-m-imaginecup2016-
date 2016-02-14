@@ -11,7 +11,7 @@
     <!--페이지에서 이용하기 위한 리소스들-->
     <Page.Resources>
         <Style x:Key="ToggleButtonStyle" TargetType="ToggleButton">
-            
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
@@ -42,7 +42,7 @@
 
                         </Grid>
                     </ControlTemplate>
-                                   
+
                 </Setter.Value>
             </Setter>
         </Style>
@@ -140,8 +140,8 @@
             </Setter>
         </Style>
 
-      
-       
+
+
 
 
         <!--그리드 라인 색변경-->
@@ -163,7 +163,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <SplitView x:Name="Splitter" Background="White" IsPaneOpen="False"  DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="230">
-           
+
             <!-- 메뉴 판 열었을 때 나오는 메뉴판 구성-->
             <SplitView.Pane>
                 <!-- 개인정보 구성 메뉴 -->
@@ -175,9 +175,9 @@
                     <Button x:Name="Menu_Profile" Grid.Row="0" Background="#FFE38C" Height="230" Width="230" Click="ToEditProfile">
 
                         <Grid Height="230" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="/Assets/Edit_Profile/my_profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
-                            <TextBlock Text="윤형일" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
-                            <TextBlock Text="안녕하세요..." Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
+                            <Image Source="/Assets/team_page/team_profile.png" Height="64" VerticalAlignment="Top" Margin="50,48,40,0"/>
+                            <TextBlock Text="ShowYourself" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
+                            <TextBlock Text="Imagine cup fighting!" Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
                         </Grid>
 
                     </Button>
@@ -244,12 +244,12 @@
                             <Button.Background>
                                 <ImageBrush ImageSource="/Assets/MainPage/MainPage_Pane_SignOut.png"/>
                             </Button.Background>
-                           
+
                         </Button>
                         <Image Grid.Row="9" Source="/Assets/MainPage/MainPage_Pane_Bar.png"/>
                     </Grid>
                 </Grid>
-               
+
             </SplitView.Pane>
 
             <!-- 메뉴판이 나오기 전 메인화면-->
@@ -266,16 +266,16 @@
 
                         </ToggleButton>
                         <Grid x:Name="Circle_View" Height="330"  Width="330" VerticalAlignment="Center" Margin="0 100 0 0">
-                           
+
                             <Image x:Name="Search_Circle5" Source="/Assets/MainPage/MainPage_Circle_Size5.png" Height="270" Width="270"  Visibility="Collapsed"/>
                             <Image x:Name="Search_Circle4" Source="/Assets/MainPage/MainPage_Circle_Size4.png" Height="220" Width="220"  Visibility="Collapsed"/>
                             <Image x:Name="Search_Circle3" Source="/Assets/MainPage/MainPage_Circle_Size3.png" Height="180" Width="180"  Visibility="Collapsed"/>
                             <Image x:Name="Search_Circle2" Source="/Assets/MainPage/MainPage_Circle_Size2.png" Height="150" Width="150" Visibility="Collapsed"/>
                             <Image x:Name="Search_Circle1" Source="/Assets/MainPage/MainPage_Circle_Size1.png" Height="130" Width="130"/>
                             <Button x:Name="Search_Button" HorizontalAlignment="Center" Click="ProgressRing_Click" ClickMode="Release" Height="100" Width="100" Style="{StaticResource ResourceKey=Search_Button}"/>
-                        
-                    </Grid>
-                
+
+                        </Grid>
+
 
 
 
@@ -296,10 +296,10 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
 
-                         
-                            
+
+
                             <Button x:Name="UserList0" Grid.Row="0" HorizontalAlignment="Stretch" Click="To_See_Others_Page" Background="White" Margin="0 1 0 1" Tag="0">
-                               
+
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
@@ -308,14 +308,14 @@
                                             <ColumnDefinition Width="170"/>
                                         </Grid.ColumnDefinitions>
                                         <ProgressRing x:Name="UserList0_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
-                                        <Image x:Name="UserList0_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left" />
+                                        <Image x:Name="UserList0_Image" Height="60" Width="38" Grid.Column="0" HorizontalAlignment="Left" />
                                         <TextBlock x:Name="UserList0_Name"  Grid.Column="1" FontSize="15" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" ></TextBlock>
                                         <TextBlock x:Name="UserList0_Status" Grid.Column="2" FontSize="11" VerticalAlignment="Center" Foreground="#607E8C" HorizontalAlignment="Right" Margin="0 0 15 0"></TextBlock>
                                     </Grid>
                                 </Button.Content>
                             </Button>
                             <Button x:Name="UserList1" Grid.Row="1" HorizontalAlignment="Stretch" Click="To_See_Others_Page" Background="White" Margin="0 0 0 1" Tag="1">
-                              
+
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
@@ -346,7 +346,7 @@
                                 </Button.Content>
                             </Button>
                             <Button x:Name="UserList3" Grid.Row="3" HorizontalAlignment="Stretch" Click="To_See_Others_Page" Background="White" Margin="0 0 0 1" Tag="3">
-                                
+
                                 <Button.Content>
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
@@ -422,12 +422,12 @@
 
 
 
-                            </Grid>
+                        </Grid>
 
 
-                        
+
                     </ScrollViewer>
-                    
+
                 </Grid>
 
 
@@ -438,7 +438,7 @@
         </SplitView>
 
         <!-- 맨 위 메뉴판-->
-    <!--    <Grid x:Name="HeaderGrid">
+        <!--    <Grid x:Name="HeaderGrid">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="HeaderGrid_Row" Height="37"/>
             </Grid.RowDefinitions>

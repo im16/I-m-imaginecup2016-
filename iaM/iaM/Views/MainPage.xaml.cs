@@ -578,7 +578,7 @@ namespace iaM.Views
                         {
                             UserList0_Ring.IsActive = false;
                             UserList0_Ring.Visibility = Visibility.Collapsed;
-                            bi.DecodePixelHeight = bi.DecodePixelWidth = 50;
+                           
                             UserList0_Image.Source = bi;
                             UserList0_Name.Text = client.Nickname;
                             UserList0_Status.Text = client.Status_message;
