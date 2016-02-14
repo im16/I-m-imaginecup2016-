@@ -37,9 +37,27 @@ namespace iaM.Views
 
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             client = e.Parameter as Client;
+
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
+            {
+                try
+                {
+                    status_message.Text = client.Status_message;
+                    top_Name.Text = client.Nickname;
+                    BitmapImage bi = await Convert_module.convert_base64_to_bitmapImage(client.Profile_image);
+                    profile_image.Fill = new ImageBrush { ImageSource = bi };
+                }
+                catch(Exception err)
+                {
+                    Debug.WriteLine(err);
+                }
+
+
+
+            });
 
             Debug.WriteLine("{0} , {1} , {2}", client.Nickname, client.Phone_number, client.Status_message);
 
@@ -243,5 +261,7 @@ namespace iaM.Views
             }
 
         }
+
+
     }
 }

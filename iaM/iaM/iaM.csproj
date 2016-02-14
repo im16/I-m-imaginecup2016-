@@ -153,6 +153,13 @@
     <Content Include="Assets\Edit_Profile\Edit_Profile_Layout_Box.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Menu.png" />
     <Content Include="Assets\Edit_Profile\Edit_Profile_Selection_Icon.png" />
+    <Content Include="Assets\Edit_Profile\my-profile-add.png" />
+    <Content Include="Assets\Edit_Profile\my-profile-home.png" />
+    <Content Include="Assets\Edit_Profile\my-profile-menu.png" />
+    <Content Include="Assets\Edit_Profile\phone-button-1.png" />
+    <Content Include="Assets\Edit_Profile\phone-button-2.png" />
+    <Content Include="Assets\Edit_Profile\phone-button-3.png" />
+    <Content Include="Assets\Edit_Profile\phone-button-4.png" />
     <Content Include="Assets\MainPage\MainPage_Pane_Charge.png" />
     <Content Include="Assets\MainPage\MainPage_Pane_Go_Public.png" />
     <Content Include="Assets\MainPage\MainPage_Pane_Help.png" />
@@ -191,6 +198,12 @@
     <Content Include="Assets\MainPage\MainPage_Progress_Square3.png" />
     <Content Include="Assets\MainPage\MainPage_Circle_Size5.png" />
     <Content Include="Assets\mario.jpeg" />
+    <Content Include="Assets\Edit_Profile\my1.png" />
+    <Content Include="Assets\Edit_Profile\my2.png" />
+    <Content Include="Assets\Edit_Profile\my3.png" />
+    <Content Include="Assets\Edit_Profile\my4.png" />
+    <Content Include="Assets\Edit_Profile\my5.png" />
+    <Content Include="Assets\Edit_Profile\my_profile.png" />
     <Content Include="Assets\point.png" />
     <Content Include="Assets\SignUp\SignUp_background.png" />
     <Content Include="Assets\signup_add_profile_pic.png" />

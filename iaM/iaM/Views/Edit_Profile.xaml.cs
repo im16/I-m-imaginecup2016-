@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,8 +26,10 @@ namespace iaM.Views
     {
         bool flag_togglebutton_ispublic = true;
         bool menu_flag = true;
+
         public Edit_Profile()
         {
+            Debug.WriteLine("edit!");
             this.InitializeComponent();
         }
              

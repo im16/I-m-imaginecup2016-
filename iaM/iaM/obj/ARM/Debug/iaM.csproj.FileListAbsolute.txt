@@ -560,7 +560,6 @@ C:\Users\KMK\Videos\IM16\IM16\iaM\iaM\obj\ARM\Debug\ProjectArchitectures.txt
 \\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\System.Xml.XDocument.dll
 \\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\System.Xml.XmlDocument.dll
 \\Mac\Home\Documents\IM166\iaM\iaM\bin\ARM\Debug\System.Xml.XmlSerializer.dll
-\\Mac\Home\Documents\IM166\iaM\iaM\obj\ARM\Debug\iaM.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\IM166\iaM\iaM\obj\ARM\Debug\App.g.i.cs
 \\Mac\Home\Documents\IM166\iaM\iaM\obj\ARM\Debug\App.g.cs
 \\Mac\Home\Documents\IM166\iaM\iaM\obj\ARM\Debug\Views\Edit_Profile.g.i.cs

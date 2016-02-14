@@ -172,8 +172,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
-        
+
+
         <Style x:ConnectionId='1' x:Key="ProfileButtonStyle" x:Name="Pl1style" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -181,7 +181,7 @@
                         <Grid>
                             <Ellipse Name="Ellipse_Profile" >
                                 <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Default_Profile.png"/>
+                                    <ImageBrush ImageSource="/Assets/Edit_Profile/my_profile.png"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Grid>
@@ -208,7 +208,7 @@
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="MenuGrid">
                                                 <DiscreteObjectKeyFrame KeyTime="0">
                                                     <DiscreteObjectKeyFrame.Value>
-                                                        <ImageBrush ImageSource="/Assets/MainPage/MainPage_Menu.png"/>
+                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/my-profile-menu.png"/>
                                                     </DiscreteObjectKeyFrame.Value>
                                                 </DiscreteObjectKeyFrame>
                                             </ObjectAnimationUsingKeyFrames>
@@ -216,7 +216,7 @@
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Image Source="/Assets/MainPage/MainPage_Menu.png">
+                            <Image Source="/Assets/Edit_Profile/my-profile-menu.png">
                             </Image>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"/>
 
@@ -244,7 +244,7 @@
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="HomeButton">
                                                 <DiscreteObjectKeyFrame KeyTime="0">
                                                     <DiscreteObjectKeyFrame.Value>
-                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Home.png"/>
+                                                        <ImageBrush ImageSource="/Assets/Edit_Profile/my-profile-home.png"/>
                                                     </DiscreteObjectKeyFrame.Value>
                                                 </DiscreteObjectKeyFrame>
                                             </ObjectAnimationUsingKeyFrames>
@@ -259,7 +259,7 @@
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Home.png">
+                            <Image Source="/Assets/Edit_Profile/my-profile-home.png">
                             </Image>
 
                             <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -269,10 +269,10 @@
             </Setter>
         </Style>
 
-        
+
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -289,9 +289,9 @@
                     <Button x:ConnectionId='3' x:Name="Menu_Profile" Grid.Row="0" Background="#FFE38C" Height="230" Width="230">
 
                         <Grid Height="230" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Default_Profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
-                            <TextBlock Text="User A" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
-                            <TextBlock Text="Status" Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
+                            <Image Source="/Assets/Edit_Profile/my_profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
+                            <TextBlock Text="윤형일" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
+                            <TextBlock Text="안녕하세요..." Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
                         </Grid>
 
                     </Button>
@@ -372,22 +372,24 @@
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Background="#B3E3FA">
+                    <Grid Grid.Row="0" Background="#f5deb3">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <ToggleButton x:ConnectionId='11' x:Name="Toggle_Menu"                           VerticalAlignment="Top" Height="35" Width="35" Style="{StaticResource ToggleButtonStyle}">
+                        <ToggleButton x:ConnectionId='12' x:Name="Toggle_Menu"                           VerticalAlignment="Top" Height="35" Width="35" Style="{StaticResource ToggleButtonStyle}">
 
                         </ToggleButton>
-                        <TextBlock Text="Name" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Margin="0 5 0 0"/>
+                        <TextBlock Text="윤형일" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Margin="0 5 0 0"/>
 
-                        <Button x:ConnectionId='12' HorizontalAlignment="Right" x:Name="Toggle_Men1u"                           VerticalAlignment="Top" Height="35" Width="35"                              Style="{StaticResource Home_Button}">
+                        <Button x:ConnectionId='13' HorizontalAlignment="Right" x:Name="Toggle_Men1u"                           VerticalAlignment="Top" Height="35" Width="35"                              Style="{StaticResource Home_Button}">
 
                         </Button>
+
                         <Grid Grid.Row="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="5*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -395,10 +397,16 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Row="0" Grid.Column="1" Height="75" Width="75" HorizontalAlignment="Center" Style="{StaticResource ProfileButtonStyle}" Margin="0 75 0 0">
-                               
+                            <Button Grid.Row="1" Grid.Column="1" Height="120" Width="120" HorizontalAlignment="Center" Style="{StaticResource ProfileButtonStyle}" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/Edit_profile/my_profile.png">
+                                    </ImageBrush>
+                                </Button.Background>
                             </Button>
-                            <TextBox Background="Transparent " VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="3" Width="210" TextWrapping="Wrap" Text="안녕하세요 저는 서울에 사는 25살 윤형일입니다" BorderBrush="Transparent"  InputScope="AlphanumericFullWidth" FontSize="13" Foreground="#607E8C"/>
+
+                            <Image  Source="/Assets/Edit_Profile/my-profile-add.png" Margin="56,108.4,117,0.4" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+
+                            <TextBox Background="Transparent " VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="안녕하세요 저는 서울에 사는 25살 윤형일입니다" BorderBrush="Transparent"  InputScope="AlphanumericFullWidth" FontSize="13" Foreground="#607E8C"/>
                         </Grid>
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
@@ -414,42 +422,42 @@
                                 <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Button x:ConnectionId='13' Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                             Height="50" Width="50" Style="{StaticResource Button_Style_Contact}">
+                            <Button x:ConnectionId='14' Grid.Row="1" Grid.Column="1" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                             Height="50" Width="50" Style="{StaticResource Button_Style_Contact}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Caliing.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button x:ConnectionId='14' Grid.Row="1" Grid.Column="2" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50" Style="{StaticResource Button_Style_Image}">
+                            <Button x:ConnectionId='15' Grid.Row="1" Grid.Column="2" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50" Style="{StaticResource Button_Style_Image}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Album.png"/>
                                 </Button.Background>
                             </Button>
 
 
-                            <Button x:ConnectionId='15' Grid.Row="1" Grid.Column="3" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50" Style="{StaticResource Button_Style_Video}">
+                            <Button x:ConnectionId='16' Grid.Row="1" Grid.Column="3" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                            Height="50" Width="50" Style="{StaticResource Button_Style_Video}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_Video.png"/>
                                 </Button.Background>
                             </Button>
 
-                            <Button x:ConnectionId='16' Grid.Row="1" Grid.Column="4" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                          Height="50" Width="50" Style="{StaticResource Button_Style_Share}">
+                            <Button x:ConnectionId='17' Grid.Row="1" Grid.Column="4" Margin="5 0 5 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                          Height="50" Width="50" Style="{StaticResource Button_Style_Share}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_ShareSNS.png"/>
                                 </Button.Background>
                             </Button>
-                           
-                            
-                            <Image x:ConnectionId='17' x:Name="Sign_1" Grid.Row="2" Grid.Column="1" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Visible"/>
-                            <Image x:ConnectionId='18' x:Name="Sign_2" Grid.Row="2" Grid.Column="2" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
-                            <Image x:ConnectionId='19' x:Name="Sign_3" Grid.Row="2" Grid.Column="3" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
-                            <Image x:ConnectionId='20' x:Name="Sign_4" Grid.Row="2" Grid.Column="4" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
+
+
+                            <Image x:ConnectionId='18' x:Name="Sign_1" Grid.Row="2" Grid.Column="1" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Visible"/>
+                            <Image x:ConnectionId='19' x:Name="Sign_2" Grid.Row="2" Grid.Column="2" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
+                            <Image x:ConnectionId='20' x:Name="Sign_3" Grid.Row="2" Grid.Column="3" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
+                            <Image x:ConnectionId='21' x:Name="Sign_4" Grid.Row="2" Grid.Column="4" Source="/Assets/Edit_Profile/Edit_Profile_Selection_Icon.png" Height="13" Width="13" Margin="0 0 0 0" Visibility="Collapsed"/>
                         </Grid>
                     </Grid>
-                    <Grid x:ConnectionId='7' x:Name="Profile_Contact"  Grid.Row="1" Background="#B3E3FA" Visibility="Visible">
+                    <Grid x:ConnectionId='7' x:Name="Profile_Contact"  Grid.Row="1" Background="#f5deb3" Visibility="Visible">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="10*"/>
                             <RowDefinition Height="4*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -462,28 +470,17 @@
 
                         <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/phone-button-4.png"/>
                             </Button.Background>
                         </Button>
-                        
-                        <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0 0 0 1">
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_Profile/phone-button-4.png"/>
                             </Button.Background>
                         </Button>
-                        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
+                        <Image Grid.Row="0" Grid.Column="1" Source="/Assets/Edit_Profile/my-profile-add.png" Height="70" Width="70" VerticalAlignment="Bottom"  Grid.RowSpan="3" />
                     </Grid>
-                    <Grid x:ConnectionId='8' x:Name="Profile_Album"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
+                    <Grid x:ConnectionId='8' x:Name="Profile_Album"  Grid.Row="1" Background="#f5deb3" Visibility="Collapsed">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="15*"/>
@@ -496,31 +493,32 @@
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Row="0" Grid.ColumnSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Bar_Image.png" VerticalAlignment="Top"/>
-                        
-                        
-                        <Button Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+
+                        <Button  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_profile/my1.png"/>
                             </Button.Background>
                         </Button>
                         <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_profile/my2.png"/>
                             </Button.Background>
                         </Button>
                         <Button Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_profile/my3.png"/>
                             </Button.Background>
                         </Button>
                         <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_profile/my4.png"/>
                             </Button.Background>
                         </Button>
                         <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                <ImageBrush ImageSource="/Assets/Edit_profile/my5.png"/>
                             </Button.Background>
                         </Button>
                         <Button Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -528,54 +526,49 @@
                                 <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
                             </Button.Background>
                         </Button>
-                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
+                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/my-profile-add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
                     </Grid>
-                    <Grid x:ConnectionId='9' x:Name="Profile_Video"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="4*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Row="0" Grid.ColumnSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Bar_Video.png" VerticalAlignment="Top"/>
-                        <Button Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Button Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
-                            </Button.Background>
-                        </Button>
-                        <Image Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Add.png" Height="70" Width="70" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
-                    </Grid>
-                    <Grid x:ConnectionId='10' x:Name="Profile_Share"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
+                        <Grid x:ConnectionId='9' x:Name="Profile_Video"  Grid.Row="1" Background="#B3E3FA" Visibility="Collapsed">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Image Grid.Row="0" Grid.ColumnSpan="3" Source="/Assets/Edit_Profile/Edit_Profile_Bar_Video.png" VerticalAlignment="Top"/>
+                            <Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Layout_Box.png"/>
+                                </Button.Background>
+                            </Button>
+
+                            <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3">
+
+
+                                <!--  <WebView x:Name="media"  Height="253" Source="https://youtu.be/tz7-9Bk9gew" Width="360"  />-->
+
+
+                                <MediaElement x:ConnectionId='11' x:Name="media" 
+                                              Source="/Assets/Video/video.mp4" 
+                                              Width="357" 
+                                              AutoPlay="False"
+                                              AreTransportControlsEnabled="True" Height="240" />
+
+
+                            </StackPanel>
+
+
+
+
+                        </Grid>
+                        <Grid x:ConnectionId='10' x:Name="Profile_Share"  Grid.Row="1" Background="#f5deb3" Visibility="Collapsed">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="15*"/>
@@ -620,25 +613,25 @@
                                 <ImageBrush ImageSource="/Assets/Edit_Profile/Edit_Profile_Icon_SNS_Youtube.png"/>
                             </Button.Background>
                         </Button>
-                       
+
                     </Grid>
                 </Grid>
-               
+
             </SplitView.Content>
 
         </SplitView>
 
         <!-- 맨 위 메뉴판-->
-      <!--  <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Background="#C1E8F8" HorizontalAlignment="Stretch">
+        <!--  <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Background="#C1E8F8" HorizontalAlignment="Stretch">
            
             <ToggleButton x:Name="Toggle_Menu1" Click="Button_Menu_Click" VerticalAlignment="Top" Height="35" Width="35" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left">
             </ToggleButton>
            
         </StackPanel>-->
-       
-      
+
+
     </Grid>
-   
+
 </Page>
 <!-- <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

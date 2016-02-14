@@ -172,16 +172,23 @@ namespace iaM.Views
                   taskRegistration.Completed -= OnBackgroundTaskCompleted;
               }
 
-              // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
-              // scanning will be stopped automatically if the watcher is destroyed.
-              watcher.Stop();
-              dispatcherTimer.Stop();
-            seacrch_IsActive.Stop();
+            // Make sure to stop the watcher when leaving the context. Even if the watcher is not stopped,
+            // scanning will be stopped automatically if the watcher is destroyed.
+
+            if (!flag)
+            {
+                watcher.Stop();
+                dispatcherTimer.Stop();
+                seacrch_IsActive.Stop();
+            }
+      
+               
+
             // Always unregister the handlers to release the resources to prevent leaks.
             watcher.Received -= OnAdvertisementReceived;
-              watcher.Stopped -= OnAdvertisementWatcherStopped;
+            watcher.Stopped -= OnAdvertisementWatcherStopped;
 
-
+            
               base.OnNavigatingFrom(e);
         }
 
@@ -227,7 +234,7 @@ namespace iaM.Views
                 // Calling watcher start will start the scanning if not already initiated by another client
                 watcher.Start();
                 Debug.WriteLine("InProgressRing_Click");
-
+                
                 
                 dispatcherTimer = new DispatcherTimer();
                 dispatcherTimer.Tick += dispatcherTimer_Tick;
@@ -250,6 +257,9 @@ namespace iaM.Views
             else
             {
                 watcher.Stop();
+                dispatcherTimer.Stop();
+                seacrch_IsActive.Stop();
+
                 Search_Circle1.Visibility = Visibility.Visible;
                 Search_Circle2.Visibility = Visibility.Collapsed;
                 Search_Circle3.Visibility = Visibility.Collapsed;
@@ -568,6 +578,7 @@ namespace iaM.Views
                         {
                             UserList0_Ring.IsActive = false;
                             UserList0_Ring.Visibility = Visibility.Collapsed;
+                            bi.DecodePixelHeight = bi.DecodePixelWidth = 50;
                             UserList0_Image.Source = bi;
                             UserList0_Name.Text = client.Nickname;
                             UserList0_Status.Text = client.Status_message;
@@ -718,11 +729,6 @@ namespace iaM.Views
             
         }
 
-        private void To_Edit_Profile(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Edit_Profile));
-        }
-
         private void ToggleButton_IsPublic_Change(object sender, RoutedEventArgs e)
         {
             if (flag_togglebutton_ispublic)
@@ -745,6 +751,7 @@ namespace iaM.Views
 
         private void ToEditProfile(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("1234");
             this.Frame.Navigate(typeof(Edit_Profile));
         }
 

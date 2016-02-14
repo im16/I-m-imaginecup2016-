@@ -173,13 +173,13 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <Button x:Name="Menu_Profile" Grid.Row="0" Background="#FFE38C" Height="230" Width="230" Click="ToEditProfile">
-                        
-                            <Grid Height="230" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="/Assets/Edit_Profile/Edit_Profile_Default_Profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
-                            <TextBlock Text="User A" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
-                            <TextBlock Text="Status" Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
+
+                        <Grid Height="230" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="/Assets/Edit_Profile/my_profile.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0 40 0 0"/>
+                            <TextBlock Text="윤형일" Height="30" FontSize="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 50 0 0"/>
+                            <TextBlock Text="안녕하세요..." Height="20" Foreground="#607E8C" HorizontalAlignment="Center" Margin="0 120 0 0"/>
                         </Grid>
-                        
+
                     </Button>
                     <Grid Grid.Row="1">
                         <Grid.RowDefinitions>
@@ -304,8 +304,8 @@
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="50"/>
-                                            <ColumnDefinition Width="80"/>
-                                            <ColumnDefinition Width="210"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="170"/>
                                         </Grid.ColumnDefinitions>
                                         <ProgressRing x:Name="UserList0_Ring" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width="21" IsActive="True" Visibility="Visible"/>
                                         <Image x:Name="UserList0_Image" Height="50" Width="50" Grid.Column="0" HorizontalAlignment="Left" />
